@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Arquivos e pastas do Cypress
+cypress/
+cypress.json
+cypress.env.json
+videos/
