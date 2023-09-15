@@ -21,6 +21,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/contexts/.gitkeep", "src/hooks/.gitkeep", "src/pages/.gitkeep", "src/routes/.gitkeep", "src/service/.gitkeep", "src/types/.gitkeep", "src/utils/.gitkeep"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
