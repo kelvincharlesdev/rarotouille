@@ -1,0 +1,16 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 495px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #2E268B;
+    border: none;
+}
+
+.text{
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: var(--font-size-medium);
+}
