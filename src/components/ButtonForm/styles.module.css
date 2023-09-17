@@ -5,12 +5,12 @@
     width: 495px;
     height: 60px;
     border-radius: 30px;
-    background-color: #2E268B;
+    background-color: var(--secondary);
     border: none;
 }
 
 .text{
-    color: #FFFFFF;
+    color: var(--white);
     font-weight: 700;
     font-size: var(--font-size-medium);
 }
