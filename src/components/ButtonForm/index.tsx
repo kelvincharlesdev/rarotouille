@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from "react";
-import styles from "./styles.module.css"
+import styles from "./styles.module.css";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
@@ -12,4 +12,3 @@ export const ButtonForm = ({ text, type, disabled }: ButtonProps) => {
     </button>
   );
 };
-
