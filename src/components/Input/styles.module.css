@@ -1,0 +1,15 @@
+.inputContent {
+  width: 495px;
+  border-bottom: 1px solid var(--placeholder);
+}
+
+.field {
+  background-color: transparent;
+  font-size: var(--font-size-extra-small);
+  font-weight: 500;
+  color: var(--black);
+}
+
+.field::placeholder {
+  color: var(--placeholder);
+}
