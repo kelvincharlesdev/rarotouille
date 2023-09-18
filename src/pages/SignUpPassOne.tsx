@@ -1,5 +1,3 @@
-function SignUpPassOne() {
+export const SignUpPassOne = () => {
   return <div>SignUpPassOne</div>;
-}
-
-export default SignUpPassOne;
+};
