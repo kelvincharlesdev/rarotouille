@@ -1,4 +1,3 @@
 export type ForgetPasswordType = {
-      email: string;
+  email: string;
 };
-  

@@ -1,5 +1,5 @@
 export type SessionRefreshType = {
-    auth: {
-      refresh_token: string
-    }
-  }
+  auth: {
+    refresh_token: string;
+  };
+};
