@@ -1,5 +1,7 @@
+import { RarotouilleRoutes } from "./routes/routes";
+
 function App() {
-  return <div>Iniciando</div>;
+  return <RarotouilleRoutes />;
 }
 
 export default App;

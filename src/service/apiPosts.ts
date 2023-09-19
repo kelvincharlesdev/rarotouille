@@ -14,37 +14,36 @@ export const signUp = async (values: SignUpPostType) => {
 };
 
 export const login = async (values: LoginPostType) => {
-    try {
-      const response = await api.post("/sessions/login", values);
-      localStorage.setItem("access_token", response.data.access_token);
-      localStorage.setItem("refresh_token", response.data.refresh_token);
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
+  try {
+    const response = await api.post("/sessions/login", values);
+    localStorage.setItem("access_token", response.data.access_token);
+    localStorage.setItem("refresh_token", response.data.refresh_token);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const forgetPassord = async (value: ForgetPasswordType) => {
-    try {
-      const response = await api.post("/passwords/token", value);
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
+  try {
+    const response = await api.post("/passwords/token", value);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const sessionRefresh = async (value: SessionRefreshType) => {
-    const refresh_token = localStorage.getItem("refresh_token");
-    const access_token = localStorage.getItem("access_token");
+  const refresh_token = localStorage.getItem("refresh_token");
+  const access_token = localStorage.getItem("access_token");
 
-    if(refresh_token)
-    value.auth.refresh_token = refresh_token;
+  if (refresh_token) value.auth.refresh_token = refresh_token;
 
-    if(access_token)
+  if (access_token)
     try {
-      const response = await api.post("/sessions/refresh", value,{
-        headers:{
-          Authorization:`Bearer ${access_token}`
+      const response = await api.post("/sessions/refresh", value, {
+        headers: {
+          Authorization: `Bearer ${access_token}`
         }
       });
       return response;
