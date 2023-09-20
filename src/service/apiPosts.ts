@@ -15,7 +15,13 @@ export const signUp = async (values: SignUpPostType) => {
 
 export const login = async (values: LoginPostType) => {
   try {
-    const response = await api.post("/sessions/login", values);
+    const response = await api.post("/sessions/login", {
+      session: {
+        email: values.email,
+        password: values.password
+      }
+    });
+    // TODO Verficar salvamento no localStorage
     localStorage.setItem("access_token", response.data.access_token);
     localStorage.setItem("refresh_token", response.data.refresh_token);
     return response;
