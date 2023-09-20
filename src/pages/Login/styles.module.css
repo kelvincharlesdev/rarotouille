@@ -1,0 +1,30 @@
+.loginContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 495px;
+  gap: 100px;
+}
+.inputsContent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+}
+.subtitleText {
+  align-self: center;
+  font-size: var(--font-size-extra-small);
+  font-weight: 400;
+  color: var(--placeholder);
+  text-decoration: underline;
+}
+
+.linkSignUp {
+  color: var(--secondary);
+  font-weight: 700;
+}
