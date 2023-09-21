@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+.title1 {
+    color: var(--darker);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 51px;
+}
+
+.title2 {
+    color: #2C257F;
+    font-family: Poppins;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.imageHat {
+    width: 81px;
+    height: 81px;
+    flex-shrink: 0;
+    margin: 46px 26px 9px;
+}
