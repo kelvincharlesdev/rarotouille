@@ -1,4 +1,10 @@
 .inputContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
   width: 495px;
   border-bottom: 1px solid var(--placeholder);
 }
