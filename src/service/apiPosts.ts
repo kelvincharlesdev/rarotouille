@@ -1,7 +1,13 @@
+import { AddresPostType } from "../types/AddressPostType";
+import { DishPostType } from "../types/DishPostType";
 import { ForgetPasswordType } from "../types/ForgetPasswordType";
+import { LikePostType } from "../types/LikePostType";
 import { LoginPostType } from "../types/LoginPostType";
+import { OrderItemResponseType } from "../types/OrderItemResponseType";
+import { OrderPostType } from "../types/OrderPostType";
 import { SessionRefreshType } from "../types/SessionRefreshType";
 import { SignUpPostType } from "../types/SignUpPostType";
+import { TelephoneUpdateType } from "../types/TelephoneUpdateType";
 import { api } from "./api";
 
 export const signUp = async (formData: SignUpPostType) => {
@@ -59,3 +65,146 @@ export const sessionRefresh = async (value: SessionRefreshType) => {
       console.log(error);
     }
 };
+
+export const postAddress = async (values: AddresPostType) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.post("/clients/addresses",{
+        address: values,
+      },{
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+//TODO Ver se é necessário essa requisição
+export const postChef = async (formData: SignUpPostType) => {
+  
+  const access_token = localStorage.getItem("access_token");
+  try {
+    const response = await api.post("/registrations/signup", {
+      chef: formData
+    },{
+      headers: {
+        Authorization: `Bearer ${access_token}`
+      }
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const postOrder = async (values: OrderPostType) => {
+  const access_token = localStorage.getItem("access_token");
+  try {
+    const response = await api.post("/clients/orders", {
+      order: values
+    },{
+      headers: {
+        Authorization: `Bearer ${access_token}`
+      }
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const postOrderItem = async (order_id: string, values: OrderItemResponseType) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.post(`/clients/orders/${order_id}/order_items`,{
+        order_item: values
+      },{
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+//TODO perguntar se precisa tipar isso
+export const postClientTelephone = async (phone_number: TelephoneUpdateType) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.post("/clients/telephones",{
+        telephone: phone_number
+      },{
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+//TODO ver se essa requisição é necessária
+export const postChefTelephone = async (chef_id: string, phone_number: TelephoneUpdateType) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.post(`/chefs/${chef_id}/telephones`,{
+        telephone: phone_number
+      },{
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+
+//TODO ver se é necessário
+export const postDish = async (chef_id: string, dish: DishPostType) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.post(`/chefs/${chef_id}/dishes`,{
+        dish: dish
+      },{
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+
+//TODO testar depois pq não tá funcionando a rota
+export const postLike = async (like: LikePostType) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.post("/likes",{
+        like: like
+      },{
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
