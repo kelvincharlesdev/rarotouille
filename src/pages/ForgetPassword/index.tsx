@@ -75,7 +75,7 @@ export const ForgetPassword = () => {
           {({ errors, touched, isSubmitting }) => (
             <Form className={styles.forgetContent} autoComplete="off">
               <AuthTitle
-                title="Faça seu login"
+                title="Recupere sua senha"
                 subTitle="Informe o seu email no campo abaixo e lhe enviaremos um código"
               />
               <div className={styles.formContent}>
