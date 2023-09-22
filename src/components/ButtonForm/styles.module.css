@@ -7,6 +7,7 @@
   border-radius: 30px;
   background-color: var(--secondary);
   border: none;
+  cursor: pointer;
 }
 
 .text {

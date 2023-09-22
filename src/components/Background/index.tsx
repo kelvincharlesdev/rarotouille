@@ -1,4 +1,3 @@
-// Background.tsx
 import { ReactNode } from "react";
 import styles from "./styles.module.css";
 import { AuthImg } from "../AuthImg";
