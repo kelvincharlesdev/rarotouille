@@ -1,0 +1,47 @@
+.forgetContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 495px;
+  gap: 100px;
+}
+
+.inputsContent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+}
+
+.copy {
+  color: var(--placeholder);
+  cursor: pointer;
+}
+
+.token {
+  font-weight: 600;
+}
+
+.tokenContainer {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.copiedToken {
+  color: var(--orange);
+  margin-top: 25px;
+  text-align: center;
+}
+
+.tokenForm {
+  margin-bottom: 45px;
+}
