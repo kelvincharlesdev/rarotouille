@@ -1,17 +1,12 @@
-.slogan1 {
-    color: #2E268B;
-    font-family: Poppins;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.slogan {
+  color: var(--secondary);
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 41px;
 }
 
-.slogan2 {
-    color: #171157;
-    font-family: Poppins;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
+.sloganRaro {
+  color: var(--darker);
+  font-size: 32px;
+  font-weight: 800;
 }

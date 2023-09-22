@@ -44,7 +44,7 @@ export const ForgetPassword = () => {
   };
 
   return (
-    <Background image={Lock}>
+    <Background image={Lock} alt={"Cadeado"}>
       {submitted ? (
         <div>
           <AuthTitle
