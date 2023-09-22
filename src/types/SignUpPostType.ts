@@ -8,5 +8,5 @@ export type SignUpPostType = {
   telephones_attributes: ITelephones[];
   addresses_attributes: ITelephones[];
   cpf: string;
-  termsCheck: boolean;
+  termsCheck?: boolean;
 };
