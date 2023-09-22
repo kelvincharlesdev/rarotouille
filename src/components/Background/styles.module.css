@@ -3,6 +3,9 @@
   height: 100vh;
   background-color: var(--white);
   border-radius: 241px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*.imageContainer {
