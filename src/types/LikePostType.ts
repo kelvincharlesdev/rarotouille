@@ -1,5 +1,3 @@
 export type LikePostType = {
-    
-        likeable_id: string
-      
-}
+  likeable_id: string;
+};

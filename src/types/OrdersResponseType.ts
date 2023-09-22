@@ -1,8 +1,7 @@
-import { MetaType } from "./MetaType"
-import { OrderType } from "./OrderType"
+import { MetaType } from "./MetaType";
+import { OrderType } from "./OrderType";
 
 export type OrdersResponseType = {
-    
-data: OrderType[],
-meta: MetaType
-}
+  data: OrderType[];
+  meta: MetaType;
+};

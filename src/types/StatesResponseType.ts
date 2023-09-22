@@ -1,7 +1,7 @@
-import { MetaType } from "./MetaType"
-import { StateType } from "./StateType"
+import { MetaType } from "./MetaType";
+import { StateType } from "./StateType";
 
 export type StateResponseType = {
-    data: StateType[],
-    meta: MetaType
-}
+  data: StateType[];
+  meta: MetaType;
+};

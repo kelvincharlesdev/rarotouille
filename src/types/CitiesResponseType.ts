@@ -1,7 +1,7 @@
-import { CityType } from "./CityType"
-import { MetaType } from "./MetaType"
+import { CityType } from "./CityType";
+import { MetaType } from "./MetaType";
 
 export type CitiesResponseType = {
-    data: CityType[],
-    meta: MetaType
-}
+  data: CityType[];
+  meta: MetaType;
+};

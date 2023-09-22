@@ -1,7 +1,7 @@
-import { MetaType } from "./MetaType"
-import { TelephoneType } from "./TelephoneType"
+import { MetaType } from "./MetaType";
+import { TelephoneType } from "./TelephoneType";
 
 export type TelephonesResponseType = {
-    data: TelephoneType[],
-    meta: MetaType
-}
+  data: TelephoneType[];
+  meta: MetaType;
+};

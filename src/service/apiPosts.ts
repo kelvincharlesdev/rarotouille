@@ -47,36 +47,47 @@ export const forgetPassord = async (value: ForgetPasswordType) => {
   }
 };
 
-export const sessionRefresh = async (value: SessionRefreshType) => {
+export const sessionRefresh = async () => {
   const refresh_token = localStorage.getItem("refresh_token");
   const access_token = localStorage.getItem("access_token");
 
-  if (refresh_token) value.auth.refresh_token = refresh_token;
-
   if (access_token)
-    try {
-      const response = await api.post("/sessions/refresh", value, {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
+    if (refresh_token)
+      try {
+        const response = await api.post(
+          "/sessions/refresh",
+          {
+            auth: {
+              refresh_token: refresh_token
+            }
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${access_token}`
+            }
+          }
+        );
+        return response;
+      } catch (error) {
+        console.log(error);
+      }
 };
 
 export const postAddress = async (values: AddresPostType) => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {
-      const response = await api.post("/clients/addresses",{
-        address: values,
-      },{
-        headers: {
-          Authorization: `Bearer ${access_token}`
+      const response = await api.post(
+        "/clients/addresses",
+        {
+          address: values
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`
+          }
         }
-      });
+      );
       return response;
     } catch (error) {
       console.log(error);
@@ -85,16 +96,19 @@ export const postAddress = async (values: AddresPostType) => {
 
 //TODO Ver se é necessário essa requisição
 export const postChef = async (formData: SignUpPostType) => {
-  
   const access_token = localStorage.getItem("access_token");
   try {
-    const response = await api.post("/registrations/signup", {
-      chef: formData
-    },{
-      headers: {
-        Authorization: `Bearer ${access_token}`
+    const response = await api.post(
+      "/chefs",
+      {
+        chef: formData
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
       }
-    });
+    );
     return response;
   } catch (error) {
     console.log(error);
@@ -104,30 +118,41 @@ export const postChef = async (formData: SignUpPostType) => {
 export const postOrder = async (values: OrderPostType) => {
   const access_token = localStorage.getItem("access_token");
   try {
-    const response = await api.post("/clients/orders", {
-      order: values
-    },{
-      headers: {
-        Authorization: `Bearer ${access_token}`
+    const response = await api.post(
+      "/clients/orders",
+      {
+        order: values
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
       }
-    });
+    );
     return response;
   } catch (error) {
     console.log(error);
   }
 };
 
-export const postOrderItem = async (order_id: string, values: OrderItemResponseType) => {
+export const postOrderItem = async (
+  order_id: string,
+  values: OrderItemResponseType
+) => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {
-      const response = await api.post(`/clients/orders/${order_id}/order_items`,{
-        order_item: values
-      },{
-        headers: {
-          Authorization: `Bearer ${access_token}`
+      const response = await api.post(
+        `/clients/orders/${order_id}/order_items`,
+        {
+          order_item: values
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`
+          }
         }
-      });
+      );
       return response;
     } catch (error) {
       console.log(error);
@@ -135,17 +160,23 @@ export const postOrderItem = async (order_id: string, values: OrderItemResponseT
 };
 
 //TODO perguntar se precisa tipar isso
-export const postClientTelephone = async (phone_number: TelephoneUpdateType) => {
+export const postClientTelephone = async (
+  phone_number: TelephoneUpdateType
+) => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {
-      const response = await api.post("/clients/telephones",{
-        telephone: phone_number
-      },{
-        headers: {
-          Authorization: `Bearer ${access_token}`
+      const response = await api.post(
+        "/clients/telephones",
+        {
+          telephone: phone_number
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`
+          }
         }
-      });
+      );
       return response;
     } catch (error) {
       console.log(error);
@@ -153,58 +184,70 @@ export const postClientTelephone = async (phone_number: TelephoneUpdateType) => 
 };
 
 //TODO ver se essa requisição é necessária
-export const postChefTelephone = async (chef_id: string, phone_number: TelephoneUpdateType) => {
+export const postChefTelephone = async (
+  chef_id: string,
+  phone_number: TelephoneUpdateType
+) => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {
-      const response = await api.post(`/chefs/${chef_id}/telephones`,{
-        telephone: phone_number
-      },{
-        headers: {
-          Authorization: `Bearer ${access_token}`
+      const response = await api.post(
+        `/chefs/${chef_id}/telephones`,
+        {
+          telephone: phone_number
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`
+          }
         }
-      });
+      );
       return response;
     } catch (error) {
       console.log(error);
     }
 };
-
 
 //TODO ver se é necessário
 export const postDish = async (chef_id: string, dish: DishPostType) => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {
-      const response = await api.post(`/chefs/${chef_id}/dishes`,{
-        dish: dish
-      },{
-        headers: {
-          Authorization: `Bearer ${access_token}`
+      const response = await api.post(
+        `/chefs/${chef_id}/dishes`,
+        {
+          dish: dish
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`
+          }
         }
-      });
+      );
       return response;
     } catch (error) {
       console.log(error);
     }
 };
-
 
 //TODO testar depois pq não tá funcionando a rota
 export const postLike = async (like: LikePostType) => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {
-      const response = await api.post("/likes",{
-        like: like
-      },{
-        headers: {
-          Authorization: `Bearer ${access_token}`
+      const response = await api.post(
+        "/likes",
+        {
+          like: like
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`
+          }
         }
-      });
+      );
       return response;
     } catch (error) {
       console.log(error);
     }
 };
-
