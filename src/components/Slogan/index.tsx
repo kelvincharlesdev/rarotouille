@@ -1,13 +1,10 @@
-import React from 'react';
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
-
-function Slogan() {
+export const Slogan = () => {
   return (
-    <>
-      <p className={styles.slogan1}>Uma experiência <span className={styles.slogan2}>Raro</span> de delivery jamais vista</p>
-    </>
+    <p className={styles.slogan}>
+      Uma experiência <span className={styles.sloganRaro}>Raro</span> de
+      delivery jamais vista
+    </p>
   );
-}
-
-export default Slogan;
+};
