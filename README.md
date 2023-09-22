@@ -75,6 +75,7 @@
   - Axios
   - Jest
   - Cypress
+  - router-dom
 
 - Config prettier
   - Aspas duplas “ ”

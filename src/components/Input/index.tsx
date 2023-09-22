@@ -9,6 +9,8 @@ export interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const Input = ({ name, type, placeholder, errors }: FormInputProps) => {
+  console.log(errors);
+
   return (
     <div className={styles.inputContent}>
       <div className={styles.input}>
