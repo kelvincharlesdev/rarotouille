@@ -1,9 +1,7 @@
-import { ChefType } from "./ChefType"
-import { MetaType } from "./MetaType"
+import { MetaType } from "./MetaType";
+import { UserResponseType } from "./UserResponseType";
 
 export type ChefsResponseType = {
-
-    data: ChefType[],
-    meta: MetaType
-
-}
+  data: UserResponseType[];
+  meta: MetaType;
+};

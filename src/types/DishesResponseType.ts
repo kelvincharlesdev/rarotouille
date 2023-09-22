@@ -1,7 +1,7 @@
-import { DishType } from "./DishType"
-import { MetaType } from "./MetaType"
+import { DishType } from "./DishType";
+import { MetaType } from "./MetaType";
 
 export type DishesResponseType = {
-    data: DishType[],
-    meta: MetaType
-}
+  data: DishType[];
+  meta: MetaType;
+};

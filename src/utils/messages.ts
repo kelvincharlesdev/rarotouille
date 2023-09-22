@@ -26,7 +26,7 @@ export const errrorMessages = {
     invalid: "Digite um número de telefone valido"
   },
   termsCheck: {
-    required: "Você precisa aceitar os termos e condições.",
+    required: "Você precisa aceitar os termos e condições."
   },
   login: {
     notRegistered: "Email ou senha não cadastrados"
