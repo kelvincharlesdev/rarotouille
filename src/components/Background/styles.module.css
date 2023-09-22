@@ -8,16 +8,10 @@
   align-items: center;
 }
 
-/*.imageContainer {
-  Não mexam aqui hahahah 
-}*/
-
 .leftPanel {
   width: 47%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 26px 46px;
 }
 
 .background {
