@@ -4,9 +4,11 @@ import { SessionRefreshType } from "../types/SessionRefreshType";
 import { SignUpPostType } from "../types/SignUpPostType";
 import { api } from "./api";
 
-export const signUp = async (values: SignUpPostType) => {
+export const signUp = async (formData: SignUpPostType) => {
   try {
-    const response = await api.post("/registrations/signup", values);
+    const response = await api.post("/registrations/signup", {
+      user: formData
+    });
     return response;
   } catch (error) {
     console.log(error);
