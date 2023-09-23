@@ -33,6 +33,26 @@ export const errrorMessages = {
   },
 
   name: {
-    required: "Nome e sobrenome obrigatórios"
+    required: "Nome e sobrenome obrigatórios",
+    minEight: "Primeiro nome deve conter no mínimo 4 caracteres"
+  },
+
+  zip_code: {
+    invalid: "Digite um CEP válido (xxxxx-xxx)"
+  },
+  public_place: {
+    invalid: "Digite uma rua válida"
+  },
+  neighborhood: {
+    invalid: "Digite um bairro válido"
+  },
+  number: {
+    invalid: "Digite um número válido"
+  },
+  city: {
+    invalid: "Digite uma cidade válida"
+  },
+  reference: {
+    minEight: "Referência deve ter no mínimo 4 caracteres"
   }
 };

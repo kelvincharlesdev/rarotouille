@@ -114,21 +114,14 @@ export const getCity = async (state_id: string, city_id: string) => {
     }
 };
 export const getAddressByZipCode = async (zip_code: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
-    try {
-      const response = await api.get<AddressByZipCodeType>(
-        `/addresses/search_zip_code/${zip_code}`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
-      );
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
+  try {
+    const response = await api.get<AddressByZipCodeType>(
+      `/addresses/search_zip_code/${zip_code}`
+    );
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getClientsAddress = async () => {

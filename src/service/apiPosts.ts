@@ -17,7 +17,7 @@ export const signUp = async (formData: SignUpPostType) => {
     });
     return response;
   } catch (error) {
-    console.log(error);
+    return "Error 422";
   }
 };
 
