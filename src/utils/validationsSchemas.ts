@@ -66,6 +66,14 @@ export const completeSignUpSchema = Yup.object().shape({
   )
 });
 
+export const resetPasswordSchema = Yup.object().shape({
+  reset_password_token: Yup.string().required("Campo obrigatório"),
+  password: Yup.string().required(errrorMessages.password.required),
+  password_confirmation: Yup.string().required(
+    errrorMessages.password_confirmation.required
+  )
+});
+
 //TODO Verificar se vai precisar dessas validações
 
 // public_place: Yup.string().matches(
