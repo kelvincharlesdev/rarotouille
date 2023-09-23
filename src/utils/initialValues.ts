@@ -16,3 +16,32 @@ export const resetPassword: ResetPasswordType = {
   password: "",
   password_confirmation: ""
 };
+
+export const SignUpInitialValues = {
+  name: "",
+  email: "",
+  password: "",
+  password_confirmation: "",
+  telephones_attributes: [
+    {
+      number: ""
+    }
+  ],
+  addresses_attributes: [
+    {
+      name: "",
+      public_place: "",
+      zip_code: "",
+      number: "",
+      neighborhood: "",
+      reference: "",
+      complement: "",
+      city_id: "",
+      latitude: "",
+      longitude: "",
+      city: ""
+    }
+  ],
+  cpf: "",
+  termsCheck: false
+};

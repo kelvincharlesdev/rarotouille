@@ -6,5 +6,7 @@ interface ErrorMessageProps {
 }
 
 export const CustomErrorMessage = ({ message }: ErrorMessageProps) => {
+  console.log(message);
+
   return <span className={styles.errorMessage}>{message}</span>;
 };
