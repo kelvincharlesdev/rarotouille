@@ -11,7 +11,7 @@ export const forgetPassword: ForgetPasswordType = {
   email: ""
 };
 
-export const resetPassword: ResetPasswordType = {
+export const resetPasswordInitialValues: ResetPasswordType = {
   reset_password_token: "",
   password: "",
   password_confirmation: ""
