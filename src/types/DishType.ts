@@ -12,10 +12,10 @@ export type DishType = {
   available: boolean;
   active: boolean;
   unit_price: string;
-  created_at: string;
-  updated_at: string;
+  created_at?: string;
+  updated_at?: string;
   categories: CategoryType[];
-  images?: string[];
+  images: string[];
   ratings?: RatingType[];
   chef?: UserResponseType;
   liked_by_me?: boolean;
