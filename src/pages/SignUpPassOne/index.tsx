@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 import { CompleteSignUp } from "../../components/CompleteSignUp";
 import { SignUpInitialValues } from "../../utils/initialValues";
 
-
 //TODO Revisão e separação de interfaces
 
 export interface ITelephones {

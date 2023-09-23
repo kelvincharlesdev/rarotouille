@@ -39,12 +39,12 @@
   width: 100%;
 }
 
-.inputNeighborhood{
+.inputNeighborhood {
   border-bottom: 1px solid var(--placeholder);
   width: 100%;
 }
 
-.inputNumber{
+.inputNumber {
   border-bottom: 1px solid var(--placeholder);
   width: 20%;
 }
@@ -56,7 +56,6 @@
   color: var(--black);
 }
 
-
 .field::placeholder {
-    color: var(--placeholder);
-  } 
+  color: var(--placeholder);
+}

@@ -5,7 +5,6 @@ import { LikePostType } from "../types/LikePostType";
 import { LoginPostType } from "../types/LoginPostType";
 import { OrderItemResponseType } from "../types/OrderItemResponseType";
 import { OrderPostType } from "../types/OrderPostType";
-import { SessionRefreshType } from "../types/SessionRefreshType";
 import { SignUpPostType } from "../types/SignUpPostType";
 import { TelephoneUpdateType } from "../types/TelephoneUpdateType";
 import { api } from "./api";
@@ -231,7 +230,7 @@ export const postDish = async (chef_id: string, dish: DishPostType) => {
 };
 
 //TODO testar depois pq não tá funcionando a rota
-export const postLike = async (like: LikePostType) => {
+export const like = async (like: LikePostType) => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {
