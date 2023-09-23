@@ -10,7 +10,7 @@ import { Input } from "../../components/Input";
 import { ButtonForm } from "../../components/ButtonForm";
 import { resetPasswordSchema } from "../../utils/validationsSchemas";
 import { useState } from "react";
-//import { CheckAnimation } from "../../components/CheckAnimation";
+import { CheckAnimation } from "../../components/CheckAnimation";
 
 export const ResetPassword = () => {
   const [resetSuccess, setResetSuccess] = useState(false);
@@ -33,7 +33,7 @@ export const ResetPassword = () => {
             subTitle="Faça o login com sua nova
            senha."
           />
-
+          <CheckAnimation />
           <ButtonForm text={"Voltar ao Login"} />
         </div>
       ) : (
