@@ -6,7 +6,7 @@ import LoginImage from "../../assets/images/Cloche.png";
 import { Input } from "../../components/Input";
 import { ButtonForm } from "../../components/ButtonForm";
 import { AuthTitle } from "../../components/AuthTitle";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 import { routes } from "../../routes";
 import { errrorMessages } from "../../utils/messages";
@@ -14,26 +14,25 @@ import { login } from "../../service/apiPosts";
 import { useState } from "react";
 import { CustomErrorMessage } from "../../components/CustomErrorMessage";
 import { loginSchema } from "../../utils/validationsSchemas";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export const Login = () => {
   const [isInvalidLogin, setIsInvalidLogin] = useState(false);
-
+  const navigate = useNavigate();
+  const { setIsAuthenticated } = useAuthContext();
   const submitiLogin = async (values: LoginPostType) => {
-    try {
-      const response = await login(values);
-      //TODO Consertar esse tratamento
-      if (response?.status === 401) {
-        setIsInvalidLogin(true);
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsInvalidLogin(false);
+    const response = await login(values);
+
+    if (response === "Error 401") {
+      setIsInvalidLogin(true);
+    } else if (response?.status === 200) {
+      setIsAuthenticated(true);
+      navigate(routes.home);
     }
   };
 
   return (
-    <Background image={LoginImage}>
+    <Background image={LoginImage} alt="Imagem da Clouche">
       <Formik<LoginPostType>
         initialValues={loginInitialValues}
         onSubmit={submitiLogin}

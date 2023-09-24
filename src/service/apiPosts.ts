@@ -29,11 +29,14 @@ export const login = async (values: LoginPostType) => {
       }
     });
     // TODO Verficar salvamento no localStorage
-    localStorage.setItem("access_token", response.data.access_token);
-    localStorage.setItem("refresh_token", response.data.refresh_token);
-    return response;
+
+    if (response) {
+      localStorage.setItem("access_token", response.data.access_token);
+      localStorage.setItem("refresh_token", response.data.refresh_token);
+      return response;
+    }
   } catch (error) {
-    console.log(error);
+    return "Error 401";
   }
 };
 
