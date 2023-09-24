@@ -11,13 +11,14 @@ import { DishesList } from "../pages/DishesList";
 import { Favorites } from "../pages/Favorites";
 import { Orders } from "../pages/Orders";
 import { Profile } from "../pages/Profile";
+import { useAuthContext } from "../contexts/AuthContext";
 export const RarotouilleRoutes = () => {
   //TODO trocar pelo contexto dps
-  const isAuth = true;
+  const { isAuthenticated } = useAuthContext();
   return (
     <BrowserRouter>
       <Routes>
-        {isAuth ? (
+        {isAuthenticated ? (
           <>
             <Route path="/*" element={<Navigate replace to="/home" />} />
             <Route path={routes.home} element={<Home />} />
