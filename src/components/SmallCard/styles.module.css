@@ -1,90 +1,89 @@
 .cardContainer {
-    display: flex;
-    flex-direction: column;
-    width: 228px;
-    height: 246px;
-    border-radius: 16px;
-    border: 1px solid;
-    border-image-source: linear-gradient(
-      137.55deg,
-      #ffffff -45.47%,
-      rgba(255, 255, 255, 0) 132.54%
-    );
-    box-shadow:
-      -5px 7px 12px -2px #7a7ea391,
-      9px -9px 12px -7px #7a7ea391;
-  }
-  
-  .dishImage {
-    width: 245px;
-    height: 148px;
-    border-radius: 16px;
-  }
-  
-  .imageNamePriceContent {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 11px 12px 0px 12px;
-  }
-  .dishName {
-    display: flex;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: left;
-    color: var(--secondary);
-  }
-  .dishNamePrice {
-    display: flex;
-    flex-direction: column;
-  }
-  .dishPrice {
-    display: flex;
-    font-size: 12px;
-    font-weight: 500;
-    text-align: left;
-    color: var(--primary);
-  }
-  
-  .chefHeartCartContent {
-    justify-content: space-between;
-    display: flex;
-    padding: 0px 12px;
-    align-items: center;
-    gap: 10px;
-  }
-  .chefHeart {
-    gap: 10px;
-    display: flex;
-  }
-  .chefName {
-    align-self: self-end;
-    font-size: 12px;
-    font-weight: 600;
-    text-align: left;
-    color: var(--secondary);
-  }
-  
-  .cartIcon {
-    width: 24px;
-    height: 23px;
-    border: 3px;
-  }
-  
-  .cartButton {
-    display: flex;
-    right: 20px;
-    bottom: 20px;
-    cursor: pointer;
-  }
-  
-  .likeButton {
-    display: flex;
-    cursor: pointer;
-  }
-  
-  .dishImageButton {
-    cursor: pointer;
-    display: flex;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  width: 228px;
+  height: 246px;
+  border-radius: 16px;
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    137.55deg,
+    #ffffff -45.47%,
+    rgba(255, 255, 255, 0) 132.54%
+  );
+  box-shadow:
+    -5px 7px 12px -2px #7a7ea391,
+    9px -9px 12px -7px #7a7ea391;
+}
+
+.dishImage {
+  width: 245px;
+  height: 148px;
+  border-radius: 16px;
+}
+
+.imageNamePriceContent {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 11px 12px 0px 12px;
+}
+.dishName {
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  color: var(--secondary);
+}
+.dishNamePrice {
+  display: flex;
+  flex-direction: column;
+}
+.dishPrice {
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--primary);
+}
+
+.chefHeartCartContent {
+  justify-content: space-between;
+  display: flex;
+  padding: 0px 12px;
+  align-items: center;
+  gap: 10px;
+}
+.chefHeart {
+  gap: 10px;
+  display: flex;
+}
+.chefName {
+  align-self: self-end;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: var(--secondary);
+}
+
+.cartIcon {
+  width: 24px;
+  height: 23px;
+  border: 3px;
+}
+
+.cartButton {
+  display: flex;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}
+
+.likeButton {
+  display: flex;
+  cursor: pointer;
+}
+
+.dishImageButton {
+  cursor: pointer;
+  display: flex;
+}
