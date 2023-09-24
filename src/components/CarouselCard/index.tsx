@@ -55,7 +55,7 @@ export const CarouselCard = ({ dish }: CarouselCardProps) => {
       </div>
       <div className={styles.chefHeartCartContent}>
         <div className={styles.chefHeart}>
-          <p className={styles.chefName}>Por Chef {dish.chef?.name}</p>
+          <p className={styles.chefName}>Chef {dish.chef?.name}</p>
           {dish.liked_by_me ? (
             <button
               className={styles.likeButton}
