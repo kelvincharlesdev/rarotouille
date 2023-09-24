@@ -41,7 +41,7 @@
 .dishPrice {
   display: flex;
   font-size: var(--font-size-extra-small);
-  font-weight: 600;
+  font-weight: 500;
   text-align: left;
   color: var(--primary);
 }
@@ -60,7 +60,7 @@
 .chefName {
   align-self: self-end;
   font-size: var(--font-size-extra-small);
-  font-weight: 700;
+  font-weight: 600;
   text-align: left;
   color: var(--secondary);
 }

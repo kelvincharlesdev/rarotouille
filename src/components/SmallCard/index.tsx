@@ -9,11 +9,11 @@ import { like } from "../../service/apiPosts";
 import { desLike } from "../../service/apiDeletes";
 import { useState } from "react";
 
-export interface CarouselCardProps {
+export interface SmallCardProps {
   dish: DishType;
 }
 
-export const CarouselCard = ({ dish }: CarouselCardProps) => {
+export const SmallCard = ({ dish }: SmallCardProps) => {
   const navigate = useNavigate();
   const [likeId, setLikeId] = useState();
   const priceFormated = dish.unit_price.replace(".", ",");
