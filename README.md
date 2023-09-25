@@ -76,6 +76,7 @@
   - Jest
   - Cypress
   - router-dom
+  - react slick
 
 - Config prettier
   - Aspas duplas “ ”
