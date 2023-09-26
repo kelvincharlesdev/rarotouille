@@ -1,0 +1,46 @@
+.mainContentTitle {
+  text-align: center;
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  width: 350px;
+  color: var(--secondary);
+}
+.footerText {
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  width: 315px;
+  text-align: center;
+  color: var(--secondary);
+}
+.imageAndTextContent {
+  display: flex;
+  gap: 80px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  width: 691px;
+  height: 585px;
+}
+.link {
+  font-size: var(--font-size-extra-small);
+}
+.linkCopiedMessage {
+  color: green;
+  font-size: var(--font-size-extra-small);
+}
+.copyButton {
+  font-size: var(--font-size-small);
+  color: var(--black);
+}
+.footerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 691px;
+  height: 215px;
+}

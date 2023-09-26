@@ -1,3 +1,4 @@
+import { CheckoutResponseType } from "../types/CheckoutResponseType";
 import { api } from "./api";
 
 export const cancelOrder = async (order_id: string) => {
@@ -23,7 +24,7 @@ export const checkoutOrder = async (order_id: string) => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {
-      const response = await api.patch(
+      const response = await api.patch<CheckoutResponseType>(
         `/clients/orders/${order_id}/checkout`,
         {},
         {

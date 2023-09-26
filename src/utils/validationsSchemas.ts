@@ -74,6 +74,13 @@ export const resetPasswordSchema = Yup.object().shape({
   )
 });
 
+export const ratingSchema = Yup.object().shape({
+  comment: Yup.string().required("Campo obrigatório"),
+  rate: Yup.string()
+    .required()
+    .oneOf(["1", "2", "3", "4", "5"], "Selecione uma nota")
+});
+
 //TODO Verificar se vai precisar dessas validações
 
 // public_place: Yup.string().matches(

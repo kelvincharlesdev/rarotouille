@@ -17,7 +17,7 @@ export type DishType = {
   categories: CategoryType[];
   images: string[];
   ratings?: RatingType[];
-  chef?: UserResponseType;
+  chef: UserResponseType;
   liked_by_me?: boolean;
   disliked_by_me?: boolean;
   likes?: LikeType[];
