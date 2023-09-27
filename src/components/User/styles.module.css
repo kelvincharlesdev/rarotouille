@@ -1,0 +1,11 @@
+.userContainer {
+  display: flex;
+  font-size: var(--font-size-ultra-small);
+  margin: 0px 35px;
+  align-items: center;
+}
+
+.username {
+  color: var(--white);
+  font-weight: 600;
+}

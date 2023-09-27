@@ -1,27 +1,83 @@
-# React + TypeScript + Vite
+# Projeto Final
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Iniciando
 
-Currently, two official plugins are available:
+  - Primeiras regras
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    - Dar GIT PULL sempre que abrir o projeto localmente pra atualizar com todos os dados corretamente
+    - Sempre que terminar a task dar um npm run format para identação do código antes de subir
 
-## Expanding the ESLint configuration
+  - Nome: Rarotouille ( Nem pagou ja chegou)
+  - Publico Alvo : 18 a 35 anos
+  - O que faz/ Oque resolve/ Os beneficios
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Regras de Padronização
 
-- Configure the top-level `parserOptions` property like this:
+  - NODE vs 18.17.0
+  - Padrão de nomenclatura de componente/variáveis : Inglês;
+  - Commit
+    - 1. “feat: Implementa componente Button”
+    - 2. “fix: Implementa correção de Button”
+    - 3. “style: Implementa style componente Button”
+  - Usaremos Css Module
+    - Modo de importação
+      > import styles from "./styles.module.css";
+    - Como usar ex:
+      > button className={styles.button}>
+    - Nome do arquivo
+      > styles.module.css
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- Figma
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+  - Paleta de cores: Azul Raro/Ratatoulle
+  - Font: Poppins e San-serif
+  - Font size: basear no figma
+
+    - font-weight{
+
+      - 800
+      - 700
+      - 600
+      - 500
+      - 400
+
+      }
+
+    - Unidade de medida : px
+
+- Estrutura de pastas
+  - components
+    - Pasta
+      - index.tsx
+      - styles.module.css
+  - hooks
+  - contexts
+  - services
+  - styles
+  - Pages
+  - Routes
+    OBS: Dentro de cada pasta podemos ter um index.ts e dentro dele dar um export em que precisarmos isso facilita nas outras exportações
+- nomeclatura
+
+  - Component ⇒ pascal case ( DessaFormaAqui)
+
+- Export
+
+  - Todos export seram feitos dessa maneira:
+
+    - export const exemplo = ( ) ⇒ {
+      }
+
+- Bibliotecas
+
+  - Formik
+  - Yup
+  - Axios
+  - Jest
+  - Cypress
+  - router-dom
+  - react slick
+
+- Config prettier
+  - Aspas duplas “ ”
+  - ponto e virgula no final ;

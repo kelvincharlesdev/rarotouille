@@ -1,0 +1,92 @@
+.centerImage {
+  width: 400px;
+  height: 348px;
+}
+.mainTitle {
+  text-align: center;
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  width: 350px;
+  color: var(--secondary);
+}
+.footerTitle {
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  width: 315px;
+  text-align: center;
+  color: var(--secondary);
+}
+.imageAndTextContent {
+  display: flex;
+  gap: 80px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  width: 691px;
+  height: 585px;
+  overflow: scroll;
+}
+
+.cartFooter {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 691px;
+  height: 215px;
+}
+
+.avaliateTitle {
+  text-align: center;
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  width: 405px;
+  color: var(--secondary);
+}
+
+.avaliateButton {
+  color: var(--secondary);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+}
+.input {
+  border: 1px solid #aeaeae;
+  border-radius: 6px;
+  width: 445px;
+  height: 80px;
+}
+.commentAndRating {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.backButton {
+  color: var(--secondary);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+}
+.nameAndRating {
+  display: flex;
+  justify-content: space-between;
+}
+.selectRating {
+  border: none;
+  width: 90px;
+  height: 25px;
+}
+.dishName {
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  color: var(--secondary);
+}
+.backButton {
+  color: var(--secondary);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+}

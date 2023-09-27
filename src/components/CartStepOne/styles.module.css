@@ -1,0 +1,116 @@
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  width: 691px;
+  height: 520px;
+  overflow: scroll;
+  border-bottom: 3px solid;
+  border-color: var(--secondary);
+}
+.orderLine {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.mainContentHeader {
+  display: flex;
+  padding: 46px 0px 10px 0px;
+}
+.chefName {
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.trashButton {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.productLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dishImage {
+  width: 205px;
+  height: 115px;
+  border-radius: 5px;
+}
+.imageNamePriceContent {
+  display: flex;
+  gap: 10px;
+}
+.nameAndPriceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.dishName {
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  color: var(--secondary);
+}
+.dishPrice {
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  color: var(--primary);
+}
+.removeAndProductInfosContent {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.dishQtdControl {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.qtdText {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+  color: var(--secondary);
+}
+.removeUnit {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+  color: var(--secondary);
+}
+.addUnit {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+  color: var(--secondary);
+}
+.mainContentFooter {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px 0px 0px;
+}
+.removeAllText {
+  font-size: var(--font-size-extra-small);
+  font-weight: 500;
+  color: var(--red);
+}
+.cartFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 691px;
+  height: 280px;
+}
+.totalPriceContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.totalText {
+  font-size: var(--font-size-super-large);
+  font-weight: 600;
+  color: var(--secondary);
+}
+.totalPriceText {
+  font-size: var(--font-size-super-large);
+  font-weight: 600;
+  color: var(--secondary);
+}

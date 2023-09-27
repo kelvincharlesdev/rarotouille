@@ -1,0 +1,19 @@
+.rightPanel {
+  width: 53%;
+  height: 100vh;
+  background-color: var(--white);
+  border-radius: 241px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftPanel {
+  width: 47%;
+  height: 100vh;
+  padding: 26px 46px;
+}
+
+.background {
+  display: flex;
+}

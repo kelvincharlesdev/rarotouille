@@ -1,0 +1,34 @@
+.loginContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputsContent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 34px 0 55px 0;
+}
+.formContent {
+  display: flex;
+  flex-direction: column;
+}
+.subtitleText {
+  align-self: center;
+  font-size: var(--font-size-extra-small);
+  font-weight: 400;
+  color: var(--placeholder);
+  text-decoration: underline;
+}
+
+.linkSignUp {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.btn {
+  color: var(--secondary);
+  font-weight: bold;
+  margin-bottom: 24px;
+}

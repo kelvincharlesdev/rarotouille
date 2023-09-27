@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  align-items: flex-end;
+}
+
+.imageHat {
+  width: 81px;
+  height: 81px;
+}
+
+.raro {
+  font-size: 44px;
+}
+.touille {
+  color: var(--secondary);
+  font-size: 35px;
+}
