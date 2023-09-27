@@ -1,0 +1,26 @@
+.sloganContainer {
+  display: flex;
+  padding: 250px 142px 173px;
+  background-color: var(--white);
+}
+
+.sloganContainer > img {
+  width: 370px;
+  height: 228px;
+  margin-left: 100px;
+}
+
+.textContainer {
+  color: var(--secondary);
+}
+
+.title {
+  font-size: var(--font-size-super-large);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.subTitle {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+}

@@ -8,18 +8,19 @@
   --placeholder: #aeaeae;
   --checkbox: #0041a8;
 
-  --green: green;
   --white: #ffffff;
   --red: #df1313;
   --orange: #df8430;
   --black: #000000;
-
+ 
+  --font-size-ultra-small: 12px;
   --font-size-extra-small: 16px;
   --font-size-small: 20px;
   --font-size-medium: 24px;
   --font-size-large: 28px;
   --font-size-extra-large: 32px;
   --font-size-super-large: 36px;
+  --font-size-super-extra-large: 40px;
 }
 
 * {
@@ -44,6 +45,7 @@ a {
 button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 input {
