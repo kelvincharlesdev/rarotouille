@@ -1,3 +1,4 @@
+import { IChefResponse } from "../components/ShowMap";
 import { AddressByZipCodeType } from "../types/AddressByZipCodeType";
 import { AddressResponseType } from "../types/AddressResponseType";
 import { CategoriesResponseType } from "../types/CategoriesResponseType";
@@ -146,7 +147,7 @@ export const getChefs = async () => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {
-      const response = await api.get<ChefsResponseType>("/chefs", {
+      const response = await api.get<IChefResponse[]>("/chefs", {
         headers: {
           Authorization: `Bearer ${access_token}`
         }
