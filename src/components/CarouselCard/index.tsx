@@ -8,6 +8,7 @@ import { routes } from "../../routes";
 import { like } from "../../service/apiPosts";
 import { desLike } from "../../service/apiDeletes";
 import { useState } from "react";
+import { useCartContext } from "../../contexts/CartContext";
 
 export interface CarouselCardProps {
   dish: DishType;
@@ -15,6 +16,7 @@ export interface CarouselCardProps {
 
 export const CarouselCard = ({ dish }: CarouselCardProps) => {
   const navigate = useNavigate();
+  const { addDishToCart } = useCartContext();
   const [likeId, setLikeId] = useState();
   const priceFormated = dish.unit_price.replace(".", ",");
   const onClickDishImage = () => {
@@ -33,6 +35,7 @@ export const CarouselCard = ({ dish }: CarouselCardProps) => {
   };
   const onClickCart = () => {
     //TODO quando fizer o carrinho
+    addDishToCart(dish);
   };
   return (
     <div className={styles.cardContainer}>

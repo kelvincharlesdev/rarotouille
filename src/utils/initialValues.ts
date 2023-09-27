@@ -45,3 +45,8 @@ export const SignUpInitialValues = {
   cpf: "",
   termsCheck: false
 };
+
+export const ratingInitialValues = {
+  rate: 0,
+  comment: ""
+};

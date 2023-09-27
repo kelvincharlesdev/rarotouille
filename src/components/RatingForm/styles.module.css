@@ -1,0 +1,79 @@
+.fomrAndBackButton {
+  flex-direction: column;
+  display: flex;
+  gap: 45px;
+}
+.mainContent {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 691px;
+  align-items: center;
+  height: 585px;
+}
+
+.cartFooter {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 691px;
+}
+
+.avaliateTitle {
+  text-align: center;
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  width: 405px;
+  color: var(--secondary);
+}
+
+.avaliateButton {
+  color: var(--secondary);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+}
+.input {
+  border: 1px solid #aeaeae;
+  border-radius: 6px;
+  width: 445px;
+  height: 80px;
+}
+.commentAndRating {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.backButton {
+  color: var(--secondary);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+}
+.nameAndRating {
+  display: flex;
+  justify-content: space-between;
+}
+.selectRating {
+  border: none;
+  width: 90px;
+  height: 25px;
+}
+.dishName {
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  color: var(--secondary);
+}
+.imageAndTextContent {
+  display: flex;
+  gap: 80px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.errorSelect {
+  align-self: center;
+  font-size: 12px;
+  color: var(--red);
+}

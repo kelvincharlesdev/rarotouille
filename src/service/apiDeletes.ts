@@ -1,4 +1,3 @@
-import { DishType } from "../types/DishType";
 import { api } from "./api";
 
 export const logout = async () => {
