@@ -1,0 +1,35 @@
+.searchContainer {
+  width: 480px;
+  height: 54px;
+  background-color: var(--white);
+  border-radius: 83px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 25px;
+}
+
+.searchContainer > img {
+  width: 24px;
+  height: 24px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="search"] {
+  width: 350px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+input[type="search"]::placeholder {
+  color: var(--checkbox);
+  font-weight: 700;
+  opacity: 0.5;
+}
