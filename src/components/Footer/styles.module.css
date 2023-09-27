@@ -1,0 +1,41 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+footer > p {
+  padding-top: 30px;
+  color: var(--darker);
+}
+
+.footerIcons {
+  padding-top: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerIcons a {
+  color: var(--darker);
+  margin: 0px 20px;
+}
+
+.footerIcons a:hover svg {
+  color: var(--secondary);
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
+.logoRarotouille {
+  width: 90px;
+}
+
+.logosContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding-top: 30px;
+}
