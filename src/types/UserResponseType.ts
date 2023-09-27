@@ -8,6 +8,6 @@ export type UserResponseType = {
   email: string;
   created_at?: string;
   updated_at?: string;
-  addresses?: AddressResponseType[];
+  addresses: AddressResponseType[];
   telephones?: TelephoneType[];
 };
