@@ -1,3 +1,10 @@
+import { HomeSlogan } from "../../components/HomeSlogan";
+import { MainBackground } from "../../components/MainBackground";
+
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <MainBackground>
+      <HomeSlogan />
+    </MainBackground>
+  );
 };
