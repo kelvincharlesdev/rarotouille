@@ -5,6 +5,8 @@ import { LikePostType } from "../types/LikePostType";
 import { LoginPostType } from "../types/LoginPostType";
 import { OrderItemResponseType } from "../types/OrderItemResponseType";
 import { OrderPostType } from "../types/OrderPostType";
+import { OrderResponseType } from "../types/OrderResponseType";
+import { RatingType } from "../types/RatingType";
 import { SignUpPostType } from "../types/SignUpPostType";
 import { TelephoneUpdateType } from "../types/TelephoneUpdateType";
 import { api } from "./api";
@@ -120,7 +122,7 @@ export const postChef = async (formData: SignUpPostType) => {
 export const postOrder = async (values: OrderPostType) => {
   const access_token = localStorage.getItem("access_token");
   try {
-    const response = await api.post(
+    const response = await api.post<OrderResponseType>(
       "/clients/orders",
       {
         order: values
@@ -241,6 +243,27 @@ export const like = async (like: LikePostType) => {
         "/likes",
         {
           like: like
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`
+          }
+        }
+      );
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+export const postRating = async (values: RatingType, dish_id: string) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.post(
+        `/dishes/${dish_id}/ratings`,
+        {
+          rating: values
         },
         {
           headers: {

@@ -1,5 +1,5 @@
 export type AddressResponseType = {
-  id?: string;
+  id: string;
   name: string;
   public_place: string;
   zip_code: string;
@@ -7,11 +7,11 @@ export type AddressResponseType = {
   neighborhood: string;
   reference: string;
   complement: string;
-  latitude?: number;
-  longitude?: number;
+  latitude: number;
+  longitude: number;
   city_id: string;
-  addressable_type?: string;
-  addressable_id?: string;
+  addressable_type: string;
+  addressable_id: string;
   created_at?: string;
   updated_at?: string;
 };

@@ -76,9 +76,8 @@
   - Jest
   - Cypress
   - router-dom
-  - react-google-maps/api
+  - react slick
 
-  
 - Config prettier
   - Aspas duplas “ ”
   - ponto e virgula no final ;

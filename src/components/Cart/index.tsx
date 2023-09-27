@@ -1,73 +1,76 @@
 import styles from "./styles.module.css";
-import closeIcon from "../../assets/images/Close.svg"
-import dishImageExample from "../../assets/images/DishExample.png"
-import trashIcon from "../../assets/images/Trash.png"
-import { ButtonForm } from "../ButtonForm";
+import closeIcon from "../../assets/images/Close.svg";
+import { useCartContext } from "../../contexts/CartContext";
+import cartPurple from "../../assets/images/CartPurple.png";
+import { useState } from "react";
+import { CartStepTwo } from "../CartStepTwo";
+import { CartStepOne } from "../CartStepOne";
+import { CartStepThree } from "../CartStepThree";
+import { CartStepFour } from "../CartStepFour";
 
-interface CartProps{
-    isOpen: boolean;
+interface CartProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
-export const Cart = ({isOpen}: CartProps) => {
-    //TODO tentar por o ternário e trocar essa imagem pela do prato
-    if(isOpen){
-        return(
-            <div className={styles.cartContainer}>
-                <header className={styles.cartHeader}>
-                    <button type="button" className={styles.closeButton}>
-                        <img src={closeIcon} alt="closeIcon" />
-                    </button>
-                    <p className={styles.headerTitle}>
-                        Carrinho
-                    </p>
-                </header>
-    
-                <main className={styles.mainContent}>
-                    <div className={styles.mainContentHeader}>
-                        <p className={styles.chefName}>
-                        Nome do chef
-                    </p>
-                    </div>
-                        <div className={styles.productLine}>
-                            <div className={styles.removeAndProductInfosContent}>
-                        <button className={styles.trashButton} type="button">
-                            <img src={trashIcon} alt="trashIcon"/>
-                        </button>
-                        <div className={styles.imageNamePriceContent}>
-                        <img src={dishImageExample} alt="dishImage" className={styles.dishImage}/>
-                        <section className={styles.nameAndPriceSection}>
-                            <p className={styles.dishName}>Nome do prato</p>
-                            <p className={styles.dishPrice}>Preço</p>
-                        </section>
-                        </div>
-                            </div>
-                        <section className={styles.dishQtdControl}>
-                            <button className={styles.removeUnit} type="button">-</button>
-                            <p className={styles.qtdText}>10</p>
-                            <button className={styles.addUnit} type="button">+</button>
-                        </section>
-                        </div>
-                    
-    
-                    <div className={styles.mainContentFooter}>
-                        <p className={styles.removeAllText}>
-                        Remover todos os pratos
-                        </p>
-                    </div>
-                    
-                </main>
-                <footer className={styles.cartFooter}>
-                    <div className={styles.totalPriceContent}>
-                        <p className={styles.totalText}>
-                            Total
-                        </p>
-                        <p className={styles.totalPriceText}>
-                            R$45,00
-                        </p>
-                    </div>
-                    <ButtonForm text="Continuar a compra" type="button"/>
-                </footer>
-            </div>
-        )
-    }else return null
-}
+export const Cart = ({ isOpen, setIsOpen }: CartProps) => {
+  const { cartOrders } = useCartContext();
+  const [actualStep, setActualStep] = useState(0);
+
+  const handleNextStep = async () => {
+    setActualStep(prev => prev + 1);
+  };
+
+  const handlePrevStep = async () => {
+    setActualStep(prev => prev - 1);
+  };
+  const steps = [
+    <CartStepOne handleNextStep={handleNextStep} />,
+    <CartStepTwo
+      handleNextStep={handleNextStep}
+      handlePrevStep={handlePrevStep}
+    />,
+    <CartStepThree setActualStep={setActualStep} />,
+    <CartStepFour setActualStep={setActualStep} />
+  ];
+  //TODO tentar por o ternário e trocar essa imagem pela do prato
+  if (isOpen) {
+    return (
+      <div className={styles.cartContainer}>
+        <header className={styles.cartHeader}>
+          <button
+            type="button"
+            className={styles.closeButton}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <img src={closeIcon} alt="closeIcon" />
+          </button>
+          <p className={styles.headerTitle}>Carrinho</p>
+        </header>
+        {cartOrders.length > 0 ? (
+          <>{steps[actualStep]}</>
+        ) : (
+          <>
+            <main className={styles.mainContentEmpityCart}>
+              <div className={styles.imageAndTextContent}>
+                <p className={styles.empityCartTitle}>
+                  Seu carrinho está vazio
+                </p>
+                <img
+                  src={cartPurple}
+                  alt="cartPurple"
+                  className={styles.cartPurpleImage}
+                />
+              </div>
+            </main>
+            <footer className={styles.cartFooterEmpityCart}>
+              <p className={styles.empityCartSubTitle}>
+                Adicione algum prato e melhore seu dia
+              </p>
+            </footer>
+          </>
+        )}
+      </div>
+    );
+  } else return null;
+};

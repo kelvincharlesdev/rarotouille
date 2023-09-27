@@ -1,5 +1,3 @@
-import { DishType } from "./DishType";
-
 export type ItemType = {
   id: string;
   order_id: string;
@@ -8,5 +6,4 @@ export type ItemType = {
   unit_price: string;
   created_at?: string;
   updated_at?: string;
-  dish?: DishType;
 };
