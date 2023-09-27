@@ -1,86 +1,42 @@
 import styles from "./styles.module.css";
-// import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
-// import "./style.css";
-
-// export const ShowMap = () => {
-//   const chaveMapAPI = "AIzaSyB0olG_WHFt92MdcWXViOSYB-v57OSfIoE";
-//   const { isLoaded } = useJsApiLoader({
-//     id: "google-map-script",
-//     googleMapsApiKey: chaveMapAPI
-//   });
-
-//   const position = {
-//     lat: -25.45833932936462,
-//     lng: -49.28526645986307
-//   };
-
-//   return (
-//     <div className={styles.contentMap}>
-//       {isLoaded ? (
-//         <GoogleMap
-//           mapContainerStyle={{ width: "100%", height: "100%" }}
-//           center={position}
-//           zoom={15}
-//           options={{ disableDefaultUI: true }}
-//           //   onLoad={onLoad}
-//           //   onUnmount={onUnmount}
-//         >
-//           <Marker
-//             position={position}
-//             options={{
-//               label: {
-//                 text: " Posição Teste",
-//                 className: "map-marker"
-//               }
-//             }}
-//           />
-//         </GoogleMap>
-//       ) : (
-//         <></>
-//       )}
-//     </div>
-//   );
-// };
 
 import React, { useCallback, useEffect, useState } from "react";
-import {
-  GoogleMap,
-  useJsApiLoader,
-  Marker,
-  MarkerF
-} from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 
 import { UserResponseType } from "../../types/UserResponseType";
+import { TelephoneType } from "../../types/TelephoneType";
+import { AddressResponseType } from "../../types/AddressResponseType";
 
 const chaveMapAPI = "AIzaSyB0olG_WHFt92MdcWXViOSYB-v57OSfIoE";
 
 interface IShowMap {
-  chefs: UserResponseType[];
-  user?: UserResponseType;
+  chefs: IChefResponse[];
+  user: UserResponseType;
+}
+
+//TODO TAjeitar tipagem
+export interface IChefResponse {
+  id: string;
+  name: string;
+  email: string;
+  created_at?: string;
+  updated_at?: string;
+  address: AddressResponseType;
+  telephones?: TelephoneType[];
 }
 
 export const ShowMap = ({ chefs, user }: IShowMap) => {
   const [map, setMap] = useState<google.maps.Map | null>(null);
-  // const [userLocation, setUserLocation] = useState(position);
 
   const position = {
-    lat: user?.address.latitude,
-    lng: user?.address.longitude
+    lat: user?.addresses[0].latitude,
+    lng: user?.addresses[0].longitude
   };
 
   const onLoad = map => {
     if (map) {
       map.setZoom(14);
       setMap(map);
-
-      // navigator.geolocation.getCurrentPosition(function (position) {
-      //   const userLocation = {
-      //     lat: position.coords.latitude,
-      //     lng: position.coords.longitude
-      //   };
-
-      //   map.panTo(userLocation);
-      // });
     }
   };
 
@@ -92,16 +48,6 @@ export const ShowMap = ({ chefs, user }: IShowMap) => {
     id: "google-map-script",
     googleMapsApiKey: chaveMapAPI
   });
-
-  // useEffect(() => {
-  //   if (user && user.address.latitude && user.address.longitude) {
-  //     setUserLocation({
-  //       lat: user.address.latitude,
-  //       lng: user.address.longitude
-  //     });
-  //   }
-  //   console.log("user aqui", userLocation);
-  // }, [user]);
 
   return (
     <div className={styles.contentMap}>
@@ -122,7 +68,8 @@ export const ShowMap = ({ chefs, user }: IShowMap) => {
               labelOrigin: new google.maps.Point(0, 0)
             }}
             label={{
-              text: "Usuario",
+              //  {   //TODO Consertar para aparecer nome de usuario }
+              text: "Usuariooo",
               fontSize: "20px",
               fontWeight: "700",
               color: "red"
@@ -160,10 +107,3 @@ export const ShowMap = ({ chefs, user }: IShowMap) => {
     </div>
   );
 };
-
-// useEffect(() => {
-//   if (map && user) {
-//     // Configure o mapa para centralizar na localização do usuário
-//     map.setCenter({ lat: user.latitude, lng: user.longitude });
-//   }
-// }, [map, user]);
