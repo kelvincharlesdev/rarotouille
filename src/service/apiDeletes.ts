@@ -105,18 +105,3 @@ export const deleteChefDish = async (chef_id: string, dish_id: string) => {
     }
 };
 
-//TODO testar depois pq não tá funcionando
-export const desLike = async (like_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
-    try {
-      const response = await api.delete(`/likes/${like_id}`, {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
-};

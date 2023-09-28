@@ -1,0 +1,15 @@
+.button{
+    display: flex;
+    align-items: center;
+    background-color: var(--primary);
+    width: 287px;
+    height: 70px;
+    border-radius: 10px;
+}
+.text{
+    display: flex;
+    font-size: var(--font-size-extra-small);
+    color: var(--secondary);
+    gap: 20px;
+    align-items: center;
+}

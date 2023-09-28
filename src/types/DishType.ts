@@ -1,4 +1,5 @@
 import { CategoryType } from "./CategoryType";
+import { ChefsResponseType } from "./ChefsResponseType";
 import { LikeType } from "./LikeType";
 import { RatingType } from "./RatingType";
 import { UserResponseType } from "./UserResponseType";
@@ -16,10 +17,16 @@ export type DishType = {
   updated_at?: string;
   categories: CategoryType[];
   images: string[];
-  ratings?: RatingType[];
-  chef: UserResponseType;
-  liked_by_me?: boolean;
-  disliked_by_me?: boolean;
+  ratings: RatingType[];
+  chef: {
+    id: string,
+    name: string,
+    email: string,
+    created_at: string,
+    updated_at: string
+  };
+  liked_by_me: boolean;
+  disliked_by_me: boolean;
   likes?: LikeType[];
   dislikes?: LikeType[];
 };
