@@ -12,6 +12,7 @@ import { DishesResponseType } from "../types/DishesResponseType";
 import { OrderItemResponseType } from "../types/OrderItemResponseType";
 import { OrderResponseType } from "../types/OrderResponseType";
 import { OrdersResponseType } from "../types/OrdersResponseType";
+import { RatingType } from "../types/RatingType";
 import { StateType } from "../types/StateType";
 import { StateResponseType } from "../types/StatesResponseType";
 import { TelephoneType } from "../types/TelephoneType";
@@ -443,6 +444,24 @@ export const getChefDish = async (chef_id: string, dish_id: string) => {
     try {
       const response = await api.get<DishType>(
         `/chefs/${chef_id}/dishes/${dish_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`
+          }
+        }
+      );
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+export const getRatings = async (dish_id: string) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.get<RatingType>(
+        `/dishes/${dish_id}/ratings`,
         {
           headers: {
             Authorization: `Bearer ${access_token}`
