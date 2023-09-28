@@ -6,7 +6,7 @@ import { LoginPostType } from "../types/LoginPostType";
 import { OrderItemResponseType } from "../types/OrderItemResponseType";
 import { OrderPostType } from "../types/OrderPostType";
 import { OrderResponseType } from "../types/OrderResponseType";
-import { RatingType } from "../types/RatingType";
+import { RatingPostType } from "../types/RatingPostType";
 import { SignUpPostType } from "../types/SignUpPostType";
 import { TelephoneUpdateType } from "../types/TelephoneUpdateType";
 import { api } from "./api";
@@ -256,7 +256,7 @@ export const like = async (like: LikePostType) => {
     }
 };
 
-export const postRating = async (values: RatingType, dish_id: string) => {
+export const postRating = async (values: RatingPostType, dish_id: string) => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {

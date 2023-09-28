@@ -162,7 +162,7 @@ export const getChef = async (chef_id: string) => {
   const access_token = localStorage.getItem("access_token");
   if (access_token)
     try {
-      const response = await api.get<UserResponseType>(`/chefs/${chef_id}`, {
+      const response = await api.get<IChefResponse>(`/chefs/${chef_id}`, {
         headers: {
           Authorization: `Bearer ${access_token}`
         }

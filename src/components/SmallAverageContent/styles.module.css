@@ -1,0 +1,13 @@
+.averageContent{
+    width: 74px;
+    height: 29px;
+    border-radius: 8px;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.averageText{
+    font-size: var(--font-size-extra-small);
+    color: var(--secondary);
+}

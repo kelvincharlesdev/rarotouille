@@ -1,0 +1,44 @@
+.mainContainer{
+    padding: 145px 46px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+}
+.imageAndDishInfosContent{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.infosAndDescriptionContent{
+    display: flex;
+    gap: 90px;
+    align-items: center;
+}
+.mapContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 400px;
+}
+.contentTitles{
+    font-size: var(--font-size-super-large);
+    color: var(--secondary);
+}
+.otherDishesContent{
+}
+.carouselContent{
+    
+}
+.ratingsContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+
+}
+.ratingsAndAverageContent{
+    display: flex;
+    gap: 325px;
+    align-items: flex-start;
+}

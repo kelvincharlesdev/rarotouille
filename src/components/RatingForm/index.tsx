@@ -1,5 +1,5 @@
 import { ErrorMessage, Field, Form, Formik, FormikHelpers } from "formik";
-import { RatingType } from "../../types/RatingType";
+import { RatingPostType } from "../../types/RatingPostType";
 import { ratingInitialValues } from "../../utils/initialValues";
 import { ButtonForm } from "../ButtonForm";
 import { Input } from "../Input";
@@ -34,8 +34,8 @@ export const RatingForm = ({
   };
 
   const handleSubmit = async (
-    values: RatingType,
-    helper: FormikHelpers<RatingType>
+    values: RatingPostType,
+    helper: FormikHelpers<RatingPostType>
   ) => {
     const res = await postRating(
       {
@@ -54,7 +54,7 @@ export const RatingForm = ({
   };
   return (
     <div className={styles.fomrAndBackButton}>
-      <Formik<RatingType>
+      <Formik<RatingPostType>
         initialValues={ratingInitialValues}
         onSubmit={handleSubmit}
         validateOnBlur={false}
