@@ -1,3 +1,5 @@
+import { LikeType } from "./LikeType"
+
 //TODO ver do que são esses arrays
 export type RatingType ={
     id: string,
@@ -7,7 +9,7 @@ export type RatingType ={
     comment: string,
     created_at: string,
     updated_at: string,
-    likes: any[],
-    dislikes: any[],
+    likes: LikeType[],
+    dislikes: LikeType[],
     user_name?:string
 }
