@@ -1,13 +1,13 @@
 .sloganContainer {
   display: flex;
-  padding: 250px 142px 173px;
+  padding: 60px 142px 173px;
   background-color: var(--white);
 }
 
 .sloganContainer > img {
   width: 370px;
   height: 228px;
-  margin-left: 100px;
+  padding-left: 100px;
 }
 
 .textContainer {
