@@ -5,9 +5,9 @@ import cart from "../../assets/images/Cart.svg";
 import { DishType } from "../../types/DishType";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../routes";
-import { like } from "../../service/apiPosts";
-import { desLike } from "../../service/apiDeletes";
 import { useState } from "react";
+import { desLike, like } from "../../service/apiPuts";
+import { useCartContext } from "../../contexts/CartContext";
 
 export interface SmallCardProps {
   dish: DishType;
@@ -15,24 +15,20 @@ export interface SmallCardProps {
 
 export const SmallCard = ({ dish }: SmallCardProps) => {
   const navigate = useNavigate();
-  const [likeId, setLikeId] = useState();
   const priceFormated = dish.unit_price.replace(".", ",");
   const onClickDishImage = () => {
     navigate(routes.dishDetails(dish.id));
   };
+  const {addDishToCart} = useCartContext();
   const onClickLike = async () => {
-    const res = await like({ likeable_id: dish.id });
-    if (res) {
-      //TODO consertar quando a api ajeitar o like
-      setLikeId(res.data);
-    }
+    await like(dish.id);
   };
-  const onClickDesLike = () => {
-    //TODO consertar quando a api ajeitar o like
-    desLike("likeId");
+  const onClickDesLike = async () => {
+    await desLike(dish.id);
   };
   const onClickCart = () => {
-    //TODO quando fizer o carrinho
+    addDishToCart(dish);
+
   };
   return (
     <div className={styles.cardContainer}>
