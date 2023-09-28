@@ -234,27 +234,7 @@ export const postDish = async (chef_id: string, dish: DishPostType) => {
     }
 };
 
-//TODO testar depois pq não tá funcionando a rota
-export const like = async (like: LikePostType) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
-    try {
-      const response = await api.post(
-        "/likes",
-        {
-          like: like
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
-      );
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
-};
+
 
 export const postRating = async (values: RatingPostType, dish_id: string) => {
   const access_token = localStorage.getItem("access_token");

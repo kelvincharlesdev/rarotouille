@@ -6,6 +6,7 @@ import { TelephoneType } from "../types/TelephoneType";
 import { TelephoneUpdateType } from "../types/TelephoneUpdateType";
 import { ClientType } from "../types/ClientType";
 import { api } from "./api";
+import { RatingPostType } from "../types/RatingPostType";
 
 export const resetPassword = async (values: ResetPasswordType) => {
   try {
@@ -182,6 +183,90 @@ export const updateDish = async (
           }
         }
       );
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+export const like = async (dish_id: string) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.put(`/dishes/${dish_id}/like`
+,{},
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`
+          }
+        }
+      );
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+export const desLike = async (dish_id: string) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.put(`/dishes/${dish_id}/dislike`,{}, {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+
+export const likeRating = async (dish_id: string, rating_id: string) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.put(`/dishes/${dish_id}/ratings/${rating_id}/like`
+,{},
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`
+          }
+        }
+      );
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+export const desLikeRating = async (dish_id: string, rating_id: string) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.put(`/dishes/${dish_id}/ratings/${rating_id}/dislike`,{}, {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+export const updateRating = async (dish_id: string, rating_id: string, values: RatingPostType) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.put(`/dishes/${dish_id}/ratings/${rating_id}`,{
+        rating: values
+      }, {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      });
       return response;
     } catch (error) {
       console.log(error);
