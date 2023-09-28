@@ -8,6 +8,7 @@ import { CitiesResponseType } from "../types/CitiesResponseType";
 import { CityType } from "../types/CityType";
 import { ClientsAddressResponseType } from "../types/ClientsAddressResponseType";
 import { DishType } from "../types/DishType";
+import { DishesResponsePaginated } from "../types/DishesResponsePaginated";
 import { DishesResponseType } from "../types/DishesResponseType";
 import { OrderItemResponseType } from "../types/OrderItemResponseType";
 import { OrderResponseType } from "../types/OrderResponseType";
@@ -397,6 +398,28 @@ export const getDishes = async () => {
       const response = await api.get<DishesResponseType>("/dishes", {
         headers: {
           Authorization: `Bearer ${access_token}`
+        }
+      });
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+export const getDishesPaginated = async ({
+  page,
+  per_page
+}: DishesResponsePaginated) => {
+  const access_token = localStorage.getItem("access_token");
+  if (access_token)
+    try {
+      const response = await api.get<DishesResponseType>("/dishes", {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        },
+        params: {
+          page,
+          per_page
         }
       });
       return response;
