@@ -20,3 +20,14 @@
 .field::placeholder {
   color: var(--placeholder);
 }
+
+@media (max-width: 795px) {
+
+  .inputContent {
+  width: 100%;
+  }
+
+  .input {
+    width: 100%;
+  }
+}
