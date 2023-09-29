@@ -1,20 +1,34 @@
+import { useState } from "react";
 import styles from "./styles.module.css";
+import { desLike, like } from "../../service/apiPuts";
 
 interface HeartImageProps{
     likeImage: string;
     noLikeImage: string;
-    liked_by_me: boolean;
+    likedByMe: boolean;
+    dish_id: string;
 }
 
-//TODO ver como é que vai ser definido esse like
-export const HeartImage = ({likeImage, noLikeImage, liked_by_me}: HeartImageProps) => {
+export const HeartImage = ({likeImage, noLikeImage, likedByMe, dish_id}: HeartImageProps) => {
+  const [liked, setLiked] = useState(likedByMe);
+  const onClickLike = async () => {
+    const res = await like(dish_id);
+    if(res?.status === 204){
+      setLiked(!liked)
+    }
+  };
+  const onClickDesLike = async () => {
+    const res = await desLike(dish_id);
+    if(res?.status === 204){
+      setLiked(!liked)
+    }
+  };
     return (<>
-
-        {liked_by_me ? (
+        {liked === true ? (
             <button
               className={styles.likeButton}
               type="button"
-              onClick={()=>{}}
+              onClick={onClickDesLike}
             >
               {" "}
               <img src={likeImage} alt="heartLiked" />{" "}
@@ -23,7 +37,7 @@ export const HeartImage = ({likeImage, noLikeImage, liked_by_me}: HeartImageProp
             <button
               className={styles.likeButton}
               type="button"
-              onClick={()=>{}}
+              onClick={onClickLike}
             >
               {" "}
               <img src={noLikeImage} alt="heartNoLiked" />{" "}
