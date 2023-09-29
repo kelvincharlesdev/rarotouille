@@ -3,22 +3,22 @@ import { SmallAverageContent } from "../SmallAverageContent";
 import { HeartImage } from "../HeartImage";
 import styles from "./styles.module.css";
 
-//TODO ver se vale a pena por a cidade
 interface DishInfosProps{
     dish: DishType;
     likeImage: string;
     noLikeImage: string;
+    isDishLiked: boolean;
     average: number
 }
 
-export const DishInfos = ({dish,likeImage, noLikeImage, average}: DishInfosProps) => {
+export const DishInfos = ({dish,likeImage, noLikeImage, average, isDishLiked}: DishInfosProps) => {
     return (
     <div className={styles.dishInfosContent}>
         <div className={styles.nameAndAverageAndLikeContent}>
         <p className={styles.dishNameText}>{dish.name}</p>
         <section className={styles.averageAndLikeSection}>
         <SmallAverageContent average={average}/>
-        <HeartImage likeImage={likeImage} noLikeImage={noLikeImage} liked_by_me={dish.liked_by_me}/>
+        <HeartImage likeImage={likeImage} noLikeImage={noLikeImage} likedByMe={isDishLiked} dish_id={dish.id} />
         </section>
         </div>
         <div className={styles.categoriesAndCityNameContent}>
@@ -27,7 +27,6 @@ export const DishInfos = ({dish,likeImage, noLikeImage, average}: DishInfosProps
             <p key={index} className={styles.categoryNameAndCityNameText}>{category.name}</p> 
         )) : (<p className={styles.categoryNameAndCityNameText}>{dish.categories[0].name}</p>) }
         </section>
-        {/* <p className={styles.categoryNameAndCityNameText}>{cityName}</p> */}
         <p className={styles.chefNameText}>Chef {dish.chef.name}</p>
         </div>
     </div>

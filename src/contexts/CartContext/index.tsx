@@ -9,6 +9,7 @@ import { OrderResponseType } from "../../types/OrderResponseType";
 import { checkoutOrder, payOrder } from "../../service/apiPatchs";
 import { PaymentOptionType } from "../../types/PaymentOptionType";
 import { CartOrderType } from "../../types/CartOrderType";
+import { useAuthContext } from "../AuthContext";
 
 interface CartContextProps {
   cartOrders: CartOrderType[];
@@ -67,15 +68,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     }
   ]);
   const [paymentOptionIndex, setPaymentOptionIndex] = useState(0);
-  const getAddress = async () => {
-    const res = await getMe();
-    if (res?.data.addresses) {
-      setUserAddresses(res?.data.addresses);
-    }
-  };
+  const {user} = useAuthContext();
 
   useEffect(() => {
-    getAddress();
+    if(user){
+      setUserAddresses(user.addresses)
+    }
   }, []);
 
   const getChefsName = (dishes: CartOrderType[]) => {
