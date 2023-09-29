@@ -1,8 +1,8 @@
 .cardContainer {
   display: flex;
   flex-direction: column;
-  width: 228px;
-  height: 246px;
+  width: 220px;
+  height: 231px;
   border-radius: 16px;
   border: 1px solid;
   border-image-source: linear-gradient(
@@ -16,9 +16,10 @@
 }
 
 .dishImage {
-  width: 245px;
-  height: 148px;
+  width: 180px;
+  height: 155px;
   border-radius: 16px;
+  object-fit: cover;
 }
 
 .imageNamePriceContent {
@@ -29,7 +30,7 @@
 }
 .dishName {
   display: flex;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   text-align: left;
   color: var(--secondary);
@@ -40,7 +41,7 @@
 }
 .dishPrice {
   display: flex;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   text-align: left;
   color: var(--primary);
@@ -57,24 +58,29 @@
   gap: 10px;
   display: flex;
 }
+
+.chefHeart img {
+  width: 17px;
+}
+
 .chefName {
   align-self: self-end;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   text-align: left;
   color: var(--secondary);
 }
 
 .cartIcon {
-  width: 24px;
-  height: 23px;
-  border: 3px;
+  width: 17px;
+  height: 15px;
+  border: 2px;
 }
 
 .cartButton {
   display: flex;
-  right: 20px;
-  bottom: 20px;
+  right: 10px;
+  bottom: 10px;
   cursor: pointer;
 }
 
