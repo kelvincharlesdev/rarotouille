@@ -17,3 +17,33 @@
 .background {
   display: flex;
 }
+
+
+@media (max-width: 1060px) {
+  .background{
+    flex-direction: column;
+  }
+  .rightPanel {
+    border-radius: 0px 241px 0px 0px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 100px;
+  }
+
+  .leftPanel {
+    height: 136px;
+    width: 100%;
+  }
+  
+}
+
+@media (max-width: 795px) {
+
+  .rightPanel {
+    border-radius: 0px 91px 0px 0px;
+  }
+
+ 
+  
+}
