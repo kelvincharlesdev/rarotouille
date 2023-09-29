@@ -5,9 +5,8 @@ import cart from "../../assets/images/Cart.svg";
 import { DishType } from "../../types/DishType";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../routes";
-import { useState } from "react";
-import { desLike, like } from "../../service/apiPuts";
 import { useCartContext } from "../../contexts/CartContext";
+import { HeartImage } from "../HeartImage";
 
 export interface SmallCardProps {
   dish: DishType;
@@ -15,17 +14,10 @@ export interface SmallCardProps {
 
 export const SmallCard = ({ dish }: SmallCardProps) => {
   const navigate = useNavigate();
-  const priceFormated = dish.unit_price.replace(".", ",");
   const onClickDishImage = () => {
     navigate(routes.dishDetails(dish.id));
   };
   const {addDishToCart} = useCartContext();
-  const onClickLike = async () => {
-    await like(dish.id);
-  };
-  const onClickDesLike = async () => {
-    await desLike(dish.id);
-  };
   const onClickCart = () => {
     addDishToCart(dish);
 
@@ -46,31 +38,16 @@ export const SmallCard = ({ dish }: SmallCardProps) => {
         </button>
         <div className={styles.dishNamePrice}>
           <p className={styles.dishName}>{dish.name}</p>
-          <p className={styles.dishPrice}>R$ {priceFormated}</p>
+          <p className={styles.dishPrice}>{Number(dish.unit_price).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL"
+            })}</p>
         </div>
       </div>
       <div className={styles.chefHeartCartContent}>
         <div className={styles.chefHeart}>
           <p className={styles.chefName}>Chef {dish.chef?.name}</p>
-          {dish.liked_by_me ? (
-            <button
-              className={styles.likeButton}
-              type="button"
-              onClick={onClickDesLike}
-            >
-              {" "}
-              <img src={heartLiked} alt="heartLiked" />{" "}
-            </button>
-          ) : (
-            <button
-              className={styles.likeButton}
-              type="button"
-              onClick={onClickLike}
-            >
-              {" "}
-              <img src={heartNoLiked} alt="heartNoLiked" />{" "}
-            </button>
-          )}
+          <HeartImage dish_id={dish.id} likeImage={heartLiked} noLikeImage={heartNoLiked} likedByMe={dish.liked_by_me}/>
         </div>
         <button
           className={styles.cartButton}
