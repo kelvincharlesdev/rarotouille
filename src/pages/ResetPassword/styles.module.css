@@ -25,3 +25,29 @@
   align-items: center;
   gap: 50px;
 }
+
+@media (max-width: 1060px) {
+  .forgetContent,
+  .success {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 798px) {
+  .forgetContent {
+    width: 100%;
+    padding: 0 50px;
+  }
+
+  .success {
+    padding: 0 50px;
+  }
+
+  .inputsContent {
+    width: 100%;
+  }
+
+  .formContent {
+    width: 100%;
+  }
+}
