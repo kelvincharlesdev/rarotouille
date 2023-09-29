@@ -42,10 +42,12 @@ export const CompleteSignUp: React.FC<ICompleteSignUpProps> = props => {
     >
       {({ errors, touched, isSubmitting, values, setFieldValue }) => (
         <Form className={styles.loginContent} autoComplete="off">
-          <AuthTitle
-            title="Complete seu Cadastro"
-            subTitle="para ter acesso a todas as vantagens da Rarotouille"
-          />
+          <div className={styles.contentTitle}>
+            <AuthTitle
+              title="Complete seu Cadastro"
+              subTitle="para ter acesso a todas as vantagens da Rarotouille"
+            />
+          </div>
 
           <div className={styles.inputsContent}>
             {values.addresses_attributes.map((_, index) => (
