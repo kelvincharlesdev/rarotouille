@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { UserResponseType } from "../../types/UserResponseType";
+import { getMe } from "../../service/apiGet";
 
 export interface IAuthLogin {
   isAuthenticated: boolean;
@@ -21,11 +22,20 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [user, setUser] = useState<UserResponseType>();
 
+  const getUser = async () => {
+    const response = await getMe();
+
+    if (response) {
+      setUser(response.data);
+    }
+  };
+
   useEffect(() => {
     const token = localStorage.getItem("access_token");
 
     if (token) {
       setIsAuthenticated(true);
+      getUser();
     } else {
       setIsAuthenticated(false);
     }
