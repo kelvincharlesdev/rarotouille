@@ -10,3 +10,36 @@
   font-size: 32px;
   font-weight: 800;
 }
+
+@media (max-width: 1060px) {
+  .slogan {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .sloganRaro {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .slogan {
+    font-size: 16px;
+  }
+
+  .sloganRaro {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 475px) {
+  .slogan {
+    font-size: 10px;
+  }
+
+  .sloganRaro {
+    font-size: 12px;
+  }
+
+
+}
