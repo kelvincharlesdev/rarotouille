@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { MainBackground } from "../../components/MainBackground";
 import styles from "./styles.module.css";
 import { getDishesPaginated } from "../../service/apiGet";
@@ -10,8 +10,9 @@ export const DishesList = () => {
   const [dishesList, setDishesList] = useState<DishType[]>([]);
   const [page, setPage] = useState(0);
   //TODO Decidir quantos pratos ira ser mostrado na tela
+  //TODO Colocar loading pra quando entrar na pagina e quando chegar no final da rolagem
   const getDishesList = async () => {
-    const response = await getDishesPaginated({ page, per_page: 10 });
+    const response = await getDishesPaginated({ page, per_page: 25 });
     console.log(response?.data.data);
 
     if (response) {
@@ -36,9 +37,8 @@ export const DishesList = () => {
           {dishesList.map(dish => (
             <SmallCard key={dish.id} dish={dish} />
           ))}
-
-          <InfiniteScroll callback={handleInfiniteScroll} />
         </div>
+        <InfiniteScroll callback={handleInfiniteScroll} />
       </section>
     </MainBackground>
   );
