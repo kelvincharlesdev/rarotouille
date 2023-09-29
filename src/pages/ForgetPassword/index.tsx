@@ -46,7 +46,7 @@ export const ForgetPassword = () => {
   return (
     <Background image={Lock} alt={"Cadeado"}>
       {submitted ? (
-        <div>
+        <div className={styles.contenteReset}>
           <AuthTitle
             title={"Copie seu Token"}
             subTitle="Token de redefinição de senha:"
