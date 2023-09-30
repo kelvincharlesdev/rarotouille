@@ -1,0 +1,32 @@
+.loginContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .inputsContent {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin: 34px 0 55px 0;
+  }
+  .formContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+   .successMessage{
+    color: green;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+  }
+  .ButtonAndMessage{
+    display: flex;
+    width: 212px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}

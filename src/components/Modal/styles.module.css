@@ -1,0 +1,11 @@
+.modalContent{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: gray;
+}
+.modalHeader{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}

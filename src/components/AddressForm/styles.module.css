@@ -1,0 +1,75 @@
+.contentTitle {
+    max-width: 500px;
+  }
+  
+  .loginContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+  }
+  .inputsContent {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin: 34px 0 55px 0;
+  }
+  .formContent {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .linkSignUp {
+    color: var(--secondary);
+    font-weight: 700;
+  }
+  
+  .btn {
+    color: var(--secondary);
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
+  
+  .contentInput {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+  }
+  
+  .inputNeighborhood {
+    border-bottom: 1px solid var(--placeholder);
+    width: 100%;
+  }
+  
+  .inputNumber {
+    border-bottom: 1px solid var(--placeholder);
+    width: 20%;
+    overflow: hidden;
+  }
+  
+  .field {
+    background-color: transparent;
+    font-size: var(--font-size-extra-small);
+    font-weight: 500;
+    color: var(--black);
+  }
+  
+  .field::placeholder {
+    color: var(--placeholder);
+  }
+  .successMessage{
+    color: green;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+  }
+  .ButtonAndMessage{
+    display: flex;
+    width: 212px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}

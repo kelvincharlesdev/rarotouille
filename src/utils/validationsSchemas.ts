@@ -100,3 +100,32 @@ export const ratingSchema = Yup.object().shape({
 //   errrorMessages.city.invalid
 // ),
 // reference: Yup.string().min(4, errrorMessages.reference.minEight)
+
+
+export const telephoneUpdateSchema = Yup.object().shape({
+  number: Yup.string()
+  .required(errrorMessages.telephones_attributes.required)
+  .matches(
+    /^\(?\d{2}\)?[-.\s]?\d{4,5}[-.\s]?\d{4}$/,
+
+    errrorMessages.telephones_attributes.invalid
+  )
+});
+
+export const addressUpdateSchema = Yup.object().shape({
+  zip_code: Yup.string().matches(
+    /^\d{5}-\d{3}$|^$/,
+    errrorMessages.zip_code.invalid
+  )
+});
+
+export const userUpdateShema = Yup.object().shape({
+  name: Yup.string()
+    .required(errrorMessages.name.required)
+    .min(4, errrorMessages.name.minEight),
+  email: Yup.string() 
+    .test("email", errrorMessages.email.invalid, value => {
+      return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i.test(value || "");
+    })
+    .required(errrorMessages.email.required),
+});
