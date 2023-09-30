@@ -6,25 +6,25 @@ interface HeartImageProps{
     likeImage: string;
     noLikeImage: string;
     likedByMe: boolean;
+    setIsLiked: (isLiked: boolean) => void;
     dish_id: string;
 }
 
-export const HeartImage = ({likeImage, noLikeImage, likedByMe, dish_id}: HeartImageProps) => {
-  const [liked, setLiked] = useState(likedByMe);
+export const HeartImage = ({likeImage, noLikeImage, likedByMe, dish_id, setIsLiked}: HeartImageProps) => {
   const onClickLike = async () => {
     const res = await like(dish_id);
     if(res?.status === 204){
-      setLiked(!liked)
+      setIsLiked(!likedByMe)
     }
   };
   const onClickDesLike = async () => {
     const res = await desLike(dish_id);
     if(res?.status === 204){
-      setLiked(!liked)
+      setIsLiked(!likedByMe)
     }
   };
     return (<>
-        {liked === true ? (
+        {likedByMe === true ? (
             <button
               className={styles.likeButton}
               type="button"
