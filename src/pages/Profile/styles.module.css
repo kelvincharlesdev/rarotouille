@@ -1,0 +1,15 @@
+.profileContent{
+    display: flex;
+    justify-content: space-around;
+}
+.infosListContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+}
+.title{
+    font-size: var(--font-size-super-large);
+    color: var(--secondary);
+    text-shadow: 0px 4px 4px rgba(122, 126, 163, 0.51);
+}
