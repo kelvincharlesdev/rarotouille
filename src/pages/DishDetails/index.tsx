@@ -31,6 +31,16 @@ export const DishDetails = () => {
   const { id } = useParams();
   const {user} = useAuthContext();
 
+  const verifyLike = (dish: DishType) => {
+    const verify = dish.likes?.find((like)=> like.voter_id === user?.id);
+    if(verify){
+      
+      return true;
+    }else{
+      return false;
+    }
+  }
+;
 
   const getDishIndividual = async() => {
     if(id){
@@ -72,6 +82,8 @@ export const DishDetails = () => {
 
   useEffect(()=>{
     getDishIndividual();
+    setIsDishLiked(()=>verifyLike(dish))
+    console.log(isDishLiked)
   },[id])
 
   //TODO Pedir pro Kelvin explicar esse carrosel
@@ -84,7 +96,7 @@ export const DishDetails = () => {
          <div className={styles.infosAndDescriptionContent}>
            <div className={styles.imageAndDishInfosContent}>
              <DishImage imageUrl={dish.images[0]}/>
-             <DishInfos dish={dish} average={averageValue} likeImage={heartLiked} noLikeImage={heartNoLiked} isDishLiked={isDishLiked}/>
+             <DishInfos setIsDishLiked={setIsDishLiked} dish={dish} average={averageValue} likeImage={heartLiked} noLikeImage={heartNoLiked} isDishLiked={isDishLiked}/>
              <ButtonAddToCart text="Adicionar ao carrinho" onClick={() => addDishToCart(dish)}/>
            </div>
            <DescriptionContent description={dish.description}/>
