@@ -1,0 +1,38 @@
+.orderItemContent{
+    display: flex;
+}
+.orderDishContent{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    
+}
+.imageAndDishInfosContent{
+    display: flex;
+    gap: 10px;
+}
+.dishInfosAndDateContent{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.dishInfosContent{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.dishName{
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    color: var(--secondary);
+}
+.textPrimary{
+    font-size: var(--font-size-extra-small);
+    font-weight: 600;
+    color: var(--primary);
+}
+.dishAmount{
+    font-size: var(--font-size-extra-small);
+    font-weight: 600;
+    color: var(--secondary);
+}
