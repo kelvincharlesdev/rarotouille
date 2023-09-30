@@ -8,17 +8,18 @@ interface DishInfosProps{
     likeImage: string;
     noLikeImage: string;
     isDishLiked: boolean;
-    average: number
+    average: number;
+    setIsDishLiked: (isLiked: boolean) => void;
 }
 
-export const DishInfos = ({dish,likeImage, noLikeImage, average, isDishLiked}: DishInfosProps) => {
+export const DishInfos = ({dish,likeImage, noLikeImage, average, isDishLiked ,setIsDishLiked}: DishInfosProps) => {
     return (
     <div className={styles.dishInfosContent}>
         <div className={styles.nameAndAverageAndLikeContent}>
         <p className={styles.dishNameText}>{dish.name}</p>
         <section className={styles.averageAndLikeSection}>
         <SmallAverageContent average={average}/>
-        <HeartImage likeImage={likeImage} noLikeImage={noLikeImage} likedByMe={isDishLiked} dish_id={dish.id} />
+        <HeartImage likeImage={likeImage} noLikeImage={noLikeImage} likedByMe={isDishLiked} dish_id={dish.id} setIsLiked={setIsDishLiked}/>
         </section>
         </div>
         <div className={styles.categoriesAndCityNameContent}>
