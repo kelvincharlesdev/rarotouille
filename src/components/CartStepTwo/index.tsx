@@ -103,7 +103,7 @@ export const CartStepTwo = ({
         </div>
       </main>
 
-      <footer className={styles.cartFooter}>
+      <div className={styles.cartFooter}>
         <div className={styles.totalPriceContent}>
           <p className={styles.totalText}>Total</p>
           <p className={styles.totalPriceText}>
@@ -121,7 +121,7 @@ export const CartStepTwo = ({
           type="button"
           onClick={submitOrder}
         />
-      </footer>
+      </div>
     </>
   );
 };

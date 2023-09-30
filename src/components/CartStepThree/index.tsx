@@ -36,11 +36,11 @@ export const CartStepThree = ({ setActualStep }: CartStepThreeProps) => {
               <QRCode value={paymentLink} />
             </div>
           </main>
-          <footer className={styles.footerContent}>
+          <div className={styles.footerContent}>
             <p className={styles.footerText}>
               Escaneie o Qr code e conclua o pagamaneto
             </p>
-          </footer>
+          </div>
         </>
       );
     //TODO ver essa parte de link
