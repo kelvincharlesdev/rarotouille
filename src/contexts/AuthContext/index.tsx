@@ -21,12 +21,14 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [user, setUser] = useState<UserResponseType>();
+  console.log("user do contexto", user);
 
   const getUser = async () => {
     const response = await getMe();
 
     if (response) {
       setUser(response.data);
+      console.log("response.data", response.data);
     }
   };
 
@@ -39,7 +41,13 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
     } else {
       setIsAuthenticated(false);
     }
-  }, []);
+  }, [isAuthenticated]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      getUser();
+    }
+  }, [isAuthenticated]);
 
   return (
     <AuthContext.Provider

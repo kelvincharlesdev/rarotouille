@@ -6,7 +6,7 @@
   color: var(--secondary);
 }
 .footerText {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   font-weight: 700;
   width: 315px;
   text-align: center;
@@ -23,7 +23,7 @@
 .mainContent {
   display: flex;
   flex-direction: column;
-  width: 691px;
+  width: 445px;
   height: 585px;
 }
 .link {
@@ -41,6 +41,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 691px;
+  width: 445px;
   height: 215px;
 }

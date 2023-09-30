@@ -66,12 +66,12 @@ export const CartStepFour = ({ setActualStep }: CartStepFourProps) => {
               />
             </div>
           </main>
-          <footer className={styles.cartFooter}>
+          <div className={styles.cartFooter}>
             <button className={styles.backButton} onClick={backToCartStart}>
               Continuar comprando
             </button>
             <p className={styles.footerTitle}>Ela nos ajuda muito!</p>
-          </footer>
+          </div>
         </>
       );
   }
