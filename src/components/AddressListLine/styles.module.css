@@ -1,0 +1,24 @@
+.listLine{
+    display:  flex;
+    gap: 10px;
+}
+.addressContent{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.addressName{
+    font-size: var(--font-size-extra-small);
+    font-weight: 700;
+    color: var(--primary);
+}
+.address{
+    font-size: var(--font-size-extra-small);
+    font-weight: 500;
+    color: var(--black);
+}
+.complement{
+    font-size: var(--font-size-ultra-small);
+    font-weight: 500;
+    color: var(--primary);
+}
