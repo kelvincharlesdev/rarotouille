@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 783px;
-  height: 900px;
+  width: 503px;
+  height: 590px;
   border-radius: 37px;
   background-color: var(--white);
 }
@@ -12,7 +12,7 @@
 .cartHeader {
   display: flex;
   align-items: center;
-  width: 691px;
+  width: 445px;
   height: 100px;
   border-bottom: 1px solid;
   border-color: var(--secondary);
@@ -20,10 +20,12 @@
 .closeButton {
   display: flex;
 }
+
 .headerTitle {
+  padding-top:  50px;
   text-align: center;
   width: 630px;
-  font-size: var(--font-size-super-large);
+  font-size: var(--font-size-large);
   font-weight: 700;
   color: var(--secondary);
 }
@@ -139,17 +141,18 @@
   color: var(--secondary);
 }
 .cartPurpleImage {
-  width: 300px;
-  height: 250px;
+  width: 200px;
+  height: 180px;
 }
 .empityCartTitle {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   font-weight: 700;
   width: 350px;
   color: var(--secondary);
+  text-align: center;
 }
 .empityCartSubTitle {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   font-weight: 700;
   width: 315px;
   text-align: center;
@@ -158,7 +161,7 @@
 }
 .imageAndTextContent {
   display: flex;
-  gap: 80px;
+  gap: 50px;
   flex-direction: column;
   align-items: center;
   justify-content: center;

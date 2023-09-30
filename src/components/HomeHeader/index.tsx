@@ -1,8 +1,8 @@
 import styles from "./styles.module.css";
 import Logo from "../../assets/images/Logo.png";
-import Cart from "../../assets/images/Cart.svg";
 import { SearchBar } from "../SearchBar";
 import { User } from "../User";
+import { CartModal } from "../CartModal";
 
 export const HomeHeader = () => {
   return (
@@ -25,9 +25,7 @@ export const HomeHeader = () => {
           </ul>
         </nav>
         <User />
-        <button>
-          <img src={Cart} alt="Icone de carrinho" />{" "}
-        </button>
+        <CartModal />
       </div>
     </header>
   );

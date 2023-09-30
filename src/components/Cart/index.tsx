@@ -37,7 +37,7 @@ export const Cart = ({ isOpen, setIsOpen }: CartProps) => {
   if (isOpen) {
     return (
       <div className={styles.cartContainer}>
-        <header className={styles.cartHeader}>
+        <div className={styles.cartHeader}>
           <button
             type="button"
             className={styles.closeButton}
@@ -46,7 +46,7 @@ export const Cart = ({ isOpen, setIsOpen }: CartProps) => {
             <img src={closeIcon} alt="closeIcon" />
           </button>
           <p className={styles.headerTitle}>Carrinho</p>
-        </header>
+        </div>
         {cartOrders.length > 0 ? (
           <>{steps[actualStep]}</>
         ) : (
@@ -63,11 +63,11 @@ export const Cart = ({ isOpen, setIsOpen }: CartProps) => {
                 />
               </div>
             </main>
-            <footer className={styles.cartFooterEmpityCart}>
+            <div className={styles.cartFooterEmpityCart}>
               <p className={styles.empityCartSubTitle}>
                 Adicione algum prato e melhore seu dia
               </p>
-            </footer>
+            </div>
           </>
         )}
       </div>
