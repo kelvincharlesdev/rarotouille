@@ -38,7 +38,6 @@ input[type="search"]::placeholder {
   position: absolute;
   background-color: var(--white);
   width: 442px;
-  cursor: pointer;
   left: 150px;
   box-shadow:
     0px 7px 12px -2px #7a7ea391,
@@ -53,6 +52,11 @@ input[type="search"]::placeholder {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 7px;
+}
+
+.searchResultItem:hover {
+  background-color: var(--search-hover);
+  cursor: pointer; 
 }
 
 .searchResultItem img {
