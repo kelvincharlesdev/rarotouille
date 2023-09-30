@@ -86,7 +86,7 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
         </div>
       </main>
 
-      <footer className={styles.cartFooter}>
+      <div className={styles.cartFooter}>
         <div className={styles.totalPriceContent}>
           <p className={styles.totalText}>Total</p>
           <p className={styles.totalPriceText}>
@@ -101,7 +101,7 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
           type="button"
           onClick={handleNextStep}
         />
-      </footer>
+        </div>
     </>
   );
 };
