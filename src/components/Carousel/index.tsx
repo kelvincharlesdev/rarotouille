@@ -1,13 +1,14 @@
 import { ReactNode } from "react";
 import Slider from "react-slick";
-
+import "./styles.css";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 interface ICarousel {
   children: ReactNode;
 }
 
 export const Carousel = ({ children }: ICarousel) => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 300,
     centerMode: false,
@@ -17,8 +18,8 @@ export const Carousel = ({ children }: ICarousel) => {
     slidesToScroll: 1
   };
   return (
-    <div>
-      <Slider {...settings}>{children}</Slider>
-    </div>
+    <Slider className="slider" {...settings}>
+      {children}
+    </Slider>
   );
 };
