@@ -101,7 +101,7 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
           type="button"
           onClick={handleNextStep}
         />
-        </div>
+      </div>
     </>
   );
 };
