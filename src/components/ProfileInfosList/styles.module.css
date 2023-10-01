@@ -1,27 +1,28 @@
-.infosContent{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+.infosContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
-.infosList{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+.infosList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
-.title{ font-size: var(--font-size-small);
-    color: var(--secondary);
-    text-shadow: 0px 4px 4px rgba(122, 126, 163, 0.51);
+.title {
+  font-size: var(--font-size-small);
+  color: var(--secondary);
+  text-shadow: 0px 4px 4px rgba(122, 126, 163, 0.51);
 }
-.listAndAddButton{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+.listAndAddButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
-.addButton{
-    font-size: var(--font-size-ultra-small);
-    font-weight: 600;
-    color: var(--secondary);
+.addButton {
+  font-size: var(--font-size-ultra-small);
+  font-weight: 600;
+  color: var(--secondary);
 }

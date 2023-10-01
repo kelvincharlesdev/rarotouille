@@ -1,52 +1,52 @@
-.sidebarContent{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 90px;
+.sidebarContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 90px;
 }
-.userName{
-    font-size: var(--font-size-ultra-small);
-    color: var(--black);
-    font-weight: 500;
+.userName {
+  font-size: var(--font-size-ultra-small);
+  color: var(--black);
+  font-weight: 500;
 }
-.infosAndOtherPages{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 46px;
+.infosAndOtherPages {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 46px;
 }
-.imageAndName{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+.imageAndName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
-.nameSection{
-    display: flex;
-    gap: 10px;
+.nameSection {
+  display: flex;
+  gap: 10px;
 }
-.dateSection{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
+.dateSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
 }
-.dateTitile{
-    font-size: var(--font-size-extra-small);
-    color: var(--secondary);
+.dateTitile {
+  font-size: var(--font-size-extra-small);
+  color: var(--secondary);
 }
-.date{
-    font-size: var(--font-size-ultra-small);
-    color: var(--black)
-}
-
-.pageLinksButtons{
-    font-size: var(--font-size-extra-small);
-    color: var(--secondary);
-    font-weight: 600;
+.date {
+  font-size: var(--font-size-ultra-small);
+  color: var(--black);
 }
 
-.pageLogoutButton{
-    font-size: var(--font-size-extra-small);
-    color: var(--secondary);
+.pageLinksButtons {
+  font-size: var(--font-size-extra-small);
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.pageLogoutButton {
+  font-size: var(--font-size-extra-small);
+  color: var(--secondary);
 }
