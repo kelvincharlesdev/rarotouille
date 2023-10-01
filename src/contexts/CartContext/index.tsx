@@ -70,11 +70,15 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   const [paymentOptionIndex, setPaymentOptionIndex] = useState(0);
   const {user} = useAuthContext();
 
-  useEffect(() => {
+  const getUserAddress = () =>{
     if(user){
-      setUserAddresses(user.addresses)
+      setUserAddresses(user.addresses);
     }
-  }, []);
+  }
+
+  useEffect(() => {
+    getUserAddress();
+  }, [user]);
 
   const getChefsName = (dishes: CartOrderType[]) => {
     const chefs = dishes.map(dish => {
