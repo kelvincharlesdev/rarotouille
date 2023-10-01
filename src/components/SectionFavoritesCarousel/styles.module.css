@@ -1,0 +1,10 @@
+.sectionDishesClose{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+h3 {
+    font-size: var(--font-size-medium);
+    text-shadow: 0px 4px 4px rgba(122, 126, 163, 0.52);
+  }

@@ -14,7 +14,7 @@
 .slick-slider .slick-track {
   display: flex;
   align-items: center;
-  gap: 50px;
+  /* gap: 50px; */
   min-height: 350px;
 }
 

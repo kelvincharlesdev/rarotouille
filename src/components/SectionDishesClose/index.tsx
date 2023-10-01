@@ -49,7 +49,6 @@ export const SectionDishesClose = () => {
         lat: userLatitude,
         long: userLongitude
       });
-      console.log("dishes close aqui", response);
 
       if (response) {
         setDishesList([...response.data]);

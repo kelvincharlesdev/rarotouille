@@ -12,9 +12,9 @@ export const Carousel = ({ children }: ICarousel) => {
     infinite: false,
     speed: 300,
     centerMode: false,
-    variableWidth: true,
-    adaptiveHeight: true,
-    slidesToShow: 5,
+    variableWidth: false,
+    adaptiveHeight: false,
+    slidesToShow: 4,
     slidesToScroll: 1
   };
   return (

@@ -1,9 +1,9 @@
 import { HomeSlogan } from "../../components/HomeSlogan";
 import { MainBackground } from "../../components/MainBackground";
 import styles from "./styles.module.css";
-import { useAuthContext } from "../../contexts/AuthContext";
 import { SectionDishesClose } from "../../components/SectionDishesClose";
 import { HomeDishes } from "../../components/HomeDishes";
+import { SectionFavoritesCarousel } from "../../components/SectionFavoritesCarousel";
 
 export const Home = () => {
   return (
@@ -12,6 +12,7 @@ export const Home = () => {
         <HomeSlogan />
 
         <SectionDishesClose />
+        <SectionFavoritesCarousel />
 
         <HomeDishes />
       </div>
