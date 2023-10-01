@@ -4,6 +4,9 @@ import styles from "./styles.module.css";
 import { useState } from "react";
 import { Modal } from "../Modal";
 import { AddressForm } from "../AddressForm";
+
+import trashIcon from "../../assets/images/SmallTrash.png";
+import { deleteAddress } from "../../service/apiDeletes";
 interface AddressListLineProps {
     address: AddressResponseType;
 }
@@ -13,10 +16,17 @@ export const AddressListLine = ({ address }: AddressListLineProps) => {
     const onClickModal = () =>{
         setIsOpen(!isOpen);
     }
+    const onClickDelete =async () => {
+        const res = await deleteAddress(address.id);
+        if(res){
+            //TODO atualizar a página 
+        }
+    }
     return (
         <div className={styles.addressContent}>
             {address.name && <p className={styles.addressName}>{address.name}</p>}
             <div className={styles.listLine}>
+            <button onClick={onClickDelete}><img src={trashIcon} alt="trash" /></button>
                 <p className={styles.address}>
                     {address.public_place},{" "}
                     {address.number},{" "}
@@ -24,7 +34,7 @@ export const AddressListLine = ({ address }: AddressListLineProps) => {
                 </p>
                 <button onClick={onClickModal}><img src={edit} alt="editIcon" /></button>
             </div>
-            {address.complement && <p className={styles.complement}>{address.complement}</p>}
+            {address.complement && <p className={styles.complement}>{address.reference}</p>}
             {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Editar endereço">
                 <AddressForm address={address} id={address.id}/>
                 </Modal>}
