@@ -9,3 +9,7 @@
   color: var(--white);
   font-weight: 600;
 }
+
+.link {
+  display: flex;
+}
