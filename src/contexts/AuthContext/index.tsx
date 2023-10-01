@@ -21,14 +21,12 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [user, setUser] = useState<UserResponseType>();
-  console.log("user do contexto", user);
 
   const getUser = async () => {
     const response = await getMe();
 
     if (response) {
       setUser(response.data);
-      console.log("response.data", response.data);
     }
   };
 
