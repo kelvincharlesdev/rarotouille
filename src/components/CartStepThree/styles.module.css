@@ -39,10 +39,16 @@
   font-size: var(--font-size-small);
   color: var(--black);
 }
+.payButton{
+  font-size: var(--font-size-extra-small);
+  color: var(--secondary);
+}
 .footerContent {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 16px;
   width: 445px;
   height: 215px;
   margin: 0px 25px;
