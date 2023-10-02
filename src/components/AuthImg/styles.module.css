@@ -1,8 +1,8 @@
-/* .image {
-  width: 600px;
-  height: 600px;
-} */
-/*Só pras imagens não ficarem enormes, depois vou cortá-las pra que fiquem do mesmo tamanho"*/
+.image {
+  width: 80%;
+
+} 
+
 
 
 @media (max-width: 795px) {

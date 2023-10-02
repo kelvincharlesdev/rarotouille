@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: flex-start;
   width: 503px;
-  height: 65vh;
+  height: 100%;
   background-color: var(--white);
   padding: 5px;
 }

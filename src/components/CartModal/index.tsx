@@ -6,7 +6,7 @@ import { useCartContext } from "../../contexts/CartContext";
 
 export const CartModal = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const {cartOrders} = useCartContext();
+  const { cartOrders } = useCartContext();
 
   const openModal = () => {
     setIsOpen(true);
@@ -41,9 +41,12 @@ export const CartModal = () => {
   };
 
   return (
-    <>{cartOrders.length>0 && <span className={styles.ordersCount}>{cartOrders.length}</span>}
+    <>
+      {cartOrders.length > 0 && (
+        <span className={styles.ordersCount}>{cartOrders.length}</span>
+      )}
       <button onClick={isOpen ? closeModal : openModal} type="submit">
-        <img alt="Cart" src={CartSVG} />
+        <img className={styles.cartButton} alt="Cart" src={CartSVG} />
       </button>
       {isOpen && (
         <div className={styles.modalOverlay} onClick={handleOverlayClick}>

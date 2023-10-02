@@ -1,6 +1,5 @@
 .logo {
-  display: flex;
-  align-items: flex-end;
+  max-width: 40%;
 }
 
 .imageHat {

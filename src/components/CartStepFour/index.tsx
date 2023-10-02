@@ -33,15 +33,15 @@ export const CartStepFour = ({ setActualStep }: CartStepFourProps) => {
             </div>
           </main>
           <div className={styles.cartFooter}>
-            <button className={styles.backButton} onClick={backToCartStart}>
-              Não, obrigado
-            </button>
             <p className={styles.footerTitle}>Agora é só aproveitar o prato!</p>
             <button
               className={styles.avaliateButton}
               onClick={() => setStepPartial(prev => prev + 1)}
             >
               Deixar uma avaliação
+            </button>
+            <button className={styles.backButton} onClick={backToCartStart}>
+              Não, obrigado
             </button>
           </div>
         </>

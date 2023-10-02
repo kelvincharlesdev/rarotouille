@@ -20,9 +20,18 @@
 }
 .ordersCount{
   justify-content: center;
-    width: 25px;
-    border-radius: 21px;
+    width: 15px;
+    border-radius: 15px;
     display: flex;
-    background-color: var(--red);
+    background-color: var( --darker);
     color: var(--white);
+    font-size: 8px;
+    position: absolute;
+    top: 25px;
+    right: 23px;
+}
+
+
+.cartButton {
+  position: relative;
 }

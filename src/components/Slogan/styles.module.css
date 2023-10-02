@@ -1,13 +1,12 @@
 .slogan {
   color: var(--secondary);
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 600;
-  margin-top: 41px;
 }
 
 .sloganRaro {
   color: var(--darker);
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 800;
 }
 
