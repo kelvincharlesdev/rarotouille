@@ -12,7 +12,7 @@ export const User = () => {
     <div className={styles.userContainer}>
       <Link
         className={styles.link}
-        to={isAuthenticated ? routes.profile() : "/"}
+        to={isAuthenticated ? routes.profile : "/"}
       >
         <img src={UserIcon} alt="Ícone de usuário" />
       </Link>
