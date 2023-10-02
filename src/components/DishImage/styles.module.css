@@ -1,5 +1,13 @@
 .imageContent{
-    width: 598px;
-    height: 496px;
+    width: 581px;
+    height: 415px;
     border-radius: 20px;
 }
+
+
+@media (max-width: 998px) {
+    .imageContent{
+        width: 100%;
+        
+    }
+  }

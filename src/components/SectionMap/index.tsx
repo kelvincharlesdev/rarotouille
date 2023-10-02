@@ -18,7 +18,7 @@ export const SectionMap = () => {
 
   useEffect(() => {
     chefsMap();
-  }, [chefs]);
+  }, []);
 
   return (
     <section className={styles.sectionMap}>

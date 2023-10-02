@@ -1,6 +1,15 @@
 .contentMap {
-    height: 500px;
     width: 100%;
-    background-color: RED;
+    height: 100%;
+  }
+
+.distance {
+  color: var(--primary);
+  font-size: var(--font-size-small);
 }
-    
+
+.span{
+  color: var(  --secondary);
+  font-size: var(--font-size-small);
+  padding-left: 5px;
+}
