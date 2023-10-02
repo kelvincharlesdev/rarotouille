@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { DishType } from "../../types/DishType";
 import { OrderItemType } from "../../types/OrderItemType";
-import { getMe } from "../../service/apiGet";
 import { AddressResponseType } from "../../types/AddressResponseType";
 import { postOrder } from "../../service/apiPosts";
 import { AxiosResponse } from "axios";
@@ -37,7 +36,7 @@ interface CartContextProps {
   removeOrderLine: (order: CartOrderType) => void;
   removeAllDishesToCart: () => void;
   finishOrder: () => Promise<AxiosResponse<OrderResponseType, any> | null>;
-  payFinalOrder: () => void;
+  payFinalOrder: (order_id: string) => void;
 }
 
 interface CartProviderProps {
@@ -173,8 +172,11 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     return null;
   };
 
-  const payFinalOrder = async () => {
-    await payOrder(finalOrder.id);
+  const payFinalOrder = async (order_id: string) => {
+    const res = await payOrder(order_id);
+    if(res){
+      setFinalOrder(res.data)
+    }
   };
 
   const switchDeliveryAddress = (index: string) => {
