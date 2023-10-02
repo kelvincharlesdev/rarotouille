@@ -47,7 +47,8 @@
 }
 .switchOptionSection {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
 }
 .switchSelect {
@@ -90,6 +91,11 @@
   color: var(--secondary);
 }
 .backButton {
+  font-size: var(--font-size-extra-small);
+  color: var(--secondary);
+}
+
+.buttonAdd{
   font-size: var(--font-size-extra-small);
   color: var(--secondary);
 }
