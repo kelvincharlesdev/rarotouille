@@ -13,8 +13,6 @@ export const ProfileSidebar = () => {
   const { user } = useAuthContext();
   const [isOpen, setIsOpen] = useState(false);
   const onClickModal = () => {
-    console.log("to aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-
     setIsOpen(!isOpen);
   };
   let dateStr = "";
@@ -48,13 +46,13 @@ export const ProfileSidebar = () => {
 
           <button
             className={styles.pageLinksButtons}
-            onClick={() => navigate(routes.orders(user.id))}
+            onClick={() => navigate(routes.orders)}
           >
             Seus pedidos
           </button>
           <button
             className={styles.pageLinksButtons}
-            onClick={() => navigate(routes.favorites(user.id))}
+            onClick={() => navigate(routes.favorites)}
           >
             Favoritos
           </button>
