@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.button:disabled {
+  background-color: var(--map);
+}
+
 .text {
   color: var(--white);
   font-weight: 700;
