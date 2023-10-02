@@ -48,7 +48,10 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
                             {orderTwo.dish.name}
                           </p>
                           <p className={styles.dishPrice}>
-                            {orderTwo.dish.unit_price}
+                            {Number(orderTwo.dish.unit_price).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL"
+            })}
                           </p>
                         </section>
                       </div>
