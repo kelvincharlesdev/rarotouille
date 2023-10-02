@@ -22,23 +22,21 @@ export const CarouselCard = ({ dish }: CarouselCardProps) => {
   const onClickDishImage = () => {
     navigate(routes.dishDetails(dish.id));
   };
-
-  const verifyLike = (dish: DishType) => {
-    const verify = dish.likes?.find((like)=> like.voter_id === user?.id);
-    if(verify){
-      
-      return true;
-    }else{
-      return false;
-    }
-  }
-;
-
   const onClickCart = () => {
     addDishToCart(dish);
   };
+
+  const verifyLike = () => {
+    const verify = dish.likes?.find((like)=> like.voter_id === user?.id);
+    if(verify){
+      setIsLiked(true);
+    }else{
+      setIsLiked(false);
+    }
+  }
+;
   useEffect(()=>{
-    setIsLiked(()=>verifyLike(dish))
+    verifyLike();
   },[])
   return (
     <div className={styles.cardContainer}>
@@ -65,7 +63,7 @@ export const CarouselCard = ({ dish }: CarouselCardProps) => {
       <div className={styles.chefHeartCartContent}>
         <div className={styles.chefHeart}>
           <p className={styles.chefName}>Chef {dish.chef?.name}</p>
-          <HeartImage setIsLiked={setIsLiked} dish_id={dish.id} likeImage={heartLiked} noLikeImage={heartNoLiked} likedByMe={isLiked} />
+          <HeartImage setIsLiked={setIsLiked} dish={dish} likeImage={heartLiked} noLikeImage={heartNoLiked} likedByMe={isLiked} />
         </div>
         <button
           className={styles.cartButton}
