@@ -3,7 +3,6 @@ import { AddressByZipCodeType } from "../types/AddressByZipCodeType";
 import { AddressResponseType } from "../types/AddressResponseType";
 import { CategoriesResponseType } from "../types/CategoriesResponseType";
 import { CategoryType } from "../types/CategoryType";
-import { ChefsResponseType } from "../types/ChefsResponseType";
 import { CitiesResponseType } from "../types/CitiesResponseType";
 import { CityType } from "../types/CityType";
 import { ClientsAddressResponseType } from "../types/ClientsAddressResponseType";
@@ -22,14 +21,8 @@ import { UserResponseType } from "../types/UserResponseType";
 import { api } from "./api";
 
 export const getCategories = async () => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
-      const response = await api.get<CategoriesResponseType>("/categories", {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
+      const response = await api.get<CategoriesResponseType>("/categories");
       return response;
     } catch (error) {
       console.log(error);
@@ -37,14 +30,8 @@ export const getCategories = async () => {
 };
 
 export const getCategory = async (id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
-      const response = await api.get<CategoryType>(`/categories/${id}`, {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
+      const response = await api.get<CategoryType>(`/categories/${id}`);
       return response;
     } catch (error) {
       console.log(error);
@@ -52,14 +39,8 @@ export const getCategory = async (id: string) => {
 };
 
 export const getStates = async () => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
-      const response = await api.get<StateResponseType>("/states", {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
+      const response = await api.get<StateResponseType>("/states");
       return response;
     } catch (error) {
       console.log(error);
@@ -67,14 +48,8 @@ export const getStates = async () => {
 };
 
 export const getState = async (id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
-      const response = await api.get<StateType>(`/states/${id}`, {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
+      const response = await api.get<StateType>(`/states/${id}`);
       return response;
     } catch (error) {
       console.log(error);
@@ -82,16 +57,9 @@ export const getState = async (id: string) => {
 };
 
 export const getCities = async (state_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<CitiesResponseType>(
-        `/states/${state_id}/cities`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/states/${state_id}/cities`
       );
       return response;
     } catch (error) {
@@ -100,16 +68,9 @@ export const getCities = async (state_id: string) => {
 };
 
 export const getCity = async (state_id: string, city_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<CityType>(
-        `/states/${state_id}/cities/${city_id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/states/${state_id}/cities/${city_id}`
       );
       return response;
     } catch (error) {
@@ -128,16 +89,9 @@ export const getAddressByZipCode = async (zip_code: string) => {
 };
 
 export const getClientsAddress = async () => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<ClientsAddressResponseType>(
-        "/clients/addresses",
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        "/clients/addresses"
       );
       return response;
     } catch (error) {
@@ -146,14 +100,8 @@ export const getClientsAddress = async () => {
 };
 
 export const getChefs = async () => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
-      const response = await api.get<IChefResponse[]>("/chefs", {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
+      const response = await api.get<IChefResponse[]>("/chefs");
       return response;
     } catch (error) {
       console.log(error);
@@ -161,14 +109,8 @@ export const getChefs = async () => {
 };
 
 export const getChef = async (chef_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
-      const response = await api.get<IChefResponse>(`/chefs/${chef_id}`, {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
+      const response = await api.get<IChefResponse>(`/chefs/${chef_id}`);
       return response;
     } catch (error) {
       console.log(error);
@@ -176,16 +118,9 @@ export const getChef = async (chef_id: string) => {
 };
 
 export const getChefAddress = async (chef_id: string, address_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<AddressResponseType>(
-        `/chefs/${chef_id}/addresses/${address_id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/chefs/${chef_id}/addresses/${address_id}`
       );
       return response;
     } catch (error) {
@@ -194,14 +129,8 @@ export const getChefAddress = async (chef_id: string, address_id: string) => {
 };
 
 export const getMe = async () => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
-      const response = await api.get<UserResponseType>("/clients/me", {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
+      const response = await api.get<UserResponseType>("/clients/me");
       return response;
     } catch (error) {
       console.log(error);
@@ -209,14 +138,8 @@ export const getMe = async () => {
 };
 
 export const getOrders = async () => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
-      const response = await api.get<OrdersResponseType>("/clients/orders", {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
+      const response = await api.get<OrdersResponseType>("/clients/orders");
       return response;
     } catch (error) {
       console.log(error);
@@ -224,16 +147,9 @@ export const getOrders = async () => {
 };
 
 export const getOrder = async (order_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<OrderResponseType>(
-        `/clients/orders/${order_id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/clients/orders/${order_id}`
       );
       return response;
     } catch (error) {
@@ -243,16 +159,9 @@ export const getOrder = async (order_id: string) => {
 
 //TODO verificar se é essa tipagem mesmo
 export const getChefOrders = async (chef_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<OrdersResponseType>(
-        `/chefs/${chef_id}/orders`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/chefs/${chef_id}/orders`
       );
       return response;
     } catch (error) {
@@ -263,16 +172,9 @@ export const getChefOrders = async (chef_id: string) => {
 //TODO Testar de novo, deu erro interno
 
 export const getChefOrder = async (chef_id: string, order_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<OrdersResponseType>(
-        `/chefs/${chef_id}/orders/${order_id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/chefs/${chef_id}/orders/${order_id}`
       );
       return response;
     } catch (error) {
@@ -281,16 +183,9 @@ export const getChefOrder = async (chef_id: string, order_id: string) => {
 };
 
 export const getOrderItems = async (order_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<OrderItemResponseType[]>(
-        `/clients/orders/${order_id}/order_items`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/clients/orders/${order_id}/order_items`
       );
       return response;
     } catch (error) {
@@ -299,16 +194,9 @@ export const getOrderItems = async (order_id: string) => {
 };
 
 export const getOrderItem = async (order_id: string, orderItem_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<OrderItemResponseType>(
-        `/clients/orders/${order_id}/order_items/${orderItem_id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/clients/orders/${order_id}/order_items/${orderItem_id}`
       );
       return response;
     } catch (error) {
@@ -317,16 +205,9 @@ export const getOrderItem = async (order_id: string, orderItem_id: string) => {
 };
 
 export const getClientTelephones = async () => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<TelephonesResponseType>(
-        "/clients/telephones",
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        "/clients/telephones"
       );
       return response;
     } catch (error) {
@@ -335,16 +216,9 @@ export const getClientTelephones = async () => {
 };
 
 export const getClientTelephone = async (telephone_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<TelephoneType>(
-        `/clients/telephones/${telephone_id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/clients/telephones/${telephone_id}`
       );
       return response;
     } catch (error) {
@@ -353,16 +227,9 @@ export const getClientTelephone = async (telephone_id: string) => {
 };
 
 export const getChefTelephones = async (chef_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<TelephonesResponseType>(
-        `/chefs/${chef_id}/telephones`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/chefs/${chef_id}/telephones`
       );
       return response;
     } catch (error) {
@@ -374,16 +241,9 @@ export const getChefTelephone = async (
   chef_id: string,
   telephone_id: string
 ) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<TelephoneType>(
-        `/chefs/${chef_id}/telephones/${telephone_id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/chefs/${chef_id}/telephones/${telephone_id}`
       );
       return response;
     } catch (error) {
@@ -392,14 +252,8 @@ export const getChefTelephone = async (
 };
 
 export const getDishes = async () => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
-      const response = await api.get<DishesResponseType>("/dishes", {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
+      const response = await api.get<DishesResponseType>("/dishes");
       return response;
     } catch (error) {
       console.log(error);
@@ -410,13 +264,8 @@ export const getDishesPaginated = async ({
   page,
   per_page
 }: DishesResponsePaginated) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<DishesResponseType>("/dishes", {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        },
         params: {
           page,
           per_page
@@ -429,14 +278,8 @@ export const getDishesPaginated = async ({
 };
 
 export const getDish = async (dish_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
-      const response = await api.get<DishType>(`/dishes/${dish_id}`, {
-        headers: {
-          Authorization: `Bearer ${access_token}`
-        }
-      });
+      const response = await api.get<DishType>(`/dishes/${dish_id}`);
       return response;
     } catch (error) {
       console.log(error);
@@ -444,16 +287,9 @@ export const getDish = async (dish_id: string) => {
 };
 
 export const getChefDishes = async (chef_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<DishesResponseType>(
-        `/chefs/${chef_id}/dishes`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/chefs/${chef_id}/dishes`
       );
       return response;
     } catch (error) {
@@ -462,16 +298,9 @@ export const getChefDishes = async (chef_id: string) => {
 };
 
 export const getChefDish = async (chef_id: string, dish_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<DishType>(
-        `/chefs/${chef_id}/dishes/${dish_id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/chefs/${chef_id}/dishes/${dish_id}`
       );
       return response;
     } catch (error) {
@@ -480,16 +309,9 @@ export const getChefDish = async (chef_id: string, dish_id: string) => {
 };
 
 export const getRatings = async (dish_id: string) => {
-  const access_token = localStorage.getItem("access_token");
-  if (access_token)
     try {
       const response = await api.get<RatingType>(
-        `/dishes/${dish_id}/ratings`,
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`
-          }
-        }
+        `/dishes/${dish_id}/ratings`
       );
       return response;
     } catch (error) {
