@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import Logo from "../../assets/images/Logo.png";
+import Logo from "../../assets/images/LogoRarotouille.png";
 import LogoAcademy from "../../assets/images/RaroAcademey.png";
 import { FaWhatsapp, FaInstagram, FaEnvelope } from "react-icons/fa";
 
@@ -34,8 +34,7 @@ export const Footer = () => {
           className={styles.logoRarotouille}
           src={Logo}
           alt="Logo Rarotouille"
-        />{" "}
-        RAROTOUILLE
+        />
         <img
           className={styles.logoRaroAcademy}
           src={LogoAcademy}
