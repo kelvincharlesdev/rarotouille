@@ -27,19 +27,24 @@
 .mainContent {
   display: flex;
   flex-direction: column;
-  width: 600px;
-  height: 585px;
+  justify-content: space-between;
+  height: 600px;
+  width: 485px;
+  border-bottom: 3px solid;
+  border-color: var(--secondary);
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .cartFooter {
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
   align-items: center;
-  width: 691px;
+  padding-top: 16px;
+  width: 445px;
   height: 215px;
-  margin: 0px 20px;
+  margin: 0px 25px;
 }
 
 .avaliateTitle {

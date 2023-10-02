@@ -3,6 +3,10 @@ import litleMap from "../../assets/images/LitleMap.png";
 import money from "../../assets/images/Money.png";
 import { ButtonForm } from "../ButtonForm";
 import { useCartContext } from "../../contexts/CartContext";
+import { useListControlContext } from "../../contexts/ListControlContext";
+import { useState } from "react";
+import { Modal } from "../Modal";
+import { AddressForm } from "../AddressForm";
 
 interface CartStepTwoProps {
   handleNextStep: () => void;
@@ -14,13 +18,18 @@ export const CartStepTwo = ({
   handleNextStep,
   handlePrevStep
 }: CartStepTwoProps) => {
+  const [isOpen,setIsOpen] = useState(false);
+
+  const onClickModal = () =>{
+    setIsOpen(!isOpen);
+}
+
   const submitOrder = async () => {
     finishOrder();
     //TODO Tratar erro
     handleNextStep();
   };
   const {
-    userAddresses,
     totalPrice,
     finishOrder,
     switchDeliveryAddress,
@@ -29,6 +38,8 @@ export const CartStepTwo = ({
     paymentOptionIndex,
     switchPaymentOption
   } = useCartContext();
+
+  const {userAddresses} =useListControlContext();
   //TODO colocar um adicionar endereço
   if (userAddresses.length > 0) {
     return (
@@ -53,6 +64,7 @@ export const CartStepTwo = ({
             </div>
 
             <section className={styles.switchOptionSection}>
+            <button className={styles.buttonAdd} onClick={onClickModal}>Adicionar</button>
               <select
                 className={styles.switchSelect}
                 onChange={e => switchDeliveryAddress(e.target.value)}
@@ -88,6 +100,7 @@ export const CartStepTwo = ({
               </section>
             </div>
 
+             
             <section className={styles.switchOptionSection}>
               <select
                 className={styles.switchSelect}
@@ -123,6 +136,9 @@ export const CartStepTwo = ({
             type="button"
             onClick={submitOrder}
           />
+          {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Editar endereço">
+                <AddressForm/>
+                </Modal>}
         </div>
       </>
     );

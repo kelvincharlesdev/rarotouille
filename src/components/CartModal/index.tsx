@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Cart } from "../Cart";
 import CartSVG from "../../assets/images/Cart.svg";
 import styles from "./styles.module.css";
+import { useCartContext } from "../../contexts/CartContext";
 
 export const CartModal = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const {cartOrders} = useCartContext();
 
   const openModal = () => {
     setIsOpen(true);
@@ -39,7 +41,7 @@ export const CartModal = () => {
   };
 
   return (
-    <>
+    <>{cartOrders.length>0 && <span className={styles.ordersCount}>{cartOrders.length}</span>}
       <button onClick={isOpen ? closeModal : openModal} type="submit">
         <img alt="Cart" src={CartSVG} />
       </button>

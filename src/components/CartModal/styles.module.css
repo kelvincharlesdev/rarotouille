@@ -18,3 +18,11 @@
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   border-bottom-left-radius: 30px;
 }
+.ordersCount{
+  justify-content: center;
+    width: 25px;
+    border-radius: 21px;
+    display: flex;
+    background-color: var(--red);
+    color: var(--white);
+}

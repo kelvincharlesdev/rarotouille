@@ -20,6 +20,9 @@ export interface ListControlContextProps {
   removeAddress: (address_id: string) => void;
   updatePhone: (phone_id: string, updatePhone: TelephoneType) => void;
   updateAddresses: (address_id: string, updateAddress: AddressResponseType) => void;
+  addressIndex: number;
+  setAddressIndex: (addressIndex: number) => void;
+  switchAddressIndex: (index: number) => void;
 }
 
 export const ListControlContext = createContext({} as ListControlContextProps);
@@ -32,6 +35,7 @@ export const ListControlProvider = ({ children }: ListControlProvider) => {
     const [favoritesDishes, setFavoritesDishes] = useState<DishType[]>([]);
     const [userTelephones, setUserTelephones] = useState<TelephoneType[]>([]);
     const [userAddresses, setUserAddresses] = useState<AddressResponseType[]>([]);
+    const [addressIndex, setAddressIndex] = useState(0);
 
     const {user} = useAuthContext();
 
@@ -129,6 +133,10 @@ export const ListControlProvider = ({ children }: ListControlProvider) => {
     setUserAddresses(newAddresses);
   }
 
+  const switchAddressIndex = (index: number) =>{
+    setAddressIndex(index);
+  }
+
   useEffect(()=>{
     if(favoritesDishes.length === 0 && user){
         getFavoritesDishesList();    
@@ -159,7 +167,10 @@ export const ListControlProvider = ({ children }: ListControlProvider) => {
         addAddress,
         removeAddress,
         updatePhone,
-        updateAddresses
+        updateAddresses,
+        addressIndex,
+        setAddressIndex,
+        switchAddressIndex
       }}
     >
       {children}
