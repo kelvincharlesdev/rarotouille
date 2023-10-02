@@ -49,7 +49,6 @@ export const CartStepThree = ({ setActualStep }: CartStepThreeProps) => {
         <>
           <main className={styles.mainContent}>
             <div className={styles.imageAndTextContent}>
-              <p className={styles.mainContentTitle}>Quase lá</p>
               <p className={styles.link}>{paymentLink}</p>
               {copied ? (
                 <p className={styles.linkCopiedMessage}>Link copiado!</p>

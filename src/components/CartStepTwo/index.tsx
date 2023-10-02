@@ -30,7 +30,7 @@ export const CartStepTwo = ({
     switchPaymentOption
   } = useCartContext();
   //TODO colocar um adicionar endereço
-  if(userAddresses.length>0){
+  if (userAddresses.length > 0) {
     return (
       <>
         <main className={styles.mainContent}>
@@ -51,7 +51,7 @@ export const CartStepTwo = ({
                 </p>
               </section>
             </div>
-  
+
             <section className={styles.switchOptionSection}>
               <select
                 className={styles.switchSelect}
@@ -87,7 +87,7 @@ export const CartStepTwo = ({
                 </p>
               </section>
             </div>
-  
+
             <section className={styles.switchOptionSection}>
               <select
                 className={styles.switchSelect}
@@ -104,7 +104,7 @@ export const CartStepTwo = ({
             </section>
           </div>
         </main>
-  
+
         <div className={styles.cartFooter}>
           <div className={styles.totalPriceContent}>
             <p className={styles.totalText}>Total</p>
@@ -126,6 +126,5 @@ export const CartStepTwo = ({
         </div>
       </>
     );
-
   }
 };

@@ -32,7 +32,7 @@ export const CartStepFour = ({ setActualStep }: CartStepFourProps) => {
               />
             </div>
           </main>
-          <footer className={styles.cartFooter}>
+          <div className={styles.cartFooter}>
             <button className={styles.backButton} onClick={backToCartStart}>
               Não, obrigado
             </button>
@@ -43,7 +43,7 @@ export const CartStepFour = ({ setActualStep }: CartStepFourProps) => {
             >
               Deixar uma avaliação
             </button>
-          </footer>
+          </div>
         </>
       );
     case 1:
