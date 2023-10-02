@@ -24,9 +24,9 @@ export const RarotouilleRoutes = () => {
             <Route path={routes.home} element={<Home />} />
             <Route path={routes.dishDetails()} element={<DishDetails />} />
             <Route path={routes.dishesList} element={<DishesList />} />
-            <Route path={routes.favorites()} element={<Favorites />} />
-            <Route path={routes.orders()} element={<Orders />} />
-            <Route path={routes.profile()} element={<Profile />} />
+            <Route path={routes.favorites} element={<Favorites />} />
+            <Route path={routes.orders} element={<Orders />} />
+            <Route path={routes.profile} element={<Profile />} />
           </>
         ) : (
           <>
