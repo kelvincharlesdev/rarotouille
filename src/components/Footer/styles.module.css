@@ -7,12 +7,12 @@ footer {
 }
 
 footer > p {
-  padding-top: 30px;
+  padding-top: 40px;
   color: var(--darker);
 }
 
 .footerIcons {
-  padding-top: 50px;
+  padding-top: 45px;
   align-items: center;
   justify-content: center;
 }
@@ -29,13 +29,16 @@ footer > p {
 }
 
 .logoRarotouille {
-  width: 90px;
+  width: 200px;
+}
+
+.logoRaroAcademy {
+  height: 55px;
 }
 
 .logosContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 25px;
-  padding-top: 30px;
+  padding-top: 25px;
 }

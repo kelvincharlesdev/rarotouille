@@ -40,7 +40,7 @@ export const CartModal = () => {
 
   return (
     <>
-      <button onClick={openModal} type="submit">
+      <button onClick={isOpen ? closeModal : openModal} type="submit">
         <img alt="Cart" src={CartSVG} />
       </button>
       {isOpen && (

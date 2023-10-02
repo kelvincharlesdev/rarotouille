@@ -4,9 +4,9 @@
   align-items: center;
   justify-content: center;
   width: 503px;
-  height: 590px;
-  border-radius: 37px;
+  height: 65vh;
   background-color: var(--white);
+  padding: 5px;
 }
 
 .cartHeader {
@@ -19,11 +19,15 @@
 }
 .closeButton {
   display: flex;
+  padding-top: 7px;
 }
 
 .headerTitle {
-  padding-top:  50px;
+  padding-top: 50px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 630px;
   font-size: var(--font-size-large);
   font-weight: 700;
@@ -32,8 +36,9 @@
 .mainContent {
   display: flex;
   flex-direction: column;
-  width: 691px;
-  height: 585px;
+  width: 100%;
+  height: 600px;
+
   border-bottom: 3px solid;
   border-color: var(--secondary);
 }
@@ -42,6 +47,7 @@
   display: flex;
   padding: 46px 0px 10px 0px;
 }
+
 .chefName {
   font-size: var(--font-size-small);
   font-weight: 600;
@@ -120,14 +126,14 @@
 .cartFooter {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 691px;
   height: 215px;
 }
 .totalPriceContent {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
 }
 .totalText {
@@ -146,14 +152,14 @@
 }
 .empityCartTitle {
   font-size: var(--font-size-medium);
-  font-weight: 700;
+  font-weight: 600;
   width: 350px;
   color: var(--secondary);
   text-align: center;
 }
 .empityCartSubTitle {
   font-size: var(--font-size-medium);
-  font-weight: 700;
+  font-weight: 600;
   width: 315px;
   text-align: center;
 
@@ -177,7 +183,6 @@
 .cartFooterEmpityCart {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   width: 691px;
   height: 215px;
 }

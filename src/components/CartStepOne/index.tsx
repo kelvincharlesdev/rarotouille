@@ -19,7 +19,7 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
 
   return (
     <>
-      <main className={styles.mainContent}>
+      <div className={styles.mainContent}>
         {chefsNames.map((chefName, index) => (
           <div key={index} className={styles.orderLine}>
             <div className={styles.mainContentHeader}>
@@ -81,12 +81,11 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
         <div
           className={styles.mainContentFooter}
           onClick={removeAllDishesToCart}
-        >
-          <p className={styles.removeAllText}>Remover todos os pratos</p>
-        </div>
-      </main>
+        ></div>
+      </div>
 
       <div className={styles.cartFooter}>
+        <p className={styles.removeAllText}>Remover todos os pratos</p>
         <div className={styles.totalPriceContent}>
           <p className={styles.totalText}>Total</p>
           <p className={styles.totalPriceText}>

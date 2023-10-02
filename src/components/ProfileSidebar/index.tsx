@@ -2,14 +2,11 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import styles from "./styles.module.css";
 import userIcon from "../../assets/images/UserIcon.png";
 import edit from "../../assets/images/Edit.png";
-import { useNavigate } from "react-router-dom";
-import { routes } from "../../routes";
 import { useState } from "react";
 import { Modal } from "../Modal";
 import { UserForm } from "../UserForm";
 
 export const ProfileSidebar = () => {
-  const navigate = useNavigate();
   const { user } = useAuthContext();
   const [isOpen, setIsOpen] = useState(false);
   const onClickModal = () => {
@@ -25,7 +22,7 @@ export const ProfileSidebar = () => {
       <div className={styles.sidebarContent}>
         <div className={styles.infosAndOtherPages}>
           <div className={styles.imageAndName}>
-            <img src={userIcon} alt="userIcon" />
+            <img className={styles.user} src={userIcon} alt="userIcon" />
             <section className={styles.nameSection}>
               <p className={styles.userName}>{user?.name}</p>
               <button onClick={onClickModal}>
@@ -43,19 +40,6 @@ export const ProfileSidebar = () => {
             <p className={styles.dateTitile}>Tá com a gente desde:</p>
             <p className={styles.date}>{dateStr}</p>
           </section>
-
-          <button
-            className={styles.pageLinksButtons}
-            onClick={() => navigate(routes.orders)}
-          >
-            Seus pedidos
-          </button>
-          <button
-            className={styles.pageLinksButtons}
-            onClick={() => navigate(routes.favorites)}
-          >
-            Favoritos
-          </button>
         </div>
       </div>
     );
