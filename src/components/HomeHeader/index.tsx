@@ -18,10 +18,10 @@ export const HomeHeader = () => {
         <nav>
           <ul>
             <li>
-              <a href="#orders">Pedidos</a>
+              <Link to="/orders">Pedidos</Link>
             </li>
             <li>
-              <a href="#favorites">Favoritos</a>
+              <Link to="/favorites">Favoritos</Link>
             </li>
           </ul>
         </nav>
