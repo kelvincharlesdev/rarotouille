@@ -5,9 +5,9 @@
   gap: 90px;
 }
 .userName {
-  font-size: var(--font-size-ultra-small);
-  color: var(--black);
-  font-weight: 500;
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--secondary);
 }
 .infosAndOtherPages {
   display: flex;
@@ -49,4 +49,8 @@
 .pageLogoutButton {
   font-size: var(--font-size-extra-small);
   color: var(--secondary);
+}
+
+.user {
+  width: 100px;
 }
