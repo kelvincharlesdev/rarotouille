@@ -7,20 +7,22 @@ import { AddressForm } from "../AddressForm";
 
 import trashIcon from "../../assets/images/SmallTrash.png";
 import { deleteAddress } from "../../service/apiDeletes";
+import { useListControlContext } from "../../contexts/ListControlContext";
 interface AddressListLineProps {
     address: AddressResponseType;
 }
 
 export const AddressListLine = ({ address }: AddressListLineProps) => {
     const [isOpen, setIsOpen] = useState(false);
+    const { removeAddress} = useListControlContext();
     const onClickModal = () =>{
         setIsOpen(!isOpen);
     }
     const onClickDelete =async () => {
         const res = await deleteAddress(address.id);
         if(res){
-            //TODO atualizar a página 
-        }
+            removeAddress(address.id)
+;        }
     }
     return (
         <div className={styles.addressContent}>
