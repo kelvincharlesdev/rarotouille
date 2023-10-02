@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { AddressResponseType } from "../../types/AddressResponseType";
-import { TelephoneType } from "../../types/TelephoneType";
 import { AddressListLine } from "../AddressListLine";
 import { TelephoneListLine } from "../TelephoneListLine";
 import styles from "./styles.module.css";
 import { Modal } from "../Modal";
 import { PhoneForm } from "../PhoneForm";
 import { AddressForm } from "../AddressForm";
+import { useListControlContext } from "../../contexts/ListControlContext";
 
 interface ProfileInfosListProps {
-  data: TelephoneType[] | AddressResponseType[];
   title: "Telefones" | "Endereços";
 }
 
-export const ProfileInfosList = ({ data, title }: ProfileInfosListProps) => {
+export const ProfileInfosList = ({title }: ProfileInfosListProps) => {
   const { user } = useAuthContext();
+  const {userTelephones, userAddresses} = useListControlContext();
   const [isOpenPhone, setIsOpenPhone] = useState(false);
   const [isOpenAddress, setIsOpenAddress] = useState(false);
   const onClickModalPhone = () => {
@@ -51,7 +51,7 @@ export const ProfileInfosList = ({ data, title }: ProfileInfosListProps) => {
         {title === "Telefones" ? (
           <div className={styles.listAndAddButton}>
             <div className={styles.infosList}>
-              {data.map(value => (
+              {userTelephones.map(value => (
                 <TelephoneListLine key={value.id} phone={value} />
               ))}
             </div>
@@ -62,7 +62,7 @@ export const ProfileInfosList = ({ data, title }: ProfileInfosListProps) => {
         ) : (
           <div className={styles.listAndAddButton}>
             <div className={styles.infosList}>
-              {data.map(value => (
+              {userAddresses.map(value => (
                 <AddressListLine
                   key={value.id}
                   address={value as AddressResponseType}

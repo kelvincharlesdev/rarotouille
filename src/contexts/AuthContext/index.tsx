@@ -9,6 +9,7 @@ export interface IAuthLogin {
   setIsLoading: (isLoading: boolean) => void;
   user?: UserResponseType;
   setUser: (user: UserResponseType) => void;
+  updateUser: (user: UserResponseType) => void;
 }
 
 export const AuthContext = createContext({} as IAuthLogin);
@@ -21,6 +22,10 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [user, setUser] = useState<UserResponseType>();
+
+  const updateUser = (user: UserResponseType) => {
+    setUser(user);
+  }
 
   const getUser = async () => {
     const response = await getMe();
@@ -55,7 +60,8 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
         isLoading,
         setIsLoading,
         user,
-        setUser
+        setUser,
+        updateUser
       }}
     >
       {children}

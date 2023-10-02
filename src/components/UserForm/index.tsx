@@ -8,6 +8,7 @@ import styles from "./styles.module.css";
 import { useState } from "react";
 import { errrorMessages, successMessages } from "../../utils/messages";
 import { userUpdateShema } from "../../utils/validationsSchemas";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 interface UserFormProps {
     user: UserResponseType;
@@ -16,6 +17,7 @@ interface UserFormProps {
 export const UserForm = ({ user }: UserFormProps) => {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const [showErrorMessage, setShowErrorMessage] = useState(false);
+    const {updateUser} = useAuthContext();
 
 
     const initialValuesUpdate = {
@@ -30,6 +32,7 @@ export const UserForm = ({ user }: UserFormProps) => {
         if (res?.status === 200) {
             setShowErrorMessage(false)
             setShowSuccessMessage(true);
+            updateUser(res.data);
         }else{
             setShowSuccessMessage(false)
             setShowErrorMessage(true)

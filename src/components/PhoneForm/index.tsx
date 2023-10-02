@@ -8,6 +8,7 @@ import { ButtonForm } from "../ButtonForm";
 import { errrorMessages, successMessages } from "../../utils/messages";
 import styles from "./styles.module.css";
 import { postClientTelephone } from "../../service/apiPosts";
+import { useListControlContext } from "../../contexts/ListControlContext";
 
 interface PhoneFormProps {
   id?: string;
@@ -18,6 +19,7 @@ interface PhoneFormProps {
 export const PhoneForm = ({ id, number }: PhoneFormProps) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const {updatePhone, addPhone} = useListControlContext();
 
   if (number && id) {
     const initialValuesUpdate = {
@@ -29,6 +31,7 @@ export const PhoneForm = ({ id, number }: PhoneFormProps) => {
         if (res?.status === 200) {
           setShowErrorMessage(false);
           setShowSuccessMessage(true);
+          updatePhone(id, res.data)
         } else {
           setShowSuccessMessage(false);
           setShowErrorMessage(true);
@@ -83,6 +86,7 @@ export const PhoneForm = ({ id, number }: PhoneFormProps) => {
         helper.resetForm();
         setShowErrorMessage(false);
         setShowSuccessMessage(true);
+        addPhone(res.data);
       } else {
         setShowSuccessMessage(false);
         setShowErrorMessage(true);

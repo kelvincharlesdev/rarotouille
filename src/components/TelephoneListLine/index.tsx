@@ -6,12 +6,14 @@ import { Modal } from "../Modal";
 import { PhoneForm } from "../PhoneForm";
 import trashIcon from "../../assets/images/SmallTrash.png";
 import { deleteClientTelephone } from "../../service/apiDeletes";
+import { useListControlContext } from "../../contexts/ListControlContext";
 
 interface TelephoneListLineProps {
     phone: TelephoneType;
 }
 
 export const TelephoneListLine = ({ phone }: TelephoneListLineProps) => {
+    const {removePhone} = useListControlContext();
     const [isOpen, setIsOpen] = useState(false);
     const onClickModal = () =>{
         setIsOpen(!isOpen);
@@ -19,7 +21,7 @@ export const TelephoneListLine = ({ phone }: TelephoneListLineProps) => {
     const onClickDelete =async () => {
         const res = await deleteClientTelephone(phone.id);
         if(res){
-            //TODO atualizar a página 
+            removePhone(phone.id)
         }
     }
     return (

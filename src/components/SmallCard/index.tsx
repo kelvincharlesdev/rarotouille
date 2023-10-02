@@ -16,29 +16,28 @@ export interface SmallCardProps {
 
 export const SmallCard = ({ dish }: SmallCardProps) => {
   const navigate = useNavigate();
-  const {user} = useAuthContext();
   const [isLiked, setIsLiked] = useState(false)
+  const {user} = useAuthContext();
+  const {addDishToCart} = useCartContext();
   const onClickDishImage = () => {
     navigate(routes.dishDetails(dish.id));
   };
 
-  const verifyLike = (dish: DishType) => {
+  const verifyLike = () => {
     const verify = dish.likes?.find((like)=> like.voter_id === user?.id);
     if(verify){
-      
-      return true;
+      setIsLiked(true);
     }else{
-      return false;
+      setIsLiked(false);
     }
   }
 ;
-  const {addDishToCart} = useCartContext();
   const onClickCart = () => {
     addDishToCart(dish);
 
   };
   useEffect(()=>{
-    setIsLiked(()=>verifyLike(dish))
+    verifyLike();
   },[])
   return (
     <div className={styles.cardContainer}>
@@ -65,7 +64,7 @@ export const SmallCard = ({ dish }: SmallCardProps) => {
       <div className={styles.chefHeartCartContent}>
         <div className={styles.chefHeart}>
           <p className={styles.chefName}>Chef {dish.chef?.name}</p>
-          <HeartImage setIsLiked={setIsLiked} dish_id={dish.id} likeImage={heartLiked} noLikeImage={heartNoLiked} likedByMe={isLiked}/>
+          <HeartImage setIsLiked={setIsLiked} dish={dish} likeImage={heartLiked} noLikeImage={heartNoLiked} likedByMe={isLiked}/>
         </div>
         <button
           className={styles.cartButton}
