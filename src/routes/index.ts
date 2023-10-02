@@ -9,5 +9,6 @@ export const routes = {
   dishesList: "/dishesList",
   profile: "/profile",
   orders:"/orders",
-  favorites: "/favorites"
+  favorites: "/favorites",
+  payQrCode: (id: string = ":id") => `/payQrCode/${id}`
 };
