@@ -24,3 +24,15 @@
   font-size: var(--font-size-medium);
   font-weight: 600;
 }
+
+
+@media (max-width: 1080px) {
+  .img {
+    display: none;
+  }
+
+  .sloganContainer {
+    padding: 0;
+  }
+}
+

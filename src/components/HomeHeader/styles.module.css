@@ -20,6 +20,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .logoContent {
@@ -59,4 +60,11 @@ ul a:hover {
 
 nav {
   margin-left: 80px;
+}
+
+
+@media (max-width: 1180px) {
+  ul a {
+    font-size: var (--font-size-medium);
+  }
 }

@@ -81,3 +81,27 @@ input[type="search"]::placeholder {
   color: var(--secondary);
   font-size: 25px;
 }
+
+
+@media (max-width: 1180px) {
+  .searchContainer {
+    width: 380px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .searchContainer {
+    width: 280px;
+  }
+}
+
+@media (max-width: 920px) {
+  .searchContainer {
+    width: 180px;
+  }
+
+  input[type="search"] {
+    width: 110px;
+  }
+  
+}
