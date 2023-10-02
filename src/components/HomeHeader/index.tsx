@@ -1,16 +1,17 @@
 import styles from "./styles.module.css";
-import Logo from "../../assets/images/Logo.png";
+import Logo from "../../assets/images/LogoHat.png";
 import { SearchBar } from "../SearchBar";
 import { User } from "../User";
 import { CartModal } from "../CartModal";
+import { Link } from "react-router-dom";
 
 export const HomeHeader = () => {
   return (
     <header>
       <div className={styles.logoContent}>
-        <div className={styles.logo}>
+        <Link className={styles.logo} to="/home">
           <img src={Logo} alt="Logo Rarotouille" />
-        </div>
+        </Link>
         <SearchBar />
       </div>
       <div className={styles.rightHeaderContent}>
