@@ -101,8 +101,6 @@ export const ShowMapChef = ({ chef, user }: IShowMap) => {
   const primaryColor = rootStyles.getPropertyValue("--primary");
   const mapColor = rootStyles.getPropertyValue("--map");
   const waterMap = rootStyles.getPropertyValue("--checkbox");
-  const userIcon = "src/assets/images/UserIcon.png";
-  const chefIcon = "src/assets/images/LitleMap.png";
 
   const mapOptions = getMapOptions({ waterMap, mapColor, primaryColor });
 
@@ -129,12 +127,6 @@ export const ShowMapChef = ({ chef, user }: IShowMap) => {
             <MarkerF
               key={"user-location"}
               position={position}
-              icon={{
-                url: userIcon,
-                anchor: new google.maps.Point(25, 50),
-                labelOrigin: new google.maps.Point(25, -10),
-                scaledSize: new google.maps.Size(50, 50)
-              }}
               label={{
                 text: "Sua Localização",
                 fontSize: "20px",
@@ -147,12 +139,6 @@ export const ShowMapChef = ({ chef, user }: IShowMap) => {
               position={{
                 lat: chef.address.latitude,
                 lng: chef.address.longitude
-              }}
-              icon={{
-                url: chefIcon,
-                anchor: new google.maps.Point(25, 50),
-                labelOrigin: new google.maps.Point(25, -10),
-                scaledSize: new google.maps.Size(50, 50)
               }}
               label={{
                 text: chef.name,
