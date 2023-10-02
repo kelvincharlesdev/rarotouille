@@ -32,3 +32,10 @@ h3 {
   color: var(--secondary);
   font-weight: 600;
 }
+
+
+@media (max-width: 1280px) {
+  .dishRow {
+   flex-wrap: wrap;
+  }
+}

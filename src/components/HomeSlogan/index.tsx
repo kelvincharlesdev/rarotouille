@@ -11,7 +11,7 @@ export const HomeSlogan = () => {
           Aproveite e peça logo o prato que fará seu dia ainda melhor!
         </h2>
       </div>
-      <img src={Scooter} alt="Purple Scooter Delivery" />
+      <img className={styles.img} src={Scooter} alt="Purple Scooter Delivery" />
     </div>
   );
 };
