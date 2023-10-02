@@ -83,7 +83,6 @@ export const DishDetails = () => {
   useEffect(()=>{
     getDishIndividual();
     setIsDishLiked(()=>verifyLike(dish))
-    console.log(isDishLiked)
   },[id])
 
   //TODO Pedir pro Kelvin explicar esse carrosel
