@@ -65,7 +65,7 @@ export const ShowMap = ({ chefs, user }: IShowMap) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: chaveMapAPI,
-    libraries: ["places"]
+    libraries: ["places", "geometry"]
   });
 
   const rootStyles = getComputedStyle(document.documentElement);

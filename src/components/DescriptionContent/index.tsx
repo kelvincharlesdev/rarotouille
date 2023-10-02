@@ -7,7 +7,7 @@ interface DescriptionContentProps{
 export const DescriptionContent = ({description}: DescriptionContentProps) => {
     return (
         <div className={styles.descriptionContent}>
-            <p className={styles.descrptionTitle}>Descição</p>
+            <p className={styles.descrptionTitle}>Descrição</p>
             <p className={styles.descriptionText}>{description}</p>
         </div>
     );

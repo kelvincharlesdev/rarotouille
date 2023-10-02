@@ -14,11 +14,16 @@
 .slick-slider .slick-track {
   display: flex;
   align-items: center;
-  /* gap: 50px; */
   min-height: 350px;
 }
 
 .slick-slider .slick-list,
 .slick-slider .slick-track {
   margin: 0 30px;
+}
+
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
