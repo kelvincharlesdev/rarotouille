@@ -19,7 +19,7 @@ export const DishInfos = ({dish,likeImage, noLikeImage, average, isDishLiked ,se
         <p className={styles.dishNameText}>{dish.name}</p>
         <section className={styles.averageAndLikeSection}>
         <SmallAverageContent average={average}/>
-        <HeartImage likeImage={likeImage} noLikeImage={noLikeImage} likedByMe={isDishLiked} dish_id={dish.id} setIsLiked={setIsDishLiked}/>
+        <HeartImage likeImage={likeImage} noLikeImage={noLikeImage} likedByMe={isDishLiked} dish={dish} setIsLiked={setIsDishLiked}/>
         </section>
         </div>
         <div className={styles.categoriesAndCityNameContent}>
