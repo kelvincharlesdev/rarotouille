@@ -1,26 +1,31 @@
-import { useState } from "react";
 import styles from "./styles.module.css";
 import { desLike, like } from "../../service/apiPuts";
+import { useListControlContext } from "../../contexts/ListControlContext";
+import { DishType } from "../../types/DishType";
 
 interface HeartImageProps{
     likeImage: string;
     noLikeImage: string;
     likedByMe: boolean;
     setIsLiked: (isLiked: boolean) => void;
-    dish_id: string;
+    dish: DishType;
 }
 
-export const HeartImage = ({likeImage, noLikeImage, likedByMe, dish_id, setIsLiked}: HeartImageProps) => {
+export const HeartImage = ({likeImage, noLikeImage, likedByMe, dish, setIsLiked}: HeartImageProps) => {
+  const {addFavorite, removeFavorite} = useListControlContext();
+
   const onClickLike = async () => {
-    const res = await like(dish_id);
+    const res = await like(dish.id);
     if(res?.status === 204){
-      setIsLiked(!likedByMe)
+      setIsLiked(true);
+      addFavorite(dish);
     }
   };
   const onClickDesLike = async () => {
-    const res = await desLike(dish_id);
+    const res = await desLike(dish.id);
     if(res?.status === 204){
-      setIsLiked(!likedByMe)
+      setIsLiked(false);
+      removeFavorite(dish.id);
     }
   };
     return (<>
