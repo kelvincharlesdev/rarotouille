@@ -14,8 +14,8 @@ export const Profile = () => {
        <ProfileSidebar/>
        <div className={styles.infosListContent}>
         <h1 className={styles.title}>Seus dados:</h1>
-        <ProfileInfosList data={user.telephones} title="Telefones"/>
-        <ProfileInfosList data={user.addresses} title="Endereços"/>
+        <ProfileInfosList title="Telefones"/>
+        <ProfileInfosList title="Endereços"/>
        </div>
         </div>
       </MainBackground>
