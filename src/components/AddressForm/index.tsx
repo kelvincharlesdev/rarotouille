@@ -9,6 +9,7 @@ import styles from "./styles.module.css";
 import { getAddressByZipCode } from "../../service/apiGet";
 import { errrorMessages, successMessages } from "../../utils/messages";
 import { postAddress } from "../../service/apiPosts";
+import { useListControlContext } from "../../contexts/ListControlContext";
 
 interface AddressFormProps {
     id?: string;
@@ -18,6 +19,7 @@ interface AddressFormProps {
 export const AddressForm = ({ id, address }: AddressFormProps) => {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const [showErrorMessage, setShowErrorMessage] = useState(false);
+    const {addAddress, updateAddresses} = useListControlContext();
 
     const OnBlurbuscaEnderecoAddresForm = async (
         e: React.FocusEvent<HTMLInputElement, Element>,
@@ -80,6 +82,8 @@ export const AddressForm = ({ id, address }: AddressFormProps) => {
             if (res?.status === 200) {
                 setShowErrorMessage(false)
                 setShowSuccessMessage(true);
+                updateAddresses(id, res.data)
+
             }else{
                 setShowSuccessMessage(false)
                 setShowErrorMessage(true)
@@ -195,6 +199,7 @@ export const AddressForm = ({ id, address }: AddressFormProps) => {
                 helper.resetForm();
                 setShowErrorMessage(false)
                 setShowSuccessMessage(true);
+                addAddress(res.data)
             }else{
                 setShowSuccessMessage(false)
                 setShowErrorMessage(true)
