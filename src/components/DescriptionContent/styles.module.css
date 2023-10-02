@@ -9,8 +9,9 @@
     color: var(--secondary);
 }
 .descriptionText{
-    width: 556px;
     font-size: var(--font-size-medium);
     color: var(--secondary);
-    text-align: justify;
+
 }
+
+
