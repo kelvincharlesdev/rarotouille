@@ -53,7 +53,7 @@ export const ShowMap = ({ chefs, user }: IShowMap) => {
 
   const onLoad = (map: google.maps.Map | null) => {
     if (map) {
-      map.setZoom(14);
+      map.setZoom(13);
       setMap(map);
     }
   };
@@ -73,8 +73,7 @@ export const ShowMap = ({ chefs, user }: IShowMap) => {
   const primaryColor = rootStyles.getPropertyValue("--primary");
   const mapColor = rootStyles.getPropertyValue("--map");
   const waterMap = rootStyles.getPropertyValue("--checkbox");
-  const userIcon = "src/assets/images/User.png";
-  const chefIcon = "src/assets/images/Logo.png";
+  const chefIcon = "src/assets/images/LogoHat.png";
 
   const mapOptions = getMapOptions({ waterMap, mapColor, primaryColor });
 
@@ -94,12 +93,6 @@ export const ShowMap = ({ chefs, user }: IShowMap) => {
               <Marker
                 key={"user-location"}
                 position={position}
-                icon={{
-                  url: userIcon,
-                  anchor: new google.maps.Point(25, 50),
-                  labelOrigin: new google.maps.Point(25, -10),
-                  scaledSize: new google.maps.Size(50, 50)
-                }}
                 label={{
                   text: "Sua Localização",
                   fontSize: "20px",
