@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 import { OnBlurbuscaEndereco } from "../../pages/SignUpPassOne";
 import { completeSignUpSchema } from "../../utils/validationsSchemas";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, createPath } from "react-router-dom";
 import { routes } from "../../routes";
 
 interface ICompleteSignUpProps {
@@ -40,7 +40,15 @@ export const CompleteSignUp: React.FC<ICompleteSignUpProps> = props => {
       validateOnBlur={false}
       validateOnChange={false}
     >
-      {({ errors, touched, isSubmitting, values, setFieldValue }) => (
+      {({
+        errors,
+        touched,
+        isSubmitting,
+        isValid,
+        initialValues,
+        values,
+        setFieldValue
+      }) => (
         <Form className={styles.loginContent} autoComplete="off">
           <div className={styles.contentTitle}>
             <AuthTitle
@@ -145,8 +153,9 @@ export const CompleteSignUp: React.FC<ICompleteSignUpProps> = props => {
             <ButtonForm
               text="Completar Cadastrar"
               type="submit"
-              disabled={isSubmitting}
-              onClick={() => setPular(true)}
+              disabled={
+                isSubmitting || values.addresses_attributes[0].zip_code === ""
+              }
             />
 
             <button
