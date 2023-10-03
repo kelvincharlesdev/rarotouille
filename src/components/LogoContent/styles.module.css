@@ -2,32 +2,14 @@
   max-width: 40%;
 }
 
-.imageHat {
-  width: 81px;
-  height: 81px;
-}
-
-.raro {
-  font-size: 44px;
-}
-.touille {
-  color: var(--secondary);
-  font-size: 35px;
-}
-
-
 @media (max-width: 1060px) {
-  .imageHat {
-    width: 50px;
-    height: 50px;
+  .logo {
+    max-width: 20%;
   }
+}
 
-  .raro {
-    font-size: 32px;
+@media (max-width: 798px) {
+  .logo {
+    max-width: 150px;
   }
-
-  .touille {
-    font-size: 24px;
-  }
-
 }

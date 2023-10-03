@@ -12,8 +12,8 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  margin: 34px 0 55px 0;
+  gap: 15px;
+  margin: 4px 0 5px 0;
 }
 .formContent {
   display: flex;
