@@ -19,7 +19,7 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
 
   return (
     <>
-      <main className={styles.mainContent}>
+      <div className={styles.mainContent}>
         {chefsNames.map((chefName, index) => (
           <div key={index} className={styles.orderLine}>
             <div className={styles.mainContentHeader}>
@@ -48,7 +48,10 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
                             {orderTwo.dish.name}
                           </p>
                           <p className={styles.dishPrice}>
-                            {orderTwo.dish.unit_price}
+                            {Number(orderTwo.dish.unit_price).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL"
+            })}
                           </p>
                         </section>
                       </div>
@@ -78,15 +81,12 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
             })}
           </div>
         ))}
-        <div
-          className={styles.mainContentFooter}
-          onClick={removeAllDishesToCart}
-        >
-          <p className={styles.removeAllText}>Remover todos os pratos</p>
-        </div>
-      </main>
 
-      <footer className={styles.cartFooter}>
+      </div>
+
+      <div className={styles.cartFooter}>
+        <button className={styles.removeAllText} 
+          onClick={removeAllDishesToCart}>Remover todos os pratos</button>
         <div className={styles.totalPriceContent}>
           <p className={styles.totalText}>Total</p>
           <p className={styles.totalPriceText}>
@@ -101,7 +101,7 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
           type="button"
           onClick={handleNextStep}
         />
-      </footer>
+      </div>
     </>
   );
 };

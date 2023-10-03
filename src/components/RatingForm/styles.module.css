@@ -4,12 +4,13 @@
   gap: 45px;
 }
 .mainContent {
-  justify-content: center;
   display: flex;
   flex-direction: column;
-  width: 691px;
-  align-items: center;
-  height: 585px;
+  justify-content: space-between;
+  border-bottom: 3px solid;
+  border-color: var(--secondary);
+  margin-bottom: 10px;
+  overflow-y: auto;
 }
 
 .cartFooter {
@@ -18,7 +19,6 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  width: 691px;
 }
 
 .avaliateTitle {
@@ -30,16 +30,17 @@
 }
 
 .avaliateButton {
-  color: var(--secondary);
-  font-size: var(--font-size-small);
-  cursor: pointer;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 114px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: var(--secondary);
+    border: none;
+    cursor: pointer;
 }
-.input {
-  border: 1px solid #aeaeae;
-  border-radius: 6px;
-  width: 445px;
-  height: 80px;
-}
+
 .commentAndRating {
   display: flex;
   flex-direction: column;
@@ -52,7 +53,8 @@
 }
 .nameAndRating {
   display: flex;
-  justify-content: space-between;
+  gap: 171px;
+  justify-content: center;
 }
 .selectRating {
   border: none;

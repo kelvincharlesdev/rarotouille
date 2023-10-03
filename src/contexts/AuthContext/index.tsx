@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { UserResponseType } from "../../types/UserResponseType";
+import { getMe } from "../../service/apiGet";
 
 export interface IAuthLogin {
   isAuthenticated: boolean;
@@ -8,6 +9,7 @@ export interface IAuthLogin {
   setIsLoading: (isLoading: boolean) => void;
   user?: UserResponseType;
   setUser: (user: UserResponseType) => void;
+  updateUser: (user: UserResponseType) => void;
 }
 
 export const AuthContext = createContext({} as IAuthLogin);
@@ -21,15 +23,34 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [user, setUser] = useState<UserResponseType>();
 
+  const updateUser = (user: UserResponseType) => {
+    setUser(user);
+  }
+
+  const getUser = async () => {
+    const response = await getMe();
+
+    if (response) {
+      setUser(response.data);
+    }
+  };
+
   useEffect(() => {
     const token = localStorage.getItem("access_token");
 
     if (token) {
       setIsAuthenticated(true);
+      getUser();
     } else {
       setIsAuthenticated(false);
     }
-  }, []);
+  }, [isAuthenticated]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      getUser();
+    }
+  }, [isAuthenticated]);
 
   return (
     <AuthContext.Provider
@@ -39,7 +60,8 @@ export const AuthProvider = ({ children }: IAuthProvider) => {
         isLoading,
         setIsLoading,
         user,
-        setUser
+        setUser,
+        updateUser
       }}
     >
       {children}

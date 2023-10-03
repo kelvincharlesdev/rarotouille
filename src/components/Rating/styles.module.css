@@ -1,0 +1,26 @@
+.ratingContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+    width: 351px;
+    border-bottom: 1px solid var(--primary);
+}
+.ratesButtonsContent{
+    display: flex;
+    gap: 15px;
+}
+.nameAndStarsContent{
+    display: flex;
+    gap: 10px;
+}
+.userNameText{
+    font-size: var(--font-size-extra-small);
+    color: var(--secondary);
+    font-weight: 600;
+}
+.commentText{
+    font-size: var(--font-size-small);
+    color: var(--secondary);
+    font-weight: 600;
+}

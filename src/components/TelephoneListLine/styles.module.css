@@ -1,0 +1,23 @@
+.listLine {
+  display: flex;
+  gap: 10px;
+}
+.telephoneContent {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.phone {
+  font-size: var(--font-size-extra-small);
+  font-weight: 500;
+  color: var(--black);
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trash {
+  margin-top: 5px;
+}

@@ -32,3 +32,20 @@
   font-weight: bold;
   margin-bottom: 24px;
 }
+
+@media (max-width: 1060px) {
+  .formContent {
+    padding-top: 50px;
+  }
+
+}
+
+@media (max-width: 795px) {
+  .loginContent {
+    width: 100%;
+    padding: 0 40px;
+  }
+  .formContent {
+    width: 100%;
+  }
+}

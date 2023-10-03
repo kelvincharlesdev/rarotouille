@@ -1,0 +1,62 @@
+.orderContent{
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--primary);
+    justify-content: space-between;
+    width: 93%;
+}
+.orderDishInfos{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    
+}
+.orderStatus{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 46px;
+}
+.orderTitle{
+    font-size: var(--font-size-small);
+    color: var(--primary);
+}
+.statusCheckoutText{
+    font-size: var(--font-size-extra-small);
+    color: var(--secondary);
+}
+.statusCanceledText{
+    font-size: var(--font-size-extra-small);
+    color: var(--red);
+}
+.statusPageText{
+    font-size: var(--font-size-extra-small);
+    color: green;
+}
+.statusStartedText{
+    font-size: var(--font-size-extra-small);
+    color: var(--placeholder);
+}
+.totalPriceText{
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    color: var(--primary);
+}
+.dateText{
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+
+@media (max-width: 580px) {
+    .orderContent{
+       flex-direction: column;
+    }
+
+    .orderStatus{
+      align-items: flex-start;
+      gap: 25px;
+    }
+  }
+  

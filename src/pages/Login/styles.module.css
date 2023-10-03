@@ -21,10 +21,36 @@
   font-size: var(--font-size-extra-small);
   font-weight: 400;
   color: var(--placeholder);
-  text-decoration: underline;
 }
 
 .linkSignUp {
   color: var(--secondary);
   font-weight: 700;
+  padding-left: 5px;
+}
+
+@media (max-width: 1060px) {
+  .loginContent {
+   padding: 50px 46px 0 46px;
+   display: flex;
+   align-items: flex-start;
+   gap: 50px;
+  }
+}
+
+@media (max-width: 795px) {
+  .loginContent {
+    width: 100%;
+  }
+  .formContent {
+    width: 100%;
+  }
+
+  .subtitleText {
+  font-size: 12px;
+  }
+
+  .linkSignUp {
+    font-size: 12px;
+  }
 }

@@ -1,5 +1,12 @@
 .image {
-  width: 600px;
-  height: 600px;
+  width: 80%;
+
+} 
+
+
+
+@media (max-width: 1060px) {
+  .image {
+  display: none;
+  }
 }
-/*Só pras imagens não ficarem enormes, depois vou cortá-las pra que fiquem do mesmo tamanho"*/

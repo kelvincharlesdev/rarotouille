@@ -1,17 +1,15 @@
 .logo {
-  display: flex;
-  align-items: flex-end;
+  max-width: 40%;
 }
 
-.imageHat {
-  width: 81px;
-  height: 81px;
+@media (max-width: 1060px) {
+  .logo {
+    max-width: 20%;
+  }
 }
 
-.raro {
-  font-size: 44px;
-}
-.touille {
-  color: var(--secondary);
-  font-size: 35px;
+@media (max-width: 798px) {
+  .logo {
+    max-width: 150px;
+  }
 }

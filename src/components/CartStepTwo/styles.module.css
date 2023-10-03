@@ -1,8 +1,8 @@
 .mainContent {
   display: flex;
   flex-direction: column;
-  width: 691px;
-  height: 260px;
+  width: 445px;
+  height: 860px;
   border-bottom: 3px solid;
   border-color: var(--secondary);
 }
@@ -22,8 +22,8 @@
   justify-content: space-between;
 }
 .lineImage {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 5px;
 }
 .imageAndInfosContent {
@@ -47,7 +47,8 @@
 }
 .switchOptionSection {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
 }
 .switchSelect {
@@ -71,7 +72,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 691px;
+  width: 445px;
   height: 280px;
 }
 .totalPriceContent {
@@ -80,16 +81,21 @@
   width: 100%;
 }
 .totalText {
-  font-size: var(--font-size-super-large);
+  font-size: var(--font-size-medium);
   font-weight: 600;
   color: var(--secondary);
 }
 .totalPriceText {
-  font-size: var(--font-size-super-large);
+  font-size: var(--font-size-large);
   font-weight: 600;
   color: var(--secondary);
 }
 .backButton {
+  font-size: var(--font-size-extra-small);
+  color: var(--secondary);
+}
+
+.buttonAdd{
   font-size: var(--font-size-extra-small);
   color: var(--secondary);
 }

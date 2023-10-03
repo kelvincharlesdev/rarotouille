@@ -54,5 +54,25 @@ export const errrorMessages = {
   },
   reference: {
     minEight: "Referência deve ter no mínimo 4 caracteres"
+  },
+  error:{
+    add:"Erro ao adicionar, tente novamente",
+    update:"Erro ao atualizar, tente novamente"
+    
   }
 };
+
+export const successMessages = {
+  phone:{
+    update: "Telefone atualizado com sucesso",
+    add: "Telefone adicionado com sucesso"
+  },
+  address:{
+    update: "Endereço atualizado com sucesso",
+    add: "Endereço adicionado com sucesso"
+  },
+  user:{
+    update: "Dados atualizados com sucesso"
+  }
+  
+}

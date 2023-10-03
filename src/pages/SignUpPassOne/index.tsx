@@ -1,6 +1,6 @@
 import { Background } from "../../components/Background";
 import { SignUpPostType } from "../../types/SignUpPostType";
-import CadastroImage from "../../assets/images/ScooterPhone.png";
+import CadastroImage from "../../assets/images/ClipBoardForm.png";
 import React, { useState } from "react";
 import { signUp } from "../../service/apiPosts";
 import { SignUp } from "../../components/SignUp";

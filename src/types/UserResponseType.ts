@@ -9,5 +9,5 @@ export type UserResponseType = {
   created_at?: string;
   updated_at?: string;
   addresses: AddressResponseType[];
-  telephones?: TelephoneType[];
+  telephones: TelephoneType[];
 };

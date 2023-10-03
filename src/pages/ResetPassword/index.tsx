@@ -3,7 +3,7 @@ import { Background } from "../../components/Background";
 import { resetPassword } from "../../service/apiPuts";
 import { ResetPasswordType } from "../../types/ResetPasswordType";
 import styles from "./styles.module.css";
-import Lock from "../../assets/images/Lock.png";
+import Lock from "../../assets/images/lock-teste.png";
 import { Form, Formik } from "formik";
 import { resetPasswordInitialValues } from "../../utils/initialValues";
 import { Input } from "../../components/Input";

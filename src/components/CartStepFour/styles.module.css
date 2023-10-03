@@ -1,6 +1,6 @@
 .centerImage {
-  width: 400px;
-  height: 348px;
+  width: 300px;
+  height: 248px;
 }
 .mainTitle {
   text-align: center;
@@ -8,6 +8,7 @@
   font-weight: 700;
   width: 350px;
   color: var(--secondary);
+  padding-top: 15px;
 }
 .footerTitle {
   font-size: var(--font-size-large);
@@ -18,28 +19,31 @@
 }
 .imageAndTextContent {
   display: flex;
-  gap: 80px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 .mainContent {
   display: flex;
   flex-direction: column;
-  width: 691px;
-  height: 585px;
-  overflow: scroll;
+  justify-content: space-between;
+  height: 600px;
+  width: 485px;
+  border-bottom: 3px solid;
+  border-color: var(--secondary);
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .cartFooter {
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
   align-items: center;
-  width: 691px;
+  padding-top: 16px;
+  width: 445px;
   height: 215px;
+  margin: 0px 25px;
 }
 
 .avaliateTitle {
