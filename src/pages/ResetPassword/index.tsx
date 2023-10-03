@@ -34,7 +34,10 @@ export const ResetPassword = () => {
            senha."
           />
           <CheckAnimation />
-          <ButtonForm text={"Voltar ao Login"} />
+          <ButtonForm
+            data-testid="return-to-login-button"
+            text={"Voltar ao Login"}
+          />
         </div>
       ) : (
         <Formik<ResetPasswordType>
@@ -49,6 +52,7 @@ export const ResetPassword = () => {
               <div className={styles.formContent}>
                 <div className={styles.inputsContent}>
                   <Input
+                    data-testid="reset-token-input"
                     id="reset_password_token"
                     type="text"
                     name="reset_password_token"
@@ -59,6 +63,7 @@ export const ResetPassword = () => {
                     }
                   />
                   <Input
+                    data-testid="password-input"
                     id="password"
                     type="password"
                     name="password"
@@ -66,6 +71,7 @@ export const ResetPassword = () => {
                     errors={touched?.password && errors.password}
                   />
                   <Input
+                    data-testid="confirm-password-input"
                     id="password_confirmation"
                     type="password"
                     name="password_confirmation"
@@ -77,6 +83,7 @@ export const ResetPassword = () => {
                   />
                 </div>
                 <ButtonForm
+                  data-testid="reset-button"
                   text="Redefinir Senha"
                   type="submit"
                   disabled={isSubmitting}
