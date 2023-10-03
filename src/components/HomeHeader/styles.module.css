@@ -20,7 +20,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .logoContent {
@@ -62,9 +61,80 @@ nav {
   margin-left: 80px;
 }
 
+@media (max-width: 790px) {
+  .hamburguerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    gap: 180px;
+  }
 
-@media (max-width: 1180px) {
+  .contentCartHamburguer {
+    display: flex;
+    gap: 18px;
+  }
+
+  .rightHeaderContent {
+    display: none;
+  }
+
+  .menuOpen {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 103.5px;
+    left: -78px;
+    background-color: var(--white);
+    box-shadow:
+      0px 7px 12px -2px #7a7ea391,
+      9px 0px 12px -7px #7a7ea391;
+    width: 40%;
+    height: 300px;
+    z-index: 1;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+
   ul a {
-    font-size: var (--font-size-medium);
+    padding: 10px 35px;
+    color: var(--darker);
+  }
+
+  ul li {
+    width: 100%;
+    border-bottom: 1px solid var(--placeholder);
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+  }
+
+  .bar.open:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .bar.open:nth-child(2) {
+    opacity: 0;
+  }
+
+  .bar.open:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+@media (max-width: 578px) {
+  .hamburguerContent {
+    gap: 20px;
   }
 }
