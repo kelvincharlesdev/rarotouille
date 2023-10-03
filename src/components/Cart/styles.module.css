@@ -186,3 +186,13 @@
   width: 691px;
   height: 215px;
 }
+
+@media (max-width: 790px) { 
+  .cartContainer {
+    width: 100%;
+  }
+
+  .cartHeader {
+    width: 100%;
+  }
+}
