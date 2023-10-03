@@ -9,6 +9,7 @@ import { checkoutOrder, payOrder } from "../../service/apiPatchs";
 import { PaymentOptionType } from "../../types/PaymentOptionType";
 import { CartOrderType } from "../../types/CartOrderType";
 import { useAuthContext } from "../AuthContext";
+import { useListControlContext } from "../ListControlContext";
 
 interface CartContextProps {
   cartOrders: CartOrderType[];
@@ -23,9 +24,6 @@ interface CartContextProps {
   setChefsNames: (chefs: string[]) => void;
   paymentLink: string;
   setPaymentLink: (paymentLink: string) => void;
-  deliveryAddressIndex: number;
-  setDeliveryAddressIndex: (deliveryAddressIndex: number) => void;
-  switchDeliveryAddress: (index: string) => void;
   paymentOptions: PaymentOptionType[];
   setPaymentOptions: (paymentOptions: PaymentOptionType[]) => void;
   paymentOptionIndex: number;
@@ -55,7 +53,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   );
   const [totalPrice, setTotalPrice] = useState(0);
   const [paymentLink, setPaymentLink] = useState("");
-  const [deliveryAddressIndex, setDeliveryAddressIndex] = useState(0);
   const [paymentOptions, setPaymentOptions] = useState<PaymentOptionType[]>([
     {
       name: "Qr code",
@@ -68,6 +65,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   ]);
   const [paymentOptionIndex, setPaymentOptionIndex] = useState(0);
   const {user} = useAuthContext();
+  const {addressIndex} = useListControlContext();
 
   const getUserAddress = () =>{
     if(user){
@@ -156,7 +154,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       return orderItem;
     });
     const res = await postOrder({
-      delivery_address_id: userAddresses[deliveryAddressIndex].id,
+      delivery_address_id: userAddresses[addressIndex].id,
       items_attributes: orderItems
     });
     if (res?.status === 201) {
@@ -179,11 +177,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     }
   };
 
-  const switchDeliveryAddress = (index: string) => {
-    const aux = Number(index);
-    setDeliveryAddressIndex(aux);
-  };
-
   const switchPaymentOption = (index: string) => {
     const aux = Number(index);
     setPaymentOptionIndex(aux);
@@ -204,9 +197,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         setTotalPrice,
         paymentLink,
         setPaymentLink,
-        deliveryAddressIndex,
-        setDeliveryAddressIndex,
-        switchDeliveryAddress,
         paymentOptions,
         setPaymentOptions,
         paymentOptionIndex,

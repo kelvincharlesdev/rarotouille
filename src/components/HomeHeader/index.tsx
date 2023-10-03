@@ -5,9 +5,20 @@ import { SearchBar } from "../SearchBar";
 import { User } from "../User";
 import { CartModal } from "../CartModal";
 import { Link } from "react-router-dom";
+import { useListControlContext } from "../../contexts/ListControlContext";
+import { ModalSwitchAddress } from "../ModalSwitchAddress";
+import { Modal } from "../Modal";
+import mapIcon from "../../assets/svgs/MapIcon.svg"
+import { routes } from "../../routes";
 
 export const HomeHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const {userAddresses, addressIndex} = useListControlContext();
+
+  const onClickModal = () => {
+    setIsOpen(true);
+  }
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -39,15 +50,22 @@ export const HomeHeader = () => {
       >
         <ul>
           <li>
-            <Link to="/orders">Pedidos</Link>
+            <Link to={routes.home}>Home</Link>
           </li>
           <li>
-            <Link to="/favorites">Favoritos</Link>
+            <Link to={routes.orders}>Pedidos</Link>
           </li>
+          <li>
+            <Link to={routes.favorites}>Favoritos</Link>
+          </li>
+          {userAddresses[addressIndex] && <li className={styles.userAddress}> 
+              <button onClick={onClickModal}><img src={mapIcon} alt="mapIcon" /></button>
+            </li>}
         </ul>
         <User />
       </nav>
       <CartModal />
+      {isOpen && <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Trocar endereço"> <ModalSwitchAddress/></Modal>}
     </header>
   );
 };

@@ -32,12 +32,11 @@ export const CartStepTwo = ({
   const {
     totalPrice,
     finishOrder,
-    switchDeliveryAddress,
-    deliveryAddressIndex,
     paymentOptions,
     paymentOptionIndex,
     switchPaymentOption
   } = useCartContext();
+  const {addressIndex, switchAddressIndex} = useListControlContext();
 
   const {userAddresses} =useListControlContext();
   //TODO colocar um adicionar endereço
@@ -53,12 +52,12 @@ export const CartStepTwo = ({
               <img src={litleMap} alt="LitleMap" className={styles.lineImage} />
               <section className={styles.infoTitleAndSubTitle}>
                 <p className={styles.infoTitle}>
-                  {userAddresses[deliveryAddressIndex].public_place},{" "}
-                  {userAddresses[deliveryAddressIndex].number},{" "}
-                  {userAddresses[deliveryAddressIndex].neighborhood}
+                  {userAddresses[addressIndex].public_place},{" "}
+                  {userAddresses[addressIndex].number},{" "}
+                  {userAddresses[addressIndex].neighborhood}
                 </p>
                 <p className={styles.infoSubTitle}>
-                  {userAddresses[deliveryAddressIndex].complement}
+                  {userAddresses[addressIndex].complement}
                 </p>
               </section>
             </div>
@@ -67,7 +66,7 @@ export const CartStepTwo = ({
             <button className={styles.buttonAdd} onClick={onClickModal}>Adicionar</button>
               <select
                 className={styles.switchSelect}
-                onChange={e => switchDeliveryAddress(e.target.value)}
+                onChange={e => switchAddressIndex(Number(e.target.value))}
               >
                 <option disabled selected>
                   {" "}
