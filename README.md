@@ -25,7 +25,7 @@ Projeto final do curso de React da Raro Academy visa a criação de uma platafor
 
 ## Objetivos principais
 
-Desenvolver com React uma plataforma web funcional conforme descrito detalhadamente no enunciado oficial, utilizando API disponibilizada pela Raro Academy para acesso. As regras e critérios de avaliação se encontram [aqui](#github/raro-regras).
+Desenvolver com React uma plataforma web funcional conforme descrito detalhadamente no enunciado oficial, utilizando API disponibilizada pela Raro Academy para acesso. As regras e critérios de avaliação se encontram .
 
 ### LOGIN
 
@@ -91,12 +91,18 @@ Algumas tecnologias auxiliaram no desenvolvimento do projeto, dentre elas:
 
 ## Aplicação
 
-### Tela de home Desktop
+### Telas de Desktop
 
 <p align="center">
-  <img src="" alt="Imagem exibindo a versão desktop  do site" width="350">
-  <img src="" alt="Imagem exibindo a versão desktop  do site" width="350">
-  <img src="" alt="Imagem exibindo a versão desktop  do site" width="350">
+  <img src="src/assets/images/desktop-login.png" alt="Imagem exibindo a versão desktop  do site" width="350">
+  <img src="src/assets/images/desktop.png" alt="Imagem exibindo a versão desktop  do site" width="350">
+</p>
+
+### Telas de mobile
+
+<p align="center">
+  <img src="src/assets/images/mobile-login.png" alt="Imagem exibindo a versão mobile do site" width="350">
+  <img src="src/assets/images/mobile.png" alt="Imagem exibindo a versão mobile do site" width="350">
 </p>
 
 
@@ -125,8 +131,8 @@ Nos inspiramos em sites de Delivery mas também usamos os sites da Raro Academy 
             <div>
                 <img src="https://avatars.githubusercontent.com/u/110488969?v=4"width="120px;" alt="Foto de Kelvin no GitHub"/><br>
                     <b> Mariana Borges </b><br>
-                        <a href="https://www.linkedin.com/in/kelvin-charles/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="20"></a>
-                        <a href="https://github.com/kelvincharlesdev" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
+                        <a href="" alt="Linkedin"><img src="" height="20"></a>
+                        <a href="" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
             </div>
         </td>
                 <td align="center">
@@ -144,15 +150,6 @@ Nos inspiramos em sites de Delivery mas também usamos os sites da Raro Academy 
                         <a href="https://www.linkedin.com/in/joao-victor-goncalves-da-silva/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="20"></a>
                         <a href="https://github.com/jhonyDev07" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
             </div>
-        </td>
-                <td align="center">
-            <div>
-                <img src="https://avatars.githubusercontent.com/u/110488969?v=4"width="120px;" alt="Foto de Kelvin no GitHub"/><br>
-                    <b> Fábio Lenon </b><br>
-                        <a href="https://www.linkedin.com/in/kelvin-charles/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="20"></a>
-                        <a href="https://github.com/kelvincharlesdev" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
-            </div>
-        </td>
     </tr>
 
 </table>

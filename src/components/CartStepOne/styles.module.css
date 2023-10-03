@@ -123,3 +123,16 @@
   font-weight: 600;
   color: var(--secondary);
 }
+
+
+@media (max-width: 790px) { 
+  .mainContent {
+    width: 100%;
+    height: 50%;
+  }
+
+  .cartFooter {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
