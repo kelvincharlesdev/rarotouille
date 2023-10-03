@@ -42,3 +42,9 @@ footer > p {
   gap: 25px;
   padding-top: 25px;
 }
+
+@media (max-width: 798px) {
+  .logosContainer {
+    flex-direction: column;
+  }
+}

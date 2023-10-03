@@ -12,7 +12,7 @@ export const MainBackground = ({ children }: MainBackgroundProps) => {
     <>
       <HomeHeader />
       <div className={styles.content}>{children}</div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
