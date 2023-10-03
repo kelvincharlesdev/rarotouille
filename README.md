@@ -129,10 +129,10 @@ Nos inspiramos em sites de Delivery mas também usamos os sites da Raro Academy 
     <tr>  
         <td align="center">
             <div>
-                <img src="https://avatars.githubusercontent.com/u/110488969?v=4"width="120px;" alt="Foto de Kelvin no GitHub"/><br>
+                <br>
                     <b> Mariana Borges </b><br>
-                        <a href="" alt="Linkedin"><img src="" height="20"></a>
-                        <a href="" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
+                        <a href="" alt="Linkedin"></a>
+                        <a href="https://github.com/Mari-codes" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
             </div>
         </td>
                 <td align="center">
