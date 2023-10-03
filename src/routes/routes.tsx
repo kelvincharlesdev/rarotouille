@@ -12,6 +12,8 @@ import { Favorites } from "../pages/Favorites";
 import { Orders } from "../pages/Orders";
 import { Profile } from "../pages/Profile";
 import { useAuthContext } from "../contexts/AuthContext";
+import { LoggedComponent } from "../components/LoggedComponent";
+import { PayQrCode } from "../pages/PayQrCode";
 export const RarotouilleRoutes = () => {
   //TODO trocar pelo contexto dps
   const { isAuthenticated } = useAuthContext();
@@ -21,12 +23,15 @@ export const RarotouilleRoutes = () => {
         {isAuthenticated ? (
           <>
             <Route path="/*" element={<Navigate replace to="/home" />} />
+            <Route element={<LoggedComponent/>}>
             <Route path={routes.home} element={<Home />} />
             <Route path={routes.dishDetails()} element={<DishDetails />} />
             <Route path={routes.dishesList} element={<DishesList />} />
-            <Route path={routes.favorites()} element={<Favorites />} />
-            <Route path={routes.orders()} element={<Orders />} />
-            <Route path={routes.profile()} element={<Profile />} />
+            <Route path={routes.favorites} element={<Favorites />} />
+            <Route path={routes.orders} element={<Orders />} />
+            <Route path={routes.profile} element={<Profile />} />
+            <Route path={routes.payQrCode()} element={<PayQrCode/>}/>
+            </Route>
           </>
         ) : (
           <>

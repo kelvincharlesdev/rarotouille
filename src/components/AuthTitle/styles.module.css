@@ -14,3 +14,14 @@
   font-weight: 700;
   color: var(--primary);
 }
+
+
+@media (max-width: 795px) {
+  .title {
+    font-size: var(--font-size-medium);
+  }
+
+  .subTitle {
+    font-size: var(  --font-size-extra-small);
+  }
+}

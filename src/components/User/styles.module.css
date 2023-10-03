@@ -9,3 +9,25 @@
   color: var(--white);
   font-weight: 600;
 }
+
+.link {
+  display: flex;
+}
+
+
+@media (max-width: 790px) {
+
+  .username {
+    color: var(--darker);
+    font-weight: 600;
+  }
+
+  .userContainer {
+  margin-top: 20px;
+  width: 100%;
+    padding-left: 30px;
+
+  
+  }
+
+}

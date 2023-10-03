@@ -1,0 +1,47 @@
+.dishInfosContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.nameAndAverageAndLikeContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.averageAndLikeSection {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.categoriesAndCityNameContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.categoriesNamesSection {
+  display: flex;
+  gap: 10px;
+}
+
+.dishNameText {
+  font-size: var(--font-size-extra-large);
+  color: var(--secondary);
+  font-weight: 700;
+}
+.categoryNameAndCityNameText {
+  font-size: var(--font-size-small);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.chefNameText {
+  font-size: var(--font-size-medium);
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 1090px) {
+  .nameAndAverageAndLikeContent {
+   flex-direction: column;
+  }
+}

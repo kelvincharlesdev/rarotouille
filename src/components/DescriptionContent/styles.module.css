@@ -1,0 +1,17 @@
+.descriptionContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.descrptionTitle{
+    font-size: 49px;
+    color: var(--secondary);
+}
+.descriptionText{
+    font-size: var(--font-size-medium);
+    color: var(--secondary);
+
+}
+
+

@@ -1,25 +1,23 @@
+.contentTitle {
+  max-width: 500px;
+}
+
 .loginContent {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 100px;
 }
 .inputsContent {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  margin: 34px 0 55px 0;
+  gap: 15px;
+  margin: 4px 0 5px 0;
 }
 .formContent {
   display: flex;
   flex-direction: column;
-}
-.subtitleText {
-  align-self: center;
-  font-size: var(--font-size-extra-small);
-  font-weight: 400;
-  color: var(--placeholder);
-  text-decoration: underline;
 }
 
 .linkSignUp {
@@ -47,6 +45,7 @@
 .inputNumber {
   border-bottom: 1px solid var(--placeholder);
   width: 20%;
+  overflow: hidden;
 }
 
 .field {
@@ -58,4 +57,50 @@
 
 .field::placeholder {
   color: var(--placeholder);
+}
+
+@media (max-width: 1280px) {
+  .contentTitle {
+    margin-left: 60px;
+  }
+
+
+}
+
+@media (max-width: 1050px) {
+
+    .loginContent {
+      padding: 50px 40px 0 40px;
+  }
+
+  .contentTitle {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 795px) {
+  .loginContent {
+    width: 100%;
+   
+    display: flex;
+    align-items: flex-start;
+  }
+  .contentTitle {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .inputsContent {
+    width: 100%;
+  }
+}
+
+@media (max-width: 595px) {
+  .contentInput {
+    gap: 20px;
+  }
+
+  .fiel {
+    width: 100%;
+  }
 }

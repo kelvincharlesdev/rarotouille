@@ -1,0 +1,9 @@
+.rateRatingContent{
+    display: flex;
+    align-items: flex-start;
+    gap: 36px;
+}
+.numberAndImageSection{
+    display: flex;
+    gap: 6px;
+}

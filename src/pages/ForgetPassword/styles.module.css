@@ -45,3 +45,29 @@
 .tokenForm {
   margin-bottom: 45px;
 }
+
+@media (max-width: 1060px) {
+  .forgetContent {
+    margin-top: 100px;
+    gap: 70px;
+  }
+
+  .formContent {
+    gap: 45px;
+  }
+
+  .contenteReset {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 795px) {
+  .forgetContent {
+    width: 100%;
+    padding: 0 46px;
+  }
+
+  .formContent {
+    width: 100%;
+  }
+}

@@ -1,0 +1,41 @@
+.dishContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: left;
+}
+
+.dishRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 37px;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  font-size: var(--font-size-medium);
+  text-shadow: 0px 4px 4px rgba(122, 126, 163, 0.52);
+}
+
+.link {
+  font-size: var(--font-size-extra-small);
+}
+
+.link,
+h3 {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+
+@media (max-width: 1280px) {
+  .dishRow {
+   flex-wrap: wrap;
+  }
+}

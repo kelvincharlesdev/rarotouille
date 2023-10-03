@@ -1,0 +1,36 @@
+.averageContent {
+  width: 387px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.averageAndStarsContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.averageTitle {
+  font-size: var(--font-size-extra-large);
+  color: var(--secondary);
+}
+.averageText {
+  font-size: 60px;
+  color: var(--secondary);
+}
+
+@media (max-width: 620px) {
+  .averageContent {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .averageTitle {
+    font-size: var(--font-size-large);
+  }
+}
+
+@media (max-width: 400px) {
+  .averageTitle {
+    font-size: var(--font-size-medium);
+  }
+}

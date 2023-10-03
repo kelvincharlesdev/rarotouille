@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 import QRCode from "react-qr-code";
 import { useCartContext } from "../../contexts/CartContext";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ButtonForm } from "../ButtonForm";
 
 interface CartStepThreeProps {
@@ -9,7 +9,7 @@ interface CartStepThreeProps {
 }
 //TODO ver se é simulação ou é pra ler o qr code
 export const CartStepThree = ({ setActualStep }: CartStepThreeProps) => {
-  const { paymentLink, paymentOptionIndex, payFinalOrder } = useCartContext();
+  const { paymentLink, paymentOptionIndex, payFinalOrder, finalOrder } = useCartContext();
   const [copied, setCopied] = useState(false);
 
   const copyLink = () => {
@@ -17,14 +17,11 @@ export const CartStepThree = ({ setActualStep }: CartStepThreeProps) => {
       setCopied(true);
     });
   };
+  const payOrder = async () => {
+    payFinalOrder(finalOrder.id);
+    setActualStep(3)
 
-  useEffect(() => {
-    const payQrCodeSimulation = () => {
-      payFinalOrder();
-      setActualStep(3);
-    };
-    setTimeout(payQrCodeSimulation, 7000);
-  }, []);
+  }
 
   switch (paymentOptionIndex) {
     case 0:
@@ -33,14 +30,15 @@ export const CartStepThree = ({ setActualStep }: CartStepThreeProps) => {
           <main className={styles.mainContent}>
             <div className={styles.imageAndTextContent}>
               <p className={styles.mainContentTitle}>Quase lá</p>
-              <QRCode value={paymentLink} />
+              <QRCode value={`${location.origin}/payQrCode/${finalOrder.id}`}/>
             </div>
           </main>
-          <footer className={styles.footerContent}>
+          <div className={styles.footerContent}>
+            <button onClick={payOrder} className={styles.payButton}>Pagar</button>
             <p className={styles.footerText}>
               Escaneie o Qr code e conclua o pagamaneto
             </p>
-          </footer>
+          </div>
         </>
       );
     //TODO ver essa parte de link
@@ -49,7 +47,6 @@ export const CartStepThree = ({ setActualStep }: CartStepThreeProps) => {
         <>
           <main className={styles.mainContent}>
             <div className={styles.imageAndTextContent}>
-              <p className={styles.mainContentTitle}>Quase lá</p>
               <p className={styles.link}>{paymentLink}</p>
               {copied ? (
                 <p className={styles.linkCopiedMessage}>Link copiado!</p>

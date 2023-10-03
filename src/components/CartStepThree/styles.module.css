@@ -4,13 +4,15 @@
   font-weight: 700;
   width: 350px;
   color: var(--secondary);
+  padding: 20px 20px 0px 20px;
 }
 .footerText {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-small);
   font-weight: 700;
   width: 315px;
   text-align: center;
   color: var(--secondary);
+  padding: 0px 20px;
 }
 .imageAndTextContent {
   display: flex;
@@ -23,8 +25,8 @@
 .mainContent {
   display: flex;
   flex-direction: column;
-  width: 691px;
-  height: 585px;
+  width: 445px;
+  height: 685px;
 }
 .link {
   font-size: var(--font-size-extra-small);
@@ -37,10 +39,17 @@
   font-size: var(--font-size-small);
   color: var(--black);
 }
+.payButton{
+  font-size: var(--font-size-extra-small);
+  color: var(--secondary);
+}
 .footerContent {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 691px;
+  padding-top: 16px;
+  width: 445px;
   height: 215px;
+  margin: 0px 25px;
 }

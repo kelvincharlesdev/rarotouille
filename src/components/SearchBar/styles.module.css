@@ -33,3 +33,75 @@ input[type="search"]::placeholder {
   font-weight: 700;
   opacity: 0.5;
 }
+
+.searchContent {
+  position: absolute;
+  background-color: var(--white);
+  width: 442px;
+  left: 135px;
+  box-shadow:
+    0px 7px 12px -2px #7a7ea391,
+    9px 0px 12px -7px #7a7ea391;
+}
+
+.searchContent p {
+  color: var(--darker);
+}
+
+.searchResultItem {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 7px;
+}
+
+.searchResultItem:hover {
+  background-color: var(--search-hover);
+  cursor: pointer;
+}
+
+.searchResultItem img {
+  width: 50px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.searchResultItem h2 {
+  font-size: var(--font--size--small);
+  display: flex;
+  align-items: center;
+  color: var(--secondary);
+}
+
+.link {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  color: var(--secondary);
+  font-size: 25px;
+}
+
+
+@media (max-width: 1180px) {
+  .searchContainer {
+    width: 380px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .searchContainer {
+    width: 280px;
+  }
+}
+
+@media (max-width: 920px) {
+  .searchContainer {
+    width: 180px;
+  }
+
+  input[type="search"] {
+    width: 110px;
+  }
+  
+}

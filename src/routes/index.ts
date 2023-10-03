@@ -7,7 +7,8 @@ export const routes = {
   home: "/home",
   dishDetails: (id: string = ":id") => `/dishDetails/${id}`,
   dishesList: "/dishesList",
-  profile: (id: string = ":id") => `/profile/${id}`,
-  orders: (id: string = ":id") => `/orders/${id}`,
-  favorites: (id: string = ":id") => `/favorites/${id}`
+  profile: "/profile",
+  orders:"/orders",
+  favorites: "/favorites",
+  payQrCode: (id: string = ":id") => `/payQrCode/${id}`
 };

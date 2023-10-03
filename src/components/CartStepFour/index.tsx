@@ -32,10 +32,7 @@ export const CartStepFour = ({ setActualStep }: CartStepFourProps) => {
               />
             </div>
           </main>
-          <footer className={styles.cartFooter}>
-            <button className={styles.backButton} onClick={backToCartStart}>
-              Não, obrigado
-            </button>
+          <div className={styles.cartFooter}>
             <p className={styles.footerTitle}>Agora é só aproveitar o prato!</p>
             <button
               className={styles.avaliateButton}
@@ -43,7 +40,10 @@ export const CartStepFour = ({ setActualStep }: CartStepFourProps) => {
             >
               Deixar uma avaliação
             </button>
-          </footer>
+            <button className={styles.backButton} onClick={backToCartStart}>
+              Não, obrigado
+            </button>
+          </div>
         </>
       );
     case 1:
@@ -66,12 +66,12 @@ export const CartStepFour = ({ setActualStep }: CartStepFourProps) => {
               />
             </div>
           </main>
-          <footer className={styles.cartFooter}>
+          <div className={styles.cartFooter}>
             <button className={styles.backButton} onClick={backToCartStart}>
               Continuar comprando
             </button>
             <p className={styles.footerTitle}>Ela nos ajuda muito!</p>
-          </footer>
+          </div>
         </>
       );
   }

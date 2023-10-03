@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { DishType } from "../../types/DishType";
 import { OrderItemType } from "../../types/OrderItemType";
-import { getMe } from "../../service/apiGet";
 import { AddressResponseType } from "../../types/AddressResponseType";
 import { postOrder } from "../../service/apiPosts";
 import { AxiosResponse } from "axios";
@@ -9,6 +8,8 @@ import { OrderResponseType } from "../../types/OrderResponseType";
 import { checkoutOrder, payOrder } from "../../service/apiPatchs";
 import { PaymentOptionType } from "../../types/PaymentOptionType";
 import { CartOrderType } from "../../types/CartOrderType";
+import { useAuthContext } from "../AuthContext";
+import { useListControlContext } from "../ListControlContext";
 
 interface CartContextProps {
   cartOrders: CartOrderType[];
@@ -23,9 +24,6 @@ interface CartContextProps {
   setChefsNames: (chefs: string[]) => void;
   paymentLink: string;
   setPaymentLink: (paymentLink: string) => void;
-  deliveryAddressIndex: number;
-  setDeliveryAddressIndex: (deliveryAddressIndex: number) => void;
-  switchDeliveryAddress: (index: string) => void;
   paymentOptions: PaymentOptionType[];
   setPaymentOptions: (paymentOptions: PaymentOptionType[]) => void;
   paymentOptionIndex: number;
@@ -36,7 +34,7 @@ interface CartContextProps {
   removeOrderLine: (order: CartOrderType) => void;
   removeAllDishesToCart: () => void;
   finishOrder: () => Promise<AxiosResponse<OrderResponseType, any> | null>;
-  payFinalOrder: () => void;
+  payFinalOrder: (order_id: string) => void;
 }
 
 interface CartProviderProps {
@@ -55,7 +53,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   );
   const [totalPrice, setTotalPrice] = useState(0);
   const [paymentLink, setPaymentLink] = useState("");
-  const [deliveryAddressIndex, setDeliveryAddressIndex] = useState(0);
   const [paymentOptions, setPaymentOptions] = useState<PaymentOptionType[]>([
     {
       name: "Qr code",
@@ -67,16 +64,18 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     }
   ]);
   const [paymentOptionIndex, setPaymentOptionIndex] = useState(0);
-  const getAddress = async () => {
-    const res = await getMe();
-    if (res?.data.addresses) {
-      setUserAddresses(res?.data.addresses);
+  const {user} = useAuthContext();
+  const {addressIndex} = useListControlContext();
+
+  const getUserAddress = () =>{
+    if(user){
+      setUserAddresses(user.addresses);
     }
-  };
+  }
 
   useEffect(() => {
-    getAddress();
-  }, []);
+    getUserAddress();
+  }, [user]);
 
   const getChefsName = (dishes: CartOrderType[]) => {
     const chefs = dishes.map(dish => {
@@ -155,7 +154,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       return orderItem;
     });
     const res = await postOrder({
-      delivery_address_id: userAddresses[deliveryAddressIndex].id,
+      delivery_address_id: userAddresses[addressIndex].id,
       items_attributes: orderItems
     });
     if (res?.status === 201) {
@@ -171,13 +170,11 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     return null;
   };
 
-  const payFinalOrder = async () => {
-    await payOrder(finalOrder.id);
-  };
-
-  const switchDeliveryAddress = (index: string) => {
-    const aux = Number(index);
-    setDeliveryAddressIndex(aux);
+  const payFinalOrder = async (order_id: string) => {
+    const res = await payOrder(order_id);
+    if(res){
+      setFinalOrder(res.data)
+    }
   };
 
   const switchPaymentOption = (index: string) => {
@@ -200,9 +197,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         setTotalPrice,
         paymentLink,
         setPaymentLink,
-        deliveryAddressIndex,
-        setDeliveryAddressIndex,
-        switchDeliveryAddress,
         paymentOptions,
         setPaymentOptions,
         paymentOptionIndex,

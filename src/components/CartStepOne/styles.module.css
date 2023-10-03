@@ -1,46 +1,54 @@
 .mainContent {
   display: flex;
   flex-direction: column;
-  width: 691px;
-  height: 520px;
-  overflow: scroll;
+  justify-content: space-between;
+  height: 600px;
+  width: 485px;
   border-bottom: 3px solid;
   border-color: var(--secondary);
+  margin-bottom: 10px;
+  overflow-y: auto;
 }
+
+.button {
+  width: 440px;
+}
+
 .orderLine {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
-.mainContentHeader {
-  display: flex;
-  padding: 46px 0px 10px 0px;
-}
+
 .chefName {
   font-size: var(--font-size-small);
   font-weight: 600;
   color: var(--secondary);
+  margin: 0px 20px;
 }
 
 .trashButton {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 .productLine {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 20px;
 }
 .dishImage {
-  width: 205px;
-  height: 115px;
+  width: 80px;
+  height: 80px;
   border-radius: 5px;
 }
 .imageNamePriceContent {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
+
 .nameAndPriceSection {
   display: flex;
   flex-direction: column;
@@ -84,7 +92,7 @@
 .mainContentFooter {
   display: flex;
   justify-content: center;
-  padding: 20px 0px 0px 0px;
+  padding-top: 20px;
 }
 .removeAllText {
   font-size: var(--font-size-extra-small);
@@ -94,23 +102,37 @@
 .cartFooter {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 691px;
+  width: 445px;
   height: 280px;
 }
 .totalPriceContent {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  padding: 20px;
 }
 .totalText {
-  font-size: var(--font-size-super-large);
+  font-size: var(--font-size-medium);
   font-weight: 600;
   color: var(--secondary);
 }
 .totalPriceText {
-  font-size: var(--font-size-super-large);
+  font-size: var(--font-size-large);
   font-weight: 600;
   color: var(--secondary);
+}
+
+
+@media (max-width: 790px) { 
+  .mainContent {
+    width: 100%;
+    height: 50%;
+  }
+
+  .cartFooter {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
