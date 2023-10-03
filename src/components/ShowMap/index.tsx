@@ -6,6 +6,7 @@ import { UserResponseType } from "../../types/UserResponseType";
 import { TelephoneType } from "../../types/TelephoneType";
 import { AddressResponseType } from "../../types/AddressResponseType";
 import { getMapOptions } from "../../utils/map";
+import { useListControlContext } from "../../contexts/ListControlContext";
 
 const chaveMapAPI = import.meta.env.VITE_REACT_APP_GOOGLE_MAPS_API_KEY;
 
@@ -26,17 +27,19 @@ export interface IChefResponse {
 
 export const ShowMap = ({ chefs, user }: IShowMap) => {
   const [map, setMap] = useState<google.maps.Map | null>(null);
+  const {addressIndex} = useListControlContext();
+  
 
   const DEFAULT_LATITUDE = -19.95102;
   const DEFAULT_LONGITUDE = -43.92111;
 
   const hasUserAddress =
-    user?.addresses?.[0]?.latitude !== undefined &&
-    user?.addresses?.[0]?.longitude !== undefined;
+    user?.addresses?.[addressIndex]?.latitude !== undefined &&
+    user?.addresses?.[addressIndex]?.longitude !== undefined;
 
   const userAddress = {
-    latitude: user?.addresses?.[0]?.latitude,
-    longitude: user?.addresses?.[0]?.longitude
+    latitude: user?.addresses?.[addressIndex]?.latitude,
+    longitude: user?.addresses?.[addressIndex]?.longitude
   };
 
   const position = useMemo(() => {

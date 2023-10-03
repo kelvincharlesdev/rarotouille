@@ -94,7 +94,6 @@ export const RatingForm = ({
                   <Input
                     name="comment"
                     id="comment"
-                    className={styles.input}
                     placeholder="Escreva a sua avaliação"
                     errors={touched.comment && errors.comment}
                   />

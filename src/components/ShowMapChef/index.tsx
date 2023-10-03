@@ -6,6 +6,7 @@ import { UserResponseType } from "../../types/UserResponseType";
 import { TelephoneType } from "../../types/TelephoneType";
 import { AddressResponseType } from "../../types/AddressResponseType";
 import { getMapOptions } from "../../utils/map";
+import { useListControlContext } from "../../contexts/ListControlContext";
 
 const chaveMapAPI = import.meta.env.VITE_REACT_APP_GOOGLE_MAPS_API_KEY;
 
@@ -28,18 +29,19 @@ export const ShowMapChef = ({ chef, user }: IShowMap) => {
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
   const [mapLoaded] = useState(true);
+  const {addressIndex} = useListControlContext();
 
   useEffect(() => {
     if (
       mapLoaded &&
       chef.address.latitude !== undefined &&
       chef.address.longitude !== undefined &&
-      user?.addresses?.[0]?.latitude !== undefined &&
-      user?.addresses?.[0]?.longitude !== undefined
+      user?.addresses?.[addressIndex]?.latitude !== undefined &&
+      user?.addresses?.[addressIndex]?.longitude !== undefined
     ) {
       const userLocation = new google.maps.LatLng(
-        user.addresses[0].latitude,
-        user.addresses[0].longitude
+        user.addresses[addressIndex].latitude,
+        user.addresses[addressIndex].longitude
       );
       const chefLocation = new google.maps.LatLng(
         chef.address.latitude,
@@ -59,12 +61,12 @@ export const ShowMapChef = ({ chef, user }: IShowMap) => {
   const DEFAULT_LONGITUDE = -43.92111;
 
   const hasUserAddress =
-    user?.addresses?.[0]?.latitude !== undefined &&
-    user?.addresses?.[0]?.longitude !== undefined;
+    user?.addresses?.[addressIndex]?.latitude !== undefined &&
+    user?.addresses?.[addressIndex]?.longitude !== undefined;
 
   const userAddress = {
-    latitude: user?.addresses?.[0]?.latitude,
-    longitude: user?.addresses?.[0]?.longitude
+    latitude: user?.addresses?.[addressIndex]?.latitude,
+    longitude: user?.addresses?.[addressIndex]?.longitude
   };
 
   const position = useMemo(() => {

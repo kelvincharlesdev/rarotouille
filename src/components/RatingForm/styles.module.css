@@ -40,14 +40,7 @@
     border: none;
     cursor: pointer;
 }
-.input {
-  border: 1px solid #aeaeae;
-  border-radius: 6px;
-    font-size: var(--font-size-extra-small);
-    font-weight: 500;
-    color: var(--black);
-    width: 382px;
-}
+
 .commentAndRating {
   display: flex;
   flex-direction: column;

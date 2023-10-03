@@ -81,14 +81,12 @@ export const CartStepOne = ({ handleNextStep }: CartStepOneProps) => {
             })}
           </div>
         ))}
-        <div
-          className={styles.mainContentFooter}
-          onClick={removeAllDishesToCart}
-        ></div>
+
       </div>
 
       <div className={styles.cartFooter}>
-        <p className={styles.removeAllText}>Remover todos os pratos</p>
+        <button className={styles.removeAllText} 
+          onClick={removeAllDishesToCart}>Remover todos os pratos</button>
         <div className={styles.totalPriceContent}>
           <p className={styles.totalText}>Total</p>
           <p className={styles.totalPriceText}>

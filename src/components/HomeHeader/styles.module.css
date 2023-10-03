@@ -9,6 +9,10 @@ header {
   background-color: var(--primary);
   z-index: 1000;
 }
+.userAddress{
+  display: flex;
+}
+
 
 .rightHeaderContent {
   display: flex;
@@ -130,6 +134,9 @@ nav {
 
   .bar.open:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
+  }
+  .userAddress{
+    padding: 0px 0px 5px 40px;
   }
 }
 
