@@ -24,9 +24,4 @@ dist-ssr
 *.sw?
 .env
 
-# Arquivos e pastas do Cypress
-cypress/
-cypress.json
-cypress.env.json
-videos/
 
