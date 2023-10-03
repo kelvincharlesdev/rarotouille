@@ -25,8 +25,6 @@ dist-ssr
 .env
 
 # Arquivos e pastas do Cypress
-cypress/
-cypress.json
 cypress.env.json
 videos/
 
