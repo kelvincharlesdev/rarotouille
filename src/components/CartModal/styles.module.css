@@ -27,11 +27,19 @@
     color: var(--white);
     font-size: 8px;
     position: absolute;
-    top: 25px;
-    right: 23px;
+    top: 32px;
+    right: 68px;
 }
 
 
 .cartButton {
   position: relative;
+}
+
+
+@media (max-width: 790px) {
+  .cartButton {
+   width: 27px;
+  } 
+
 }

@@ -139,10 +139,10 @@ Nos inspiramos em sites de Delivery mas também usamos os sites da Raro Academy 
         </td>
                 <td align="center">
             <div>
-                <img src="https://avatars.githubusercontent.com/u/110488969?v=4"width="120px;" alt="Foto de Kelvin no GitHub"/><br>
+                <img src="https://git.raroacademy.com.br/uploads/-/system/user/avatar/75/avatar.png?width=400"width="120px;" alt="Foto de Kelvin no GitHub"/><br>
                     <b> João Victor </b><br>
-                        <a href="https://www.linkedin.com/in/kelvin-charles/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="20"></a>
-                        <a href="https://github.com/kelvincharlesdev" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
+                        <a href="https://www.linkedin.com/in/joao-victor-goncalves-da-silva/" alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="20"></a>
+                        <a href="https://github.com/jhonyDev07" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="20"></a>
             </div>
         </td>
                 <td align="center">

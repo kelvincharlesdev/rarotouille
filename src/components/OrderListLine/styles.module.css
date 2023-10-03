@@ -47,3 +47,16 @@
     font-weight: 700;
     color: var(--secondary);
 }
+
+
+@media (max-width: 580px) {
+    .orderContent{
+       flex-direction: column;
+    }
+
+    .orderStatus{
+      align-items: flex-start;
+      gap: 25px;
+    }
+  }
+  

@@ -12,24 +12,14 @@
 
 @media (max-width: 1060px) {
   .slogan {
-    font-size: 20px;
-    margin-top: 20px;
+    font-size: 15px;
   }
 
   .sloganRaro {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
-@media (max-width: 575px) {
-  .slogan {
-    font-size: 16px;
-  }
-
-  .sloganRaro {
-    font-size: 16px;
-  }
-}
 
 @media (max-width: 475px) {
   .slogan {
