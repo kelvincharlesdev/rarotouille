@@ -9,7 +9,7 @@ import { SectionMap } from "../../components/SectionMap";
 export const Home = () => {
   return (
     <MainBackground>
-      <div className={styles.teste}>
+      <div className={styles.teste} id="home-container">
         <HomeSlogan />
         <SectionDishesClose />
         <SectionFavoritesCarousel />
